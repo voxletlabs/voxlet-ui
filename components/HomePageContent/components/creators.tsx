@@ -1,10 +1,7 @@
 import React from "react";
-import { BatteryChargingIcon, TimerIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/registry/default/lib/utils";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
-import { Pre, CodeBlock } from "fumadocs-ui/components/codeblock";
-import Image from "next/image";
+import { buttonVariants } from "@/registry/default/ui/button";
 
 export default function Creators() {
   return (

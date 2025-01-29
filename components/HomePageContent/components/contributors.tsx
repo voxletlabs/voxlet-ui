@@ -7,7 +7,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/registry/default/ui/tooltip";
 import ContributorsData from "@/data/contributors";
 
 type Contributor = {

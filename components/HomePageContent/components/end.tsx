@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/registry/default/lib/utils";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 

@@ -1,9 +1,6 @@
 import React from "react";
 import {
-  LibraryBig,
-  Palette,
   Plus,
-  Server,
   Settings2,
   Sparkles,
   TerminalIcon,

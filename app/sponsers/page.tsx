@@ -1,7 +1,7 @@
 import React from "react";
 import { Heart } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/registry/default/ui/button";
+import { cn } from "@/registry/default/lib/utils";
 import Link from "next/link";
 
 const SponsorsPage = () => {
@@ -11,7 +11,7 @@ const SponsorsPage = () => {
         <h1 className="scroll-m-20 pb-2 text-4xl font-semibold tracking-tight first:mt-0">
           Support{" "}
           <span className="relative after:content-['']  after:absolute  after:top-[95%] after:w-[150%] after:[aspect-ratio:5_/_1] after:left-2/4 after:-translate-x-1/2 after:translate-y-[0]  after:rounded-[50%] after:border-[2px] after:border-[solid] after:border-blue-500 after:[clip-path:polygon(0_0,_50%_50%,_100%_0)]">
-            Kaif UI
+            Voxlet UI
           </span>
         </h1>
         <p className="leading-7 [&:not(:first-child)]:mt-3">
@@ -19,7 +19,7 @@ const SponsorsPage = () => {
           <i>
             <span className="text-blue-500 underline">sponsorship</span>
           </i>{" "}
-          powers <b>open-source</b> projects like <i>Kaif UI.</i>
+          powers <b>open-source</b> projects like <i>Voxlet UI.</i>
         </p>
         <div className="mt-2">
           <div>

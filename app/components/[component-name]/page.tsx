@@ -35,7 +35,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
     const utilFileCode = convertRegistryPaths((await readLibSource('utils.ts')) || "");
     try {
         return (
-            <main className="flex flex-col items-start justify-center min-h-screen p-8">
+            <main className="flex flex-col items-start justify-center min-h-screen">
                 <h1 className="text-3xl font-bold mb-2">{component.name}</h1>
 
                 <p className="text-lg mb-4 text-muted-foreground">{component.supportLine}</p>
@@ -50,7 +50,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
                     <h2 className="text-2xl font-semibold mb-4">Installation</h2>
                     <Steps>
                         <>
-                            {component.dependencies.map((dep, index) => (
+                            {component.dependencies?.map((dep, index) => (
                                 <Step key={index} title={dep.title}>
                                     <div className="relative min-w-full mt-4">
                                         <CodeBlock lang="bash">{dep.command}</CodeBlock>
@@ -80,10 +80,10 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
                 </section>
 
                 <section className="w-full">
-                    {component.typesTable.length > 1 && (
+                    {component.typesTable?.length && component.typesTable.length > 1 && (
                         <h2 className="text-2xl font-semibold mb-4">Props</h2>
                     )}
-                    {component.typesTable.map((typeTable, index) => (
+                    {component.typesTable?.map((typeTable, index) => (
                         <div key={index} className="mb-8">
                             <h2 className="text-xl font-semibold mb-4">{typeTable.title}</h2>
                             <Table>

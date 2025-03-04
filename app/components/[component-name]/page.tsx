@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
-import DemoComponent from "@/components/demo-component";
 import { slugify } from "@/utils/slugify";
 import { CodeBlock } from "@/components/code-block";
 import CopyButton from "@/components/copy-button";
 import { readComponentCoreCode, readLibSource } from "@/components/read-source";
 import { Step, Steps } from "@/registry/default/ui/steps";
 import { ComponentsData } from "@/data/componentsData";
+import ComponentLoader from "@/components/component-loader/server";
 
 interface ComponentPageProps {
     params: { "component-name": string };
@@ -41,7 +41,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
 
                 {component.demo.map((path) => (
                     <div className="mb-4 w-full" key={path}>
-                        <DemoComponent componentName={path} />
+                        <ComponentLoader componentName={path} />
                     </div>
                 ))}
 

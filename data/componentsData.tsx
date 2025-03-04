@@ -110,6 +110,63 @@ const ComponentsData: ComponentDataType[] = [
             },
         ],
     },
+    {
+        name: "Loader Button",
+        supportLine: "Seamless loading with a customizable Loader Button.",
+        imageUrl: "/components/loader-button.png",
+        demo: [
+            "loaderButton/usage.tsx",
+            "loaderButton/variants.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Dependencies",
+                command: "npm i lucide-react",
+            },
+            {
+                title: "Install Shadcn Components",
+                command: "npx shadcn@latest add button",
+            },
+        ],
+        code: "loaderButton.tsx",
+        typesTable: [
+            {
+                title: "Props",
+                table: [
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Optional class names to style the button component.",
+                    },
+                    {
+                        prop: "isLoading",
+                        type: "boolean",
+                        default: "false",
+                        description: "A boolean indicating whether the loader animation should be displayed.",
+                    },
+                    {
+                        prop: "buttonVariant",
+                        type: `"default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined`,
+                        default: `"default"`,
+                        description: "Defines the style variant of the button, can be one of the provided Tailwind-based variants like 'default', 'destructive', etc.",
+                    },
+                    {
+                        prop: "children",
+                        type: "React.ReactNode",
+                        default: "undefined",
+                        description: "The content to be rendered inside the button, typically text or icons.",
+                    },
+                    {
+                        prop: "onClick",
+                        type: "(event: React.MouseEvent<HTMLButtonElement>) => void",
+                        default: "undefined",
+                        description: "Optional onClick event handler that gets triggered when the button is clicked.",
+                    },
+                ],
+            },
+        ],
+    },
 ];
 
 export { ComponentsData };

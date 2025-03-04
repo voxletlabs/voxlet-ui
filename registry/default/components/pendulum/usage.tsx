@@ -1,5 +1,4 @@
 import Pendulum from "@/registry/default/ui/pendulum";
-
  
 export default function PendulumDemo() {
   return (

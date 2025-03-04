@@ -40,6 +40,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 0%;
     --foreground: 0 0% 98%;
@@ -72,7 +73,27 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
+  pre::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  pre::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  pre::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 5px;
+  }
+
+  pre {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
 }

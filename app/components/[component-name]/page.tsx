@@ -6,6 +6,7 @@ import { readComponentCoreCode, readLibSource } from "@/components/read-source";
 import { Step, Steps } from "@/registry/default/ui/steps";
 import { ComponentsData } from "@/data/componentsData";
 import ComponentLoader from "@/components/component-loader/server";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/registry/default/ui/table";
 
 interface ComponentPageProps {
     params: { "component-name": string };
@@ -76,7 +77,6 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
                             </div>
                         </Step>
                     </Steps>
-
                 </section>
 
                 <section className="w-full">
@@ -86,29 +86,30 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
                     {component.typesTable.map((typeTable, index) => (
                         <div key={index} className="mb-8">
                             <h2 className="text-xl font-semibold mb-4">{typeTable.title}</h2>
-                            <table className="min-w-full border-collapse table-auto">
-                                <thead>
-                                    <tr>
-                                        <th className="px-4 py-2 border">Prop</th>
-                                        <th className="px-4 py-2 border">Type</th>
-                                        <th className="px-4 py-2 border">Default</th>
-                                        <th className="px-4 py-2 border">Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                            <Table>
+                                <TableHeader>
+                                    <TableRow className="*:border-border md:*:p-4 hover:bg-transparent [&>:not(:last-child)]:border-r">
+                                        <TableHead className="w-[150px]">Prop</TableHead>
+                                        <TableHead>Type</TableHead>
+                                        <TableHead>Default</TableHead>
+                                        <TableHead>Description</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody className="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
                                     {typeTable.table.map((row, rowIndex) => (
-                                        <tr key={rowIndex}>
-                                            <td className="px-4 py-2 border">{row.prop}</td>
-                                            <td className="px-4 py-2 border">{row.type}</td>
-                                            <td className="px-4 py-2 border">{row.default}</td>
-                                            <td className="px-4 py-2 border">{row.description}</td>
-                                        </tr>
+                                        <TableRow key={rowIndex} className="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r md:*:p-4">
+                                            <TableCell className="font-medium">{row.prop}</TableCell>
+                                            <TableCell>{row.type}</TableCell>
+                                            <TableCell>{row.default}</TableCell>
+                                            <TableCell>{row.description}</TableCell>
+                                        </TableRow>
                                     ))}
-                                </tbody>
-                            </table>
+                                </TableBody>
+                            </Table>
                         </div>
                     ))}
                 </section>
+
             </main>
         );
     } catch (error) {

@@ -167,6 +167,69 @@ const ComponentsData: ComponentDataType[] = [
             },
         ],
     },
+    {
+        name: "Circular Navigation",
+        supportLine: "An interactive circular menu for seamless navigation throughout your application.",
+        imageUrl: "/components/circularNavigation.png",
+        demo: [
+            "circular-navigation/usage.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Dependencies",
+                command: "npm i framer-motion lucide-react",
+            },
+        ],
+        code: "circularNavigation.tsx",
+        typesTable: [
+            {
+                title: "CircularNavigationProps",
+                table: [
+                    {
+                        prop: "navItems",
+                        type: "NavItem[]",
+                        default: "[]",
+                        description: "An array of navigation items, each containing a name, icon, and href.",
+                    },
+                    {
+                        prop: "isOpen",
+                        type: "boolean",
+                        default: "false",
+                        description: "Controls whether the circular navigation menu is open or closed.",
+                    },
+                    {
+                        prop: "toggleMenu",
+                        type: "() => void",
+                        default: "undefined",
+                        description: "Function to toggle the menu's open/close state.",
+                    },
+                ],
+            },
+            {
+                title: "NavItem",
+                table: [
+                    {
+                        prop: "name",
+                        type: "string",
+                        default: "''",
+                        description: "The display name of the navigation item.",
+                    },
+                    {
+                        prop: "icon",
+                        type: "React.ComponentType<{ className?: string }>",
+                        default: "undefined",
+                        description: "The icon component for the navigation item.",
+                    },
+                    {
+                        prop: "href",
+                        type: "string",
+                        default: "''",
+                        description: "The URL link for the navigation item.",
+                    },
+                ],
+            },
+        ],
+    },
 ];
 
 export { ComponentsData };

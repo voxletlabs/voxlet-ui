@@ -20,7 +20,6 @@ import Navigation from "@/data/Navigation";
 import { useRouter } from "next/navigation";
 import { cn } from "@/registry/default/lib/utils";
 
-// ✅ Global state to prevent multiple instances from having their own state
 const globalState = {
   open: false,
   setOpen: (_: boolean) => {},
@@ -30,7 +29,6 @@ export function SearchCommand() {
   const router = useRouter();
   const [open, setOpen] = React.useState(globalState.open);
 
-  // Sync the state globally to prevent multiple instances
   React.useEffect(() => {
     globalState.setOpen = setOpen;
   }, []);

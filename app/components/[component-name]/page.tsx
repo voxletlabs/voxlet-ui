@@ -49,26 +49,23 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
                 <section className="mb-8 w-full">
                     <h2 className="text-2xl font-semibold mb-4">Installation</h2>
                     <Steps>
-                        <>
-                            {component.dependencies?.map((dep, index) => (
-                                <Step key={index} title={dep.title}>
-                                    <div className="relative min-w-full mt-4">
-                                        <CodeBlock lang="bash">{dep.command}</CodeBlock>
-                                        <CopyButton componentSource={dep.command} />
-                                    </div>
-                                </Step>
-                            ))}
-                        </>
-                        <>
-                            {component.cnUtilsFIle && (
-                                <Step title="lib/utils.ts">
-                                    <div className="relative min-w-full mt-2">
-                                        <CodeBlock lang="tsx">{utilFileCode}</CodeBlock>
-                                        <CopyButton componentSource={utilFileCode} />
-                                    </div>
-                                </Step>
-                            )}
-                        </>
+
+                        {component.dependencies?.map((dep, index) => (
+                            <Step key={index} title={dep.title}>
+                                <div className="relative min-w-full mt-4">
+                                    <CodeBlock lang="bash">{dep.command}</CodeBlock>
+                                    <CopyButton componentSource={dep.command} />
+                                </div>
+                            </Step>
+                        ))}
+                        {component.cnUtilsFIle ? (
+                            <Step title="lib/utils.ts">
+                                <div className="relative min-w-full mt-2">
+                                    <CodeBlock lang="tsx">{utilFileCode}</CodeBlock>
+                                    <CopyButton componentSource={utilFileCode} />
+                                </div>
+                            </Step>
+                        ) : null}
                         <Step title="Copy the source code">
                             <code className="bg-muted text-primary text-md py-1 px-2 mt-4 rounded-md">@/components/ui/{component.code}</code>
                             <div className="relative min-w-full mt-4">

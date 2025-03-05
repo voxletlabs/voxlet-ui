@@ -25,7 +25,6 @@ export default async function ComponentLoader({ componentName, className }: Comp
 
     let Component: ComponentType<any> | null = null;
     try {
-      // Try to import as a server-side component
       Component = (await import(`@/registry/default/components/${componentName}`)).default as ComponentType<any>;
     } catch (error) {
       console.warn(`Failed to load ${componentName} as a server component. Using client loader instead.`);

@@ -6,7 +6,7 @@ import { readComponentCoreCode, readLibSource } from "@/components/read-source";
 import { Step, Steps } from "@/registry/default/ui/steps";
 import { ComponentsData } from "@/data/componentsData";
 import ComponentLoader from "@/components/component-loader/server";
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/registry/default/ui/table";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/registry/default/ui/table";
 
 interface ComponentPageProps {
     params: { "component-name": string };

@@ -35,7 +35,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
     const utilFileCode = convertRegistryPaths((await readLibSource('utils.ts')) || "");
     try {
         return (
-            <main className="flex flex-col items-start justify-center min-h-screen">
+            <main className="flex flex-col items-start justify-center min-h-screen pt-[2rem]">
                 <h1 className="text-3xl font-bold mb-2">{component.name}</h1>
 
                 <p className="text-lg mb-4 text-muted-foreground">{component.supportLine}</p>

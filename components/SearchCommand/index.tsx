@@ -3,14 +3,8 @@
 import React from "react";
 import {
   Circle,
-  CommandIcon,
   SearchIcon,
-  ExternalLink,
-  LayoutList,
-  BookText,
-  FileTextIcon,
 } from "lucide-react";
-import { Input } from "@/registry/default/ui/input";
 import { Button } from "../../registry/default/ui/button";
 import {
   CommandDialog,
@@ -23,17 +17,39 @@ import {
 } from "@/registry/default/ui/command";
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 import Navigation from "@/data/Navigation";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { cn } from "@/registry/default/lib/utils";
+
+// ✅ Global state to prevent multiple instances from having their own state
+const globalState = {
+  open: false,
+  setOpen: (_: boolean) => {},
+};
 
 export function SearchCommand() {
-  const [open, setOpen] = React.useState(false);
+  const router = useRouter();
+  const [open, setOpen] = React.useState(globalState.open);
 
-  // To open/close command dialog using Ctrl + K (or Cmd + K on Mac)
+  // Sync the state globally to prevent multiple instances
+  React.useEffect(() => {
+    globalState.setOpen = setOpen;
+  }, []);
+
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+      if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
+        if (
+          (e.target instanceof HTMLElement && e.target.isContentEditable) ||
+          e.target instanceof HTMLInputElement ||
+          e.target instanceof HTMLTextAreaElement ||
+          e.target instanceof HTMLSelectElement
+        ) {
+          return;
+        }
+
         e.preventDefault();
-        setOpen((open) => !open);
+        
+        globalState.setOpen(true); 
       }
     };
 
@@ -41,72 +57,61 @@ export function SearchCommand() {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
-  // This function opens the CommandDialog on click
-  const handleClick = () => {
-    setOpen(true);
-  };
-
-  const sortedNavigation = [
-    ...Navigation.filter((section) => section.title !== "Explore"),
-    ...Navigation.filter((section) => section.title === "Explore"),
-  ];
+  const runCommand = React.useCallback((command: () => unknown) => {
+    globalState.setOpen(false);
+    command();
+  }, []);
 
   return (
     <>
       {/* Search bar for larger screens */}
-      <div
-        className="relative flex-1 max-w-md cursor-pointer hidden md:block"
-        onClick={handleClick}
+      <Button
+        variant="outline"
+        className={cn(
+          "relative h-8 my-auto w-full justify-start rounded-[0.5rem] bg-muted/50 text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
+        )}
+        onClick={() => globalState.setOpen(true)}
       >
-        <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500 dark:text-neutral-400" />
-        <Input
-          className="w-full rounded-lg bg-muted border h-9 pl-10 pr-4 text-sm shadow-sm bg-background"
-          placeholder="Search Components..."
-          type="search"
-          onClick={handleClick} // Open CommandDialog when clicking inside the input
-        />
-        <div className="sm:flex hidden absolute top-1/2 -translate-y-1/2 right-2 text-xs font-medium font-mono items-center gap-1 dark:bg-neutral-800 bg-zinc-200 p-1 rounded-sm">
-          <CommandIcon className="w-3 h-3" />
-          <span>K</span>
-        </div>
-      </div>
+        <span className="hidden lg:inline-flex">Search documentation...</span>
+        <span className="inline-flex lg:hidden">Search...</span>
+        <kbd className="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
+          <span className="text-xs">⌘</span>K
+        </kbd>
+      </Button>
 
       {/* Search icon for mobile screens */}
       <Button
         variant="ghost"
         size="icon"
         className="md:hidden"
-        onClick={handleClick}
+        onClick={() => globalState.setOpen(true)}
       >
         <SearchIcon className="w-4 h-4" />
       </Button>
 
       {/* Command dialog */}
-      <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandDialog open={open} onOpenChange={globalState.setOpen}>
         <CommandInput placeholder="Search..." />
         <CommandList>
           <ScrollArea className="h-[18.5rem]">
             <CommandEmpty>No results found.</CommandEmpty>
-            {sortedNavigation.map((group, index) => (
+            {Navigation.map((group, index) => (
               <React.Fragment key={group.title}>
                 <CommandGroup heading={group.title}>
                   {group.links.map((link) => (
-                    <Link
+                    <CommandItem
                       key={link.title}
-                      href={link.href}
-                      onClick={() => {
-                        setOpen(false);
+                      onSelect={() => {
+                        runCommand(() => router.push(link.href as string));
                       }}
                     >
-                      <CommandItem>
-                        <group.icon className="mr-2" />
-                        <span>{link.title}</span>
-                      </CommandItem>
-                    </Link>
+                      <group.icon className="mr-2" />
+                      <span>{link.title}</span>
+                    </CommandItem>
                   ))}
                 </CommandGroup>
                 {/* Render CommandSeparator only if this is not the last group */}
-                {index !== sortedNavigation.length - 1 && <CommandSeparator />}
+                {index !== Navigation.length - 1 && <CommandSeparator />}
               </React.Fragment>
             ))}
           </ScrollArea>

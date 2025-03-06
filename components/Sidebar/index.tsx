@@ -54,9 +54,9 @@ const Sidebar = () => {
                       {section.links.map((link: LinkData, idx: number) => (
                         <Link
                           key={idx}
-                          className={`group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:text-blue-500 hover:translate-x-1 transition duration-200 ${
+                          className={`group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:text-primary hover:translate-x-1 transition duration-200 ${
                             pathname === link.href
-                              ? "text-white"
+                              ? "text-black dark:text-white"
                               : "text-muted-foreground"
                           }`}
                           target={link.external ? "_blank" : undefined}

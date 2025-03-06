@@ -26,6 +26,53 @@ export interface ComponentDataType {
 
 const ComponentsData: ComponentDataType[] = [
     {
+        name: "Download Button",
+        supportLine: "A dynamic button with real-time download status and progress tracking.",
+        imageUrl: "/components/emogi-nav.png",
+        demo: [
+            "download-button/usage.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Shadcn Components",
+                command: "npx shadcn@latest add button",
+            },
+        ],
+        cnUtilsFIle: true,
+        code: "download-button.tsx",
+        typesTable: [
+            {
+                title: "Props",
+                table: [
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Optional custom class names for styling.",
+                    },
+                    {
+                        prop: "downloadStatus",
+                        type: `"idle" | "downloading" | "downloaded" | "complete"`,
+                        default: `"idle"`,
+                        description: "Represents the current state of the download process.",
+                    },
+                    {
+                        prop: "progress",
+                        type: "number",
+                        default: "0",
+                        description: "Indicates the download progress percentage (0-100).",
+                    },
+                    {
+                        prop: "onClick",
+                        type: "() => void",
+                        default: "undefined",
+                        description: "Callback function triggered when the button is clicked.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
         name: "Emogi Nav",
         supportLine: "Emogi nav, think different.",
         imageUrl: "/components/emogi-nav.png",

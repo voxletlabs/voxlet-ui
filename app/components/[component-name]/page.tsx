@@ -7,6 +7,7 @@ import { Step, Steps } from "@/registry/default/ui/steps";
 import { ComponentsData } from "@/data/componentsData";
 import ComponentLoader from "@/components/component-loader/server";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/registry/default/ui/table";
+import Link from "next/link";
 
 interface ComponentPageProps {
     params: { "component-name": string };
@@ -106,7 +107,11 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
                         </div>
                     ))}
                 </section>
-
+                {component.credit && (
+                    <div className="mt-4 mb-12">
+                        <p className="text-md">{component.credit.message} <Link href={component.credit.link.url} target="_blank" className="underline font-bold">{component.credit.link.text}</Link></p>
+                    </div>
+                )}
             </main>
         );
     } catch (error) {

@@ -22,9 +22,81 @@ export interface ComponentDataType {
     cnUtilsFIle?: boolean;
     code: string;
     typesTable?: TypeTable[];
+    credit?: {
+        message: string;
+        link: {
+            text: string;
+            url: string;
+        };
+    };
 }
 
 const ComponentsData: ComponentDataType[] = [
+    {
+        name: "Tube Light Navbar",
+        supportLine: "A sleek, interactive navigation bar with a dynamic lighting effect, perfect for modern UIs.",
+        imageUrl: "/components/emogi-nav.png",
+        demo: [
+            "tubelight-navbar/usage.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Dependencies",
+                command: "npm i framer-motion lucide-react",
+            },
+        ],
+        cnUtilsFIle: true,
+        code: "tubelight-navbar.tsx",
+        typesTable: [
+            {
+                title: "NavBarProps",
+                table: [
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Optional custom class names for styling.",
+                    },
+                    {
+                        prop: "items",
+                        type: "NavItem[]",
+                        default: "[]",
+                        description: "An array of navigation items containing name, URL, and icon.",
+                    },
+                ],
+            },
+            {
+                title: "NavItem",
+                table: [
+                    {
+                        prop: "name",
+                        type: "string",
+                        default: "undefined",
+                        description: "The label for the navigation item.",
+                    },
+                    {
+                        prop: "url",
+                        type: "string",
+                        default: "undefined",
+                        description: "The destination URL for the navigation item.",
+                    },
+                    {
+                        prop: "icon",
+                        type: "LucideIcon",
+                        default: "undefined",
+                        description: "The icon representing the navigation item.",
+                    },
+                ],
+            },
+        ],
+        credit: {
+            message: "The inspiration for this component is directly taken from",
+            link: {
+                text: "Serenity UI",
+                url: "https://www.serenity-ui.com/components/navbars/tubelightnavbar",
+            },
+        },
+    },
     {
         name: "Download Button",
         supportLine: "A dynamic button with real-time download status and progress tracking.",

@@ -28,7 +28,7 @@ export default function BlocksPage({ params }: BlocksPageProps) {
             <div className="flex flex-col gap-8 w-full">
                 {category.blocks.map((block) => (
                     <div key={block.name} className="mb-8">
-                        <h2 className="text-2xl font-semibold mb-4">{block.name}</h2>
+                        {/* <h2 className="text-2xl font-semibold mb-4">{block.name}</h2> */}
                         <BlockLoader blockName={block.path} />
                     </div>
                 ))}

@@ -46,9 +46,22 @@ const BlocksData: BlockCategory[] = [
         supportLine: 'Streamline user access with intuitive and customizable authentication UI.',
         imageUrl: '/blocks/pricing.png',
         blocks: [
+
+            {
+                name: 'Login Page Three',
+                path: 'authentication/login-page-three.tsx'
+            },
+            {
+                name: 'Login Page Four',
+                path: 'authentication/login-page-four.tsx'
+            },
             {
                 name: 'Login Page One',
                 path: 'authentication/login-page-one.tsx'
+            },
+            {
+                name: 'Login Page Five',
+                path: 'authentication/login-page-five.tsx'
             },
             {
                 name: 'Login Page Two',

@@ -91,13 +91,13 @@ export default function BlocksPage() {
                   width={720}
                   height={1024}
                   decoding="async"
-                  className="transition duration-300 blur-0 rounded-md group-hover:scale-105 object-cover h-full w-full"
+                  className="transition duration-200 blur-0 rounded-md group-hover:scale-[1.02] object-cover h-full w-full"
                   src={blockCategory.imageUrl}
                   style={{ color: "transparent" }}
                 />
               </div>
-              <p className="text-xl font-bold mt-4 mb-2 dark:text-neutral-100 text-neutral-700">
-                {blockCategory.categoryName}
+              <p className="text-xl font-bold mt-4 mb-2 dark:text-neutral-100 text-neutral-700 py-auto">
+                <span className="text-lg font-medium">{`(${blockCategory.blocks.length})`}</span> {blockCategory.categoryName}
               </p>
               <p className="mt-2 text-sm font-normal dark:text-neutral-300 text-neutral-500">
                 {blockCategory.supportLine}

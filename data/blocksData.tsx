@@ -60,6 +60,14 @@ const BlocksData: BlockCategory[] = [
                 path: 'authentication/login-page-one.tsx'
             },
             {
+                name: 'Sign in dialog',
+                path: 'authentication/sign-in-dialog.tsx'
+            },
+            {
+                name: 'Sign up dialog',
+                path: 'authentication/sign-up-dialog.tsx'
+            },
+            {
                 name: 'Login Page Five',
                 path: 'authentication/login-page-five.tsx'
             },

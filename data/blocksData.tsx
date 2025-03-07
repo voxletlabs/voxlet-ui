@@ -40,7 +40,18 @@ const BlocksData: BlockCategory[] = [
                 path: 'pricing/pricingTwo.tsx'
             },
         ]
-    }
+    },
+    {
+        categoryName: 'Authentication',
+        supportLine: 'Make a stunning first impression with captivating hero sections.',
+        imageUrl: '/blocks/pricing.png',
+        blocks: [
+            {
+                name: 'Login Page One',
+                path: 'authentication/login-page-one.tsx'
+            },
+        ]
+    },
 ];
 
 export { BlocksData, type BlockCategory, type Block };

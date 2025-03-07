@@ -33,6 +33,51 @@ export interface ComponentDataType {
 
 const ComponentsData: ComponentDataType[] = [
     {
+        name: "Gravity Box",
+        supportLine: "A physics-based tag cloud using Matter.js, where tags respond to gravity and collisions.",
+        imageUrl: "/components/emogi-nav.png",
+        demo: [
+            "gravity-box/usage.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Dependencies",
+                command: "npm i matter-js",
+            },
+        ],
+        code: "gravity-box.tsx",
+        typesTable: [
+            {
+                title: "GravityBoxProps",
+                table: [
+                    {
+                        prop: "tags",
+                        type: "Tag[]",
+                        default: "[]",
+                        description: "An array of tags, each containing text and a background color.",
+                    },
+                ],
+            },
+            {
+                title: "Tag",
+                table: [
+                    {
+                        prop: "text",
+                        type: "string",
+                        default: "-",
+                        description: "The display text for the tag.",
+                    },
+                    {
+                        prop: "color",
+                        type: "string",
+                        default: "-",
+                        description: "The background color of the tag.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
         name: "Anime Navbar",
         supportLine: "A sleek and animated navigation bar built with Framer Motion for a smooth user experience.",
         imageUrl: "/components/emogi-nav.png",

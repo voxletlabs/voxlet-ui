@@ -43,12 +43,16 @@ const BlocksData: BlockCategory[] = [
     },
     {
         categoryName: 'Authentication',
-        supportLine: 'Make a stunning first impression with captivating hero sections.',
+        supportLine: 'Streamline user access with intuitive and customizable authentication UI.',
         imageUrl: '/blocks/pricing.png',
         blocks: [
             {
                 name: 'Login Page One',
                 path: 'authentication/login-page-one.tsx'
+            },
+            {
+                name: 'Login Page Two',
+                path: 'authentication/login-page-two.tsx'
             },
         ]
     },

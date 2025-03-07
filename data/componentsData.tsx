@@ -33,6 +33,77 @@ export interface ComponentDataType {
 
 const ComponentsData: ComponentDataType[] = [
     {
+        name: "Anime Navbar",
+        supportLine: "A sleek and animated navigation bar built with Framer Motion for a smooth user experience.",
+        imageUrl: "/components/emogi-nav.png",
+        demo: [
+            "anime-navbar/usage.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Dependencies",
+                command: "npm i framer-motion lucide-react",
+            },
+        ],
+        cnUtilsFIle: true,
+        code: "anime-navbar.tsx",
+        typesTable: [
+            {
+                title: "NavBarProps",
+                table: [
+                    {
+                        prop: "items",
+                        type: "NavItem[]",
+                        default: "[]",
+                        description: "An array of navigation items, each containing a name, URL, and icon.",
+                    },
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Optional custom class names for styling.",
+                    },
+                    {
+                        prop: "defaultActive",
+                        type: "string",
+                        default: "undefined",
+                        description: "Specifies which navigation item should be active by default.",
+                    },
+                ],
+            },
+            {
+                title: "NavItem",
+                table: [
+                    {
+                        prop: "name",
+                        type: "string",
+                        default: "undefined",
+                        description: "The label for the navigation item.",
+                    },
+                    {
+                        prop: "url",
+                        type: "string",
+                        default: "undefined",
+                        description: "The destination URL for the navigation item.",
+                    },
+                    {
+                        prop: "icon",
+                        type: "LucideIcon",
+                        default: "undefined",
+                        description: "The icon representing the navigation item.",
+                    },
+                ],
+            },
+        ],
+        credit: {
+            message: "Inspired by Jatin Yadav's Anime Navbar component on",
+            link: {
+                text: "21st.dev.",
+                url: "https://21st.dev/jatin-yadav05/anime-navbar/default",
+            },
+        },
+    },
+    {
         name: "Tube Light Navbar",
         supportLine: "A sleek, interactive navigation bar with a dynamic lighting effect, perfect for modern UIs.",
         imageUrl: "/components/emogi-nav.png",

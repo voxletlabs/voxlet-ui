@@ -61,7 +61,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
                         ))}
                         {component.cnUtilsFIle ? (
                             <Step title="lib/utils.ts">
-                                <div className="relative min-w-full mt-2">
+                                <div className="relative min-w-full mt-4">
                                     <CodeBlock lang="tsx">{utilFileCode}</CodeBlock>
                                     <CopyButton componentSource={utilFileCode} />
                                 </div>

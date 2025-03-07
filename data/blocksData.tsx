@@ -21,6 +21,17 @@ const BlocksData: BlockCategory[] = [
                 path: 'heroSection/heroSectionOne.tsx'
             }
         ]
+    },
+    {
+        categoryName: 'Pricing',
+        supportLine: 'Make a stunning first impression with captivating hero sections.',
+        imageUrl: '/blocks/pricing.png',
+        blocks: [
+            {
+                name: 'Pricing One',
+                path: 'pricing/pricingOne.tsx'
+            }
+        ]
     }
 ];
 

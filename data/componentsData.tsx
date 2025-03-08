@@ -33,6 +33,87 @@ export interface ComponentDataType {
 
 const ComponentsData: ComponentDataType[] = [
     {
+        name: "Magic Wand",
+        supportLine: "An interactive Magic Wand effect that follows the cursor, animating a floating wand and revealing images within tiles as the cursor moves.",
+        imageUrl: "/components/emogi-nav.png",
+        demo: [
+            "magic-wand/usage.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Dependencies",
+                command: "npm i framer-motion lucide-react",
+            },
+        ],
+        code: "magic-wand.tsx",
+        cnUtilsFIle: true,
+        typesTable: [
+            {
+                title: "MagicWandContainerProps",
+                table: [
+                    {
+                        prop: "children",
+                        type: "React.ReactNode",
+                        default: "-",
+                        description: "Elements that will be wrapped by the magic wand effect.",
+                    },
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Custom class names for additional styling of the container.",
+                    },
+                    {
+                        prop: "wandClassName",
+                        type: "string",
+                        default: "undefined",
+                        description: "Custom class names for additional styling of the floating wand.",
+                    },
+                ],
+            },
+            {
+                title: "MagicWandTileProps",
+                table: [
+                    {
+                        prop: "image",
+                        type: "string",
+                        default: "-",
+                        description: "The source URL of the image to be revealed.",
+                    },
+                    {
+                        prop: "icon",
+                        type: "LucideIcon | IconConfig",
+                        default: "undefined",
+                        description: "Lucide icon or an object with an icon and optional className.",
+                    },
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Optional class names for styling the tile.",
+                    },
+                ],
+            },
+            {
+                title: "IconConfig",
+                table: [
+                    {
+                        prop: "icon",
+                        type: "LucideIcon",
+                        default: "undefined",
+                        description: "Lucide icon component.",
+                    },
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Optional class names for styling the icon.",
+                    },
+                ],
+            },
+        ]        
+    },
+    {
         name: "Animated Background",
         supportLine: "An animated background effect that highlights elements smoothly on hover or click, enhancing user interaction.",
         imageUrl: "/components/emogi-nav.png",

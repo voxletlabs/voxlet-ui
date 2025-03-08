@@ -33,6 +33,59 @@ export interface ComponentDataType {
 
 const ComponentsData: ComponentDataType[] = [
     {
+        name: "Space Box",
+        supportLine: "A cosmic-inspired interactive box with animated stars and shooting stars that react to user hover.",
+        imageUrl: "/components/emogi-nav.png",
+        demo: [
+            "space-box/usage.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Dependencies",
+                command: "npm i framer-motion",
+            },
+        ],
+        cnUtilsFIle: true,
+        code: "space-box.tsx",
+        typesTable: [
+            {
+                title: "SpaceBoxProps",
+                table: [
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Optional custom class names for styling.",
+                    },
+                    {
+                        prop: "highlightedWord",
+                        type: "string",
+                        default: "-",
+                        description: "A word that appears bold before hovering over the component.",
+                    },
+                    {
+                        prop: "text",
+                        type: "string",
+                        default: "-",
+                        description: "The descriptive text that follows the highlighted word.",
+                    },
+                    {
+                        prop: "animatedText",
+                        type: "string",
+                        default: "-",
+                        description: "A scrolling text that appears when hovering over the component.",
+                    },
+                    {
+                        prop: "starDensity",
+                        type: '"low" | "medium" | "high"',
+                        default: '"medium"',
+                        description: "Controls the number of stars and shooting stars in the background animation.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
         name: "Steps",
         supportLine: "A vertical stepper component for guiding users through multi-step processes.",
         imageUrl: "/components/emogi-nav.png",

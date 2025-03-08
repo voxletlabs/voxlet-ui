@@ -33,6 +33,37 @@ export interface ComponentDataType {
 
 const ComponentsData: ComponentDataType[] = [
     {
+        name: "Flip Coin Button",
+        supportLine: "A fun interactive button that simulates a coin flip animation when clicked.",
+        imageUrl: "/components/emogi-nav.png",
+        demo: [
+            "flip-coin-button/usage.tsx",
+        ],
+        cnUtilsFIle: true,
+        code: "flip-coin-button.tsx",
+        typesTable: [
+            {
+                title: "FlipCoinButtonProps",
+                table: [
+                    {
+                        prop: "children",
+                        type: "ReactNode",
+                        default: "-",
+                        description: "The content inside the button, typically text or an icon.",
+                    },
+                ],
+            },
+        ],
+        credit: {
+            message: "The inspiration for this component is directly taken from",
+            link: {
+                text: "Cooper Goeke on CodePen",
+                url: "https://codepen.io/coopergoeke/pen/abZqEbK",
+            },
+        },
+
+    },
+    {
         name: "Space Box",
         supportLine: "A cosmic-inspired interactive box with animated stars and shooting stars that react to user hover.",
         imageUrl: "/components/emogi-nav.png",

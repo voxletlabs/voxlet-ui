@@ -33,6 +33,28 @@ export interface ComponentDataType {
 
 const ComponentsData: ComponentDataType[] = [
     {
+        name: "Scroll Progress",
+        supportLine: "A scroll progress indicator that visually tracks page scroll with a circular progress bar.",
+        imageUrl: "/components/emogi-nav.png",
+        demo: [
+            "scroll-progress/usage.tsx",
+        ],
+        code: "scroll-progress.tsx",
+        typesTable: [
+            {
+                title: "ScrollProgressProps",
+                table: [
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Optional custom class names for styling.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
         name: "Gravity Box",
         supportLine: "A physics-based tag cloud using Matter.js, where tags respond to gravity and collisions.",
         imageUrl: "/components/emogi-nav.png",

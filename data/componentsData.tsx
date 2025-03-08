@@ -33,6 +33,47 @@ export interface ComponentDataType {
 
 const ComponentsData: ComponentDataType[] = [
     {
+        name: "Steps",
+        supportLine: "A vertical stepper component for guiding users through multi-step processes.",
+        imageUrl: "/components/emogi-nav.png",
+        demo: [
+            "steps/basic.tsx",
+            "steps/software-installation-guide.tsx",
+            "steps/signin-onboarding.tsx",
+        ],
+        code: "steps.tsx",
+        typesTable: [
+            {
+                title: "StepsProps",
+                table: [
+                    {
+                        prop: "children",
+                        type: "React.ReactNode",
+                        default: "-",
+                        description: "A collection of `<Step>` components that make up the stepper.",
+                    },
+                ],
+            },
+            {
+                title: "StepProps",
+                table: [
+                    {
+                        prop: "title",
+                        type: "string",
+                        default: "-",
+                        description: "The title of the step.",
+                    },
+                    {
+                        prop: "children",
+                        type: "React.ReactNode",
+                        default: "-",
+                        description: "Content displayed inside the step, such as form fields or descriptions.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
         name: "Magic Wand",
         supportLine: "An interactive Magic Wand effect that follows the cursor, animating a floating wand and revealing images within tiles as the cursor moves.",
         imageUrl: "/components/emogi-nav.png",
@@ -111,7 +152,7 @@ const ComponentsData: ComponentDataType[] = [
                     },
                 ],
             },
-        ]        
+        ]
     },
     {
         name: "Animated Background",

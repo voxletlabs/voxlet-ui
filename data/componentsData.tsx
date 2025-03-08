@@ -34,7 +34,7 @@ export interface ComponentDataType {
 const ComponentsData: ComponentDataType[] = [
     {
         name: "Animated Background",
-        supportLine: "A dynamic background animation component that highlights elements based on user interactions, supporting both hover and click activation.",
+        supportLine: "An animated background effect that highlights elements smoothly on hover or click, enhancing user interaction.",
         imageUrl: "/components/emogi-nav.png",
         demo: [
             "animated-background/animated-nav-links-hover.tsx",

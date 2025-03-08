@@ -33,6 +33,67 @@ export interface ComponentDataType {
 
 const ComponentsData: ComponentDataType[] = [
     {
+        name: "Animated Background",
+        supportLine: "A dynamic background animation component that highlights elements based on user interactions, supporting both hover and click activation.",
+        imageUrl: "/components/emogi-nav.png",
+        demo: [
+            "animated-background/animated-nav-links-hover.tsx",
+            "animated-background/animated-tabs-hover.tsx",
+            "animated-background/animated-card-background-hover.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Dependencies",
+                command: "npm i motion",
+            },
+        ],
+        code: "animated-background.tsx",
+        cnUtilsFIle: true,
+        typesTable: [
+            {
+                title: "AnimatedBackgroundProps",
+                table: [
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Additional custom class names for styling the animated background.",
+                    },
+                    {
+                        prop: "children",
+                        type: "ReactElement<{ 'data-id': string }>[] | ReactElement<{ 'data-id': string }>",
+                        default: "-",
+                        description: "An array or a single React element with a `data-id` attribute used for tracking active elements.",
+                    },
+                    {
+                        prop: "defaultValue",
+                        type: "string",
+                        default: "undefined",
+                        description: "Specifies which item should be highlighted by default.",
+                    },
+                    {
+                        prop: "onValueChange",
+                        type: "(newActiveId: string | null) => void",
+                        default: "undefined",
+                        description: "Callback function triggered when the active element changes.",
+                    },
+                    {
+                        prop: "transition",
+                        type: "Transition",
+                        default: "undefined",
+                        description: "Defines the transition animation properties using the Motion library.",
+                    },
+                    {
+                        prop: "enableHover",
+                        type: "boolean",
+                        default: "false",
+                        description: "Enables hover-based activation instead of click-based interaction.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
         name: "Scroll Progress",
         supportLine: "A scroll progress indicator that visually tracks page scroll with a circular progress bar.",
         imageUrl: "/components/emogi-nav.png",

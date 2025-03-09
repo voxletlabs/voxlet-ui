@@ -17,9 +17,13 @@ const BlocksData: BlockCategory[] = [
         imageUrl: '/blocks/hero-section.png',
         blocks: [
             {
+                name: 'Hero Section Two',
+                path: 'heroSection/heroSectionTwo.tsx'
+            },
+            {
                 name: 'Hero Section One',
                 path: 'heroSection/heroSectionOne.tsx'
-            }
+            },
         ]
     },
     {

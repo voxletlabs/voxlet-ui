@@ -29,14 +29,14 @@ const BlocksData: BlockCategory[] = [
         blocks: [
             {
                 name: 'Pricing One',
-                path: 'pricing/pricingThree.tsx'
-            },
-            {
-                name: 'Pricing Two',
                 path: 'pricing/pricingOne.tsx'
             },
             {
                 name: 'Pricing Three',
+                path: 'pricing/pricingThree.tsx'
+            },
+            {
+                name: 'Pricing Two',
                 path: 'pricing/pricingTwo.tsx'
             },
         ]

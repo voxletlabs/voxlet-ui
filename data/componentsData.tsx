@@ -440,7 +440,7 @@ const ComponentsData: ComponentDataType[] = [
     {
         name: "Tube Light Navbar",
         supportLine: "A sleek, interactive navigation bar with a dynamic lighting effect, perfect for modern UIs.",
-        imageUrl: "/components/emogi-nav.png",
+        imageUrl: "/components/tubelight-navbar.png",
         demo: [
             "tubelight-navbar/usage.tsx",
         ],

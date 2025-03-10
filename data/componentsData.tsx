@@ -66,7 +66,7 @@ const ComponentsData: ComponentDataType[] = [
     {
         name: "Space Box",
         supportLine: "A cosmic-inspired interactive box with animated stars and shooting stars that react to user hover.",
-        imageUrl: "/components/emogi-nav.png",
+        imageUrl: "/components/space-box.png",
         demo: [
             "space-box/usage.tsx",
         ],
@@ -119,7 +119,7 @@ const ComponentsData: ComponentDataType[] = [
     {
         name: "Steps",
         supportLine: "A vertical stepper component for guiding users through multi-step processes.",
-        imageUrl: "/components/emogi-nav.png",
+        imageUrl: "/components/steps.png",
         demo: [
             "steps/basic.tsx",
             "steps/software-installation-guide.tsx",
@@ -241,7 +241,7 @@ const ComponentsData: ComponentDataType[] = [
     {
         name: "Animated Background",
         supportLine: "An animated background effect that highlights elements smoothly on hover or click, enhancing user interaction.",
-        imageUrl: "/components/emogi-nav.png",
+        imageUrl: "/components/animated-background.png",
         demo: [
             "animated-background/animated-nav-links-hover.tsx",
             "animated-background/animated-tabs-hover.tsx",
@@ -324,7 +324,7 @@ const ComponentsData: ComponentDataType[] = [
     {
         name: "Gravity Box",
         supportLine: "A physics-based tag cloud using Matter.js, where tags respond to gravity and collisions.",
-        imageUrl: "/components/emogi-nav.png",
+        imageUrl: "/components/gravity-box.png",
         demo: [
             "gravity-box/usage.tsx",
         ],
@@ -369,7 +369,7 @@ const ComponentsData: ComponentDataType[] = [
     {
         name: "Anime Navbar",
         supportLine: "A sleek and animated navigation bar built with Framer Motion for a smooth user experience.",
-        imageUrl: "/components/emogi-nav.png",
+        imageUrl: "/components/anime-navbar.png",
         demo: [
             "anime-navbar/usage.tsx",
         ],
@@ -505,7 +505,7 @@ const ComponentsData: ComponentDataType[] = [
     {
         name: "Download Button",
         supportLine: "A dynamic button with real-time download status and progress tracking.",
-        imageUrl: "/components/emogi-nav.png",
+        imageUrl: "/components/download-button.png",
         demo: [
             "download-button/usage.tsx",
         ],

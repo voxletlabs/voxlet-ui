@@ -15,10 +15,10 @@ export default function LogInPageThree() {
                                 <div className="flex items-start">
                                     <a href="/">
                                         <Image
-                                            src={'https://kaif-ui.vercel.app/logo/logo-light-theme.svg'}
+                                            src={'/logo/logo-light-theme.svg'}
                                             width={20}
                                             height={20}
-                                            alt="Kaif UI"
+                                            alt="Voxlet UI"
                                             className="size-[3rem] rounded-lg"
                                         />
                                     </a>

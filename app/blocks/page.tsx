@@ -41,7 +41,7 @@ export default function BlocksPage() {
 
         <div className='absolute bottom-0 w-full h-16 bg-gradient-to-t from-background to-transperant pointer-events-none' />
 
-        <div className='pt-[6rem] max-2xl:min-h-screen flex flex-col items-center jusity-center gap-5 z-[50] max-w-7xl mx-auto px-4'>
+        <div className='pt-[6rem] max-2xl:min-h-screen sm:min-h-screen flex flex-col items-center jusity-center gap-5 z-[50] max-w-7xl mx-auto px-4'>
           <FadeAnimation direction='fadeIn'>
             <div className='relative border rounded-full'>
               <BorderTrail
@@ -79,7 +79,7 @@ export default function BlocksPage() {
           </FadeAnimation>
         </div>
       </div>
-      <div id="blocks" className="px-4 max-w-[85rem] mx-auto">
+      <div id="blocks" className="p-4 max-w-[85rem] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-20 lg:gap-10 pb-40 items-start relative z-40">
           {BlocksData.map((blockCategory) => (
             <FadeAnimation direction="fadeIn" key={blockCategory.categoryName}>

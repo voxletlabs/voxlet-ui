@@ -33,134 +33,9 @@ export interface ComponentDataType {
 
 const ComponentsData: ComponentDataType[] = [
     {
-        name: "Flip Coin Button",
-        supportLine: "A fun interactive button that simulates a coin flip animation when clicked.",
-        imageUrl: "/components/emogi-nav.png",
-        demo: [
-            "flip-coin-button/usage.tsx",
-        ],
-        cnUtilsFIle: true,
-        code: "flip-coin-button.tsx",
-        typesTable: [
-            {
-                title: "FlipCoinButtonProps",
-                table: [
-                    {
-                        prop: "children",
-                        type: "ReactNode",
-                        default: "-",
-                        description: "The content inside the button, typically text or an icon.",
-                    },
-                ],
-            },
-        ],
-        credit: {
-            message: "The inspiration for this component is directly taken from",
-            link: {
-                text: "Cooper Goeke on CodePen",
-                url: "https://codepen.io/coopergoeke/pen/abZqEbK",
-            },
-        },
-
-    },
-    {
-        name: "Space Box",
-        supportLine: "A cosmic-inspired interactive box with animated stars and shooting stars that react to user hover.",
-        imageUrl: "/components/space-box.png",
-        demo: [
-            "space-box/usage.tsx",
-        ],
-        dependencies: [
-            {
-                title: "Install Dependencies",
-                command: "npm i framer-motion",
-            },
-        ],
-        cnUtilsFIle: true,
-        code: "space-box.tsx",
-        typesTable: [
-            {
-                title: "SpaceBoxProps",
-                table: [
-                    {
-                        prop: "className",
-                        type: "string",
-                        default: "undefined",
-                        description: "Optional custom class names for styling.",
-                    },
-                    {
-                        prop: "highlightedWord",
-                        type: "string",
-                        default: "-",
-                        description: "A word that appears bold before hovering over the component.",
-                    },
-                    {
-                        prop: "text",
-                        type: "string",
-                        default: "-",
-                        description: "The descriptive text that follows the highlighted word.",
-                    },
-                    {
-                        prop: "animatedText",
-                        type: "string",
-                        default: "-",
-                        description: "A scrolling text that appears when hovering over the component.",
-                    },
-                    {
-                        prop: "starDensity",
-                        type: '"low" | "medium" | "high"',
-                        default: '"medium"',
-                        description: "Controls the number of stars and shooting stars in the background animation.",
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        name: "Steps",
-        supportLine: "A vertical stepper component for guiding users through multi-step processes.",
-        imageUrl: "/components/steps.png",
-        demo: [
-            "steps/basic.tsx",
-            "steps/software-installation-guide.tsx",
-            "steps/signin-onboarding.tsx",
-        ],
-        code: "steps.tsx",
-        typesTable: [
-            {
-                title: "StepsProps",
-                table: [
-                    {
-                        prop: "children",
-                        type: "React.ReactNode",
-                        default: "-",
-                        description: "A collection of `<Step>` components that make up the stepper.",
-                    },
-                ],
-            },
-            {
-                title: "StepProps",
-                table: [
-                    {
-                        prop: "title",
-                        type: "string",
-                        default: "-",
-                        description: "The title of the step.",
-                    },
-                    {
-                        prop: "children",
-                        type: "React.ReactNode",
-                        default: "-",
-                        description: "Content displayed inside the step, such as form fields or descriptions.",
-                    },
-                ],
-            },
-        ],
-    },
-    {
         name: "Magic Wand",
         supportLine: "An interactive Magic Wand effect that follows the cursor, animating a floating wand and revealing images within tiles as the cursor moves.",
-        imageUrl: "/components/emogi-nav.png",
+        imageUrl: "/components/magic-wand.png",
         demo: [
             "magic-wand/usage.tsx",
         ],
@@ -239,89 +114,6 @@ const ComponentsData: ComponentDataType[] = [
         ]
     },
     {
-        name: "Animated Background",
-        supportLine: "An animated background effect that highlights elements smoothly on hover or click, enhancing user interaction.",
-        imageUrl: "/components/animated-background.png",
-        demo: [
-            "animated-background/animated-nav-links-hover.tsx",
-            "animated-background/animated-tabs-hover.tsx",
-            "animated-background/animated-card-background-hover.tsx",
-        ],
-        dependencies: [
-            {
-                title: "Install Dependencies",
-                command: "npm i motion",
-            },
-        ],
-        code: "animated-background.tsx",
-        cnUtilsFIle: true,
-        typesTable: [
-            {
-                title: "AnimatedBackgroundProps",
-                table: [
-                    {
-                        prop: "className",
-                        type: "string",
-                        default: "undefined",
-                        description: "Additional custom class names for styling the animated background.",
-                    },
-                    {
-                        prop: "children",
-                        type: "ReactElement<{ 'data-id': string }>[] | ReactElement<{ 'data-id': string }>",
-                        default: "-",
-                        description: "An array or a single React element with a `data-id` attribute used for tracking active elements.",
-                    },
-                    {
-                        prop: "defaultValue",
-                        type: "string",
-                        default: "undefined",
-                        description: "Specifies which item should be highlighted by default.",
-                    },
-                    {
-                        prop: "onValueChange",
-                        type: "(newActiveId: string | null) => void",
-                        default: "undefined",
-                        description: "Callback function triggered when the active element changes.",
-                    },
-                    {
-                        prop: "transition",
-                        type: "Transition",
-                        default: "undefined",
-                        description: "Defines the transition animation properties using the Motion library.",
-                    },
-                    {
-                        prop: "enableHover",
-                        type: "boolean",
-                        default: "false",
-                        description: "Enables hover-based activation instead of click-based interaction.",
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        name: "Scroll Progress",
-        supportLine: "A scroll progress indicator that visually tracks page scroll with a circular progress bar.",
-        imageUrl: "/components/emogi-nav.png",
-        demo: [
-            "scroll-progress/usage.tsx",
-        ],
-        code: "scroll-progress.tsx",
-        typesTable: [
-            {
-                title: "ScrollProgressProps",
-                table: [
-                    {
-                        prop: "className",
-                        type: "string",
-                        default: "undefined",
-                        description: "Optional custom class names for styling.",
-                    },
-                ],
-            },
-        ],
-    },
-    {
         name: "Gravity Box",
         supportLine: "A physics-based tag cloud using Matter.js, where tags respond to gravity and collisions.",
         imageUrl: "/components/gravity-box.png",
@@ -361,6 +153,166 @@ const ComponentsData: ComponentDataType[] = [
                         type: "string",
                         default: "-",
                         description: "The background color of the tag.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        name: "Space Box",
+        supportLine: "A cosmic-inspired interactive box with animated stars and shooting stars that react to user hover.",
+        imageUrl: "/components/space-box.png",
+        demo: [
+            "space-box/usage.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Dependencies",
+                command: "npm i framer-motion",
+            },
+        ],
+        cnUtilsFIle: true,
+        code: "space-box.tsx",
+        typesTable: [
+            {
+                title: "SpaceBoxProps",
+                table: [
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Optional custom class names for styling.",
+                    },
+                    {
+                        prop: "highlightedWord",
+                        type: "string",
+                        default: "-",
+                        description: "A word that appears bold before hovering over the component.",
+                    },
+                    {
+                        prop: "text",
+                        type: "string",
+                        default: "-",
+                        description: "The descriptive text that follows the highlighted word.",
+                    },
+                    {
+                        prop: "animatedText",
+                        type: "string",
+                        default: "-",
+                        description: "A scrolling text that appears when hovering over the component.",
+                    },
+                    {
+                        prop: "starDensity",
+                        type: '"low" | "medium" | "high"',
+                        default: '"medium"',
+                        description: "Controls the number of stars and shooting stars in the background animation.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        name: "Emogi Nav",
+        supportLine: "Emogi nav, think different.",
+        imageUrl: "/components/emogi-nav.png",
+        demo: [
+            "emogi-nav/usage.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Shadcn Components",
+                command: "npx shadcn@latest add tooltip",
+            },
+        ],
+        code: "emogiNav.tsx",
+        typesTable: [
+            {
+                title: "EmogiNavProps",
+                table: [
+                    {
+                        prop: "navItems",
+                        type: "NavItem[]",
+                        default: "-",
+                        description: "An array of `NavItem` objects representing the emoji navigation links.",
+                    },
+                ],
+            },
+            {
+                title: "NavItem",
+                table: [
+                    {
+                        prop: "label",
+                        type: "string",
+                        default: "-",
+                        description: "An array of `NavItem` objects representing the emoji navigation links.",
+                    },
+                    {
+                        prop: "href",
+                        type: "string",
+                        default: "-",
+                        description: "The URL link associated with the emoji navigation item.",
+                    },
+                    {
+                        prop: "emogi",
+                        type: "string",
+                        default: "-",
+                        description: "The image URL or path for the animated emoji.",
+                    },
+                    {
+                        prop: "alt",
+                        type: "string",
+                        default: "-",
+                        description: "Alt text for the emoji image to improve accessibility.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        name: "Pendulum",
+        supportLine: "Bring your UI to life with the smooth, captivating motion of the Pendulum component.",
+        imageUrl: "/components/pendulum.png",
+        demo: [
+            "pendulum/usage.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Dependencies",
+                command: "npm i framer-motion",
+            },
+        ],
+        code: "pendulum.tsx",
+        typesTable: [
+            {
+                title: "Props",
+                table: [
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "-",
+                        description: "Optional prop for adding custom styles to the root div.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        name: "Scroll Progress",
+        supportLine: "A scroll progress indicator that visually tracks page scroll with a circular progress bar.",
+        imageUrl: "/components/scroll-progress.png",
+        demo: [
+            "scroll-progress/usage.tsx",
+        ],
+        code: "scroll-progress.tsx",
+        typesTable: [
+            {
+                title: "ScrollProgressProps",
+                table: [
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Optional custom class names for styling.",
                     },
                 ],
             },
@@ -503,132 +455,61 @@ const ComponentsData: ComponentDataType[] = [
         },
     },
     {
-        name: "Download Button",
-        supportLine: "A dynamic button with real-time download status and progress tracking.",
-        imageUrl: "/components/download-button.png",
+        name: "Animated Background",
+        supportLine: "An animated background effect that highlights elements smoothly on hover or click, enhancing user interaction.",
+        imageUrl: "/components/animated-background.png",
         demo: [
-            "download-button/usage.tsx",
-        ],
-        dependencies: [
-            {
-                title: "Install Shadcn Components",
-                command: "npx shadcn@latest add button",
-            },
-        ],
-        cnUtilsFIle: true,
-        code: "download-button.tsx",
-        typesTable: [
-            {
-                title: "Props",
-                table: [
-                    {
-                        prop: "className",
-                        type: "string",
-                        default: "undefined",
-                        description: "Optional custom class names for styling.",
-                    },
-                    {
-                        prop: "downloadStatus",
-                        type: `"idle" | "downloading" | "downloaded" | "complete"`,
-                        default: `"idle"`,
-                        description: "Represents the current state of the download process.",
-                    },
-                    {
-                        prop: "progress",
-                        type: "number",
-                        default: "0",
-                        description: "Indicates the download progress percentage (0-100).",
-                    },
-                    {
-                        prop: "onClick",
-                        type: "() => void",
-                        default: "undefined",
-                        description: "Callback function triggered when the button is clicked.",
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        name: "Emogi Nav",
-        supportLine: "Emogi nav, think different.",
-        imageUrl: "/components/emogi-nav.png",
-        demo: [
-            "emogi-nav/usage.tsx",
-        ],
-        dependencies: [
-            {
-                title: "Install Shadcn Components",
-                command: "npx shadcn@latest add tooltip",
-            },
-        ],
-        code: "emogiNav.tsx",
-        typesTable: [
-            {
-                title: "EmogiNavProps",
-                table: [
-                    {
-                        prop: "navItems",
-                        type: "NavItem[]",
-                        default: "-",
-                        description: "An array of `NavItem` objects representing the emoji navigation links.",
-                    },
-                ],
-            },
-            {
-                title: "NavItem",
-                table: [
-                    {
-                        prop: "label",
-                        type: "string",
-                        default: "-",
-                        description: "An array of `NavItem` objects representing the emoji navigation links.",
-                    },
-                    {
-                        prop: "href",
-                        type: "string",
-                        default: "-",
-                        description: "The URL link associated with the emoji navigation item.",
-                    },
-                    {
-                        prop: "emogi",
-                        type: "string",
-                        default: "-",
-                        description: "The image URL or path for the animated emoji.",
-                    },
-                    {
-                        prop: "alt",
-                        type: "string",
-                        default: "-",
-                        description: "Alt text for the emoji image to improve accessibility.",
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        name: "Pendulum",
-        supportLine: "Bring your UI to life with the smooth, captivating motion of the Pendulum component.",
-        imageUrl: "/components/pendulum.png",
-        demo: [
-            "pendulum/usage.tsx",
+            "animated-background/animated-nav-links-hover.tsx",
+            "animated-background/animated-tabs-hover.tsx",
+            "animated-background/animated-card-background-hover.tsx",
         ],
         dependencies: [
             {
                 title: "Install Dependencies",
-                command: "npm i framer-motion",
+                command: "npm i motion",
             },
         ],
-        code: "pendulum.tsx",
+        code: "animated-background.tsx",
+        cnUtilsFIle: true,
         typesTable: [
             {
-                title: "Props",
+                title: "AnimatedBackgroundProps",
                 table: [
                     {
                         prop: "className",
                         type: "string",
+                        default: "undefined",
+                        description: "Additional custom class names for styling the animated background.",
+                    },
+                    {
+                        prop: "children",
+                        type: "ReactElement<{ 'data-id': string }>[] | ReactElement<{ 'data-id': string }>",
                         default: "-",
-                        description: "Optional prop for adding custom styles to the root div.",
+                        description: "An array or a single React element with a `data-id` attribute used for tracking active elements.",
+                    },
+                    {
+                        prop: "defaultValue",
+                        type: "string",
+                        default: "undefined",
+                        description: "Specifies which item should be highlighted by default.",
+                    },
+                    {
+                        prop: "onValueChange",
+                        type: "(newActiveId: string | null) => void",
+                        default: "undefined",
+                        description: "Callback function triggered when the active element changes.",
+                    },
+                    {
+                        prop: "transition",
+                        type: "Transition",
+                        default: "undefined",
+                        description: "Defines the transition animation properties using the Motion library.",
+                    },
+                    {
+                        prop: "enableHover",
+                        type: "boolean",
+                        default: "false",
+                        description: "Enables hover-based activation instead of click-based interaction.",
                     },
                 ],
             },
@@ -692,6 +573,53 @@ const ComponentsData: ComponentDataType[] = [
                         type: "string",
                         default: "''",
                         description: "The URL link for the navigation item.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        name: "Download Button",
+        supportLine: "A dynamic button with real-time download status and progress tracking.",
+        imageUrl: "/components/download-button.png",
+        demo: [
+            "download-button/usage.tsx",
+        ],
+        dependencies: [
+            {
+                title: "Install Shadcn Components",
+                command: "npx shadcn@latest add button",
+            },
+        ],
+        cnUtilsFIle: true,
+        code: "download-button.tsx",
+        typesTable: [
+            {
+                title: "Props",
+                table: [
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "undefined",
+                        description: "Optional custom class names for styling.",
+                    },
+                    {
+                        prop: "downloadStatus",
+                        type: `"idle" | "downloading" | "downloaded" | "complete"`,
+                        default: `"idle"`,
+                        description: "Represents the current state of the download process.",
+                    },
+                    {
+                        prop: "progress",
+                        type: "number",
+                        default: "0",
+                        description: "Indicates the download progress percentage (0-100).",
+                    },
+                    {
+                        prop: "onClick",
+                        type: "() => void",
+                        default: "undefined",
+                        description: "Callback function triggered when the button is clicked.",
                     },
                 ],
             },
@@ -762,6 +690,78 @@ const ComponentsData: ComponentDataType[] = [
             "macbook-keyboard/usage.tsx",
         ],
         code: "macbook-keyboard.tsx",
+    },
+    {
+        name: "Flip Coin Button",
+        supportLine: "A fun interactive button that simulates a coin flip animation when clicked.",
+        imageUrl: "/components/flip-coin-button.png",
+        demo: [
+            "flip-coin-button/usage.tsx",
+        ],
+        cnUtilsFIle: true,
+        code: "flip-coin-button.tsx",
+        typesTable: [
+            {
+                title: "FlipCoinButtonProps",
+                table: [
+                    {
+                        prop: "children",
+                        type: "ReactNode",
+                        default: "-",
+                        description: "The content inside the button, typically text or an icon.",
+                    },
+                ],
+            },
+        ],
+        credit: {
+            message: "The inspiration for this component is directly taken from",
+            link: {
+                text: "Cooper Goeke on CodePen",
+                url: "https://codepen.io/coopergoeke/pen/abZqEbK",
+            },
+        },
+
+    },
+    {
+        name: "Steps",
+        supportLine: "A vertical stepper component for guiding users through multi-step processes.",
+        imageUrl: "/components/steps.png",
+        demo: [
+            "steps/basic.tsx",
+            "steps/software-installation-guide.tsx",
+            "steps/signin-onboarding.tsx",
+        ],
+        code: "steps.tsx",
+        typesTable: [
+            {
+                title: "StepsProps",
+                table: [
+                    {
+                        prop: "children",
+                        type: "React.ReactNode",
+                        default: "-",
+                        description: "A collection of `<Step>` components that make up the stepper.",
+                    },
+                ],
+            },
+            {
+                title: "StepProps",
+                table: [
+                    {
+                        prop: "title",
+                        type: "string",
+                        default: "-",
+                        description: "The title of the step.",
+                    },
+                    {
+                        prop: "children",
+                        type: "React.ReactNode",
+                        default: "-",
+                        description: "Content displayed inside the step, such as form fields or descriptions.",
+                    },
+                ],
+            },
+        ],
     },
 ];
 

@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link"
 
-const customers = [
+export const customers = [
   "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuJTIwaW4lMjBzdWl0fGVufDB8MXwwfHx8MA%3D%3D",
   "https://images.unsplash.com/photo-1564568979181-0b86b0f1f2b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1hbiUyMGluJTIwc3VpdHxlbnwwfDF8MHx8fDA%3D",
   "https://images.unsplash.com/photo-1596075780750-81249df16d19?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fG1hbnxlbnwwfDF8MHx8fDA%3D",

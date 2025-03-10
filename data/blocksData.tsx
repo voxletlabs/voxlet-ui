@@ -92,6 +92,21 @@ const BlocksData: BlockCategory[] = [
             },
         ]
     },
+    {
+        categoryName: 'Footer',
+        supportLine: `Design seamless, informative footers that complete your website's experience.`,
+        imageUrl: '/blocks/footer.png',
+        blocks: [
+            {
+                name: 'Footer One',
+                path: 'footer/footerOne.tsx'
+            },
+            {
+                name: 'Footer Two',
+                path: 'footer/footerTwo.tsx'
+            },
+        ]
+    },
 ];
 
 export { BlocksData, type BlockCategory, type Block };

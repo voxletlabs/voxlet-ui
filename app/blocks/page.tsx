@@ -1,7 +1,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { Separator } from "@/registry/default/ui/separator"
 import { BlocksData } from "@/data/blocksData";
 import Image from "next/image";
 import { slugify } from "@/utils/slugify";

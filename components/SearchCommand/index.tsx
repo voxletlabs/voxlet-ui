@@ -2,7 +2,6 @@
 
 import React from "react";
 import {
-  Circle,
   SearchIcon,
 } from "lucide-react";
 import { Button } from "../../registry/default/ui/button";
@@ -19,17 +18,10 @@ import { ScrollArea } from "@/registry/default/ui/scroll-area";
 import Navigation from "@/data/Navigation";
 import { useRouter } from "next/navigation";
 import { cn } from "@/registry/default/lib/utils";
-import { useTheme } from "next-themes";
-
-const globalState = {
-  open: false,
-  setOpen: (_: boolean) => { },
-};
 
 export function SearchCommand() {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
-  const { setTheme } = useTheme();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -65,7 +57,7 @@ export function SearchCommand() {
         className={cn(
           "hidden md:flex relative h-8 my-auto w-full items-center justify-start rounded-[0.5rem] bg-muted/50 text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
         )}
-        onClick={() => globalState.setOpen(true)}
+        onClick={() => setOpen(true)}
       >
         <span className="hidden lg:inline-flex">Search documentation...</span>
         <span className="inline-flex lg:hidden">Search...</span>
@@ -79,13 +71,13 @@ export function SearchCommand() {
         variant="ghost"
         size="icon"
         className="md:hidden"
-        onClick={() => globalState.setOpen(true)}
+        onClick={() => setOpen(true)}
       >
         <SearchIcon className="w-4 h-4" />
       </Button>
 
       {/* Command dialog */}
-      <CommandDialog open={open} onOpenChange={globalState.setOpen}>
+      <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Search..." />
         <CommandList>
           <ScrollArea className="h-[18.5rem]">
@@ -105,7 +97,6 @@ export function SearchCommand() {
                     </CommandItem>
                   ))}
                 </CommandGroup>
-                {/* Render CommandSeparator only if this is not the last group */}
                 {index !== Navigation.length - 1 && <CommandSeparator />}
               </React.Fragment>
             ))}

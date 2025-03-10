@@ -23,9 +23,9 @@ export default async function BlockLoader({ blockName, className }: BlockLoaderP
     try {
         const source = convertRegistryPaths((await readBlockSource(blockName)) || "");
 
-        let Block: ComponentType<any> | null = null;
+        let Block: ComponentType<unknown> | null = null;
         try {
-            Block = (await import(`@/registry/default/blocks${blockName}`)).default as ComponentType<any>;
+            Block = (await import(`@/registry/default/blocks${blockName}`)).default as ComponentType<unknown>;
         } catch (error) {
             console.warn(`Failed to load ${blockName} as a server block. Using client loader instead.`);
         }

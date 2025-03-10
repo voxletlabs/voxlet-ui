@@ -16,7 +16,7 @@ export default function ClientComponentLoader({ componentName }: ClientComponent
       </div>
     ),
     ssr: false,
-  }) as ComponentType<any>;
+  }) as ComponentType<unknown>;
 
   return <Component />;
 }

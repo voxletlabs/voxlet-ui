@@ -23,9 +23,9 @@ export default async function ComponentLoader({ componentName, className }: Comp
   try {
     const source = convertRegistryPaths((await readComponentSource(componentName)) || "");
 
-    let Component: ComponentType<any> | null = null;
+    let Component: ComponentType<unknown> | null = null;
     try {
-      Component = (await import(`@/registry/default/components/${componentName}`)).default as ComponentType<any>;
+      Component = (await import(`@/registry/default/components/${componentName}`)).default as ComponentType<unknown>;
     } catch (error) {
       console.warn(`Failed to load ${componentName} as a server component. Using client loader instead.`);
     }

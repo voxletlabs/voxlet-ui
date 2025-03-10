@@ -16,7 +16,7 @@ export default function ClientBlockLoader({ blockName }: ClientBlockLoaderProps)
       </div>
     ),
     ssr: false,
-  }) as ComponentType<any>;
+  }) as ComponentType<unknown>;
 
   return <Block />;
 }

@@ -115,6 +115,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
             </main>
         );
     } catch (error) {
+        console.log(error)
         return notFound();
     }
 }

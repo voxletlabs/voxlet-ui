@@ -20,7 +20,7 @@ export function CTA() {
     <div className="w-full sm:px-6 sm:py-10 lg:px-8 flex justify-center items-center">
       <div className="mx-auto max-w-xl text-center lg:mx-0 lg:flex-auto py-10 lg:py-10 lg:text-left">
         <h2 className="text-xl text-center font-bold tracking-tight text-black dark:text-white sm:text-4xl mt-4">
-          Need a custom website built just for you? Let's chat!
+          Need a custom website built just for you? Let&apos;s chat!
         </h2>
         <p className="mt-6 text-sm text-center sm:text-lg leading-8 text-neutral-500 dark:text-neutral-400">
           Your dream website is just a conversation away!

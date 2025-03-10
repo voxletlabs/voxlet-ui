@@ -10,7 +10,6 @@ import { Button } from "@/registry/default/ui/button";
 import { Spotlight } from "@/components/ui/spotlight";
 import { BorderTrail } from "@/components/ui/borderTrail";
 
-
 export default function BlocksPage() {
   return (
     <>
@@ -80,7 +79,7 @@ export default function BlocksPage() {
           </FadeAnimation>
         </div>
       </div>
-      <div id="blocks" className="px-4 max-w-[85rem] mx-auto pt-[4rem]]">
+      <div id="blocks" className="px-4 max-w-[85rem] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-20 lg:gap-10 pb-40 items-start relative z-40">
           {BlocksData.map((blockCategory) => (
             <FadeAnimation direction="fadeIn" key={blockCategory.categoryName}>

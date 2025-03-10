@@ -67,7 +67,7 @@ export function Navbar({ className }: NavbarProps) {
                 >
                     <div className="px-4 py-4 flex h-16 items-center max-w-[100rem] mx-auto w-full">
                         <div className="flex items-center justify-between w-full">
-                            <div className="flex items-center justify-start gap-4">
+                            <div className="flex items-center justify-start gap-2">
                                 <Link href="/">
                                     <div className="flex items-center justify-start gap-2">
                                         <Image

@@ -19,8 +19,18 @@ export default function Footer() {
                                     height={30}
                                     decoding="async"
                                     data-nimg="1"
-                                    src={'/logo'}
-                                    className="rounded size-[2rem]"
+                                    src={'/logo/logo-dark-theme.svg'}
+                                    className="rounded hidden dark:block size-[2rem]"
+                                />
+                                <Image
+                                    alt="logo"
+                                    loading="lazy"
+                                    width={30}
+                                    height={30}
+                                    decoding="async"
+                                    data-nimg="1"
+                                    src={'/logo/logo-light-theme.svg'}
+                                    className="rounded dark:hidden size-[2rem]"
                                 />
                                 <span className="font-bold text-xl text-black dark:text-white">Voxlet UI</span>
                             </Link>

@@ -174,8 +174,18 @@ const Footer: React.FC = () => {
                                     height={30}
                                     decoding="async"
                                     data-nimg="1"
-                                    src={'/logo'}
-                                    className="rounded size-[2rem]"
+                                    src={'/logo/logo-dark-theme.svg'}
+                                    className="rounded hidden dark:block size-[2rem]"
+                                />
+                                <Image
+                                    alt="logo"
+                                    loading="lazy"
+                                    width={30}
+                                    height={30}
+                                    decoding="async"
+                                    data-nimg="1"
+                                    src={'/logo/logo-light-theme.svg'}
+                                    className="rounded dark:hidden size-[2rem]"
                                 />
                                 <h1 className="text-xl font-semibold">Voxlet UI</h1>
                             </div>

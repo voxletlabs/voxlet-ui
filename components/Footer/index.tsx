@@ -47,9 +47,9 @@ export default function Footer() {
               <Link
                 target="__blank"
                 className="dark:text-sky-500 text-neutral-600 font-medium"
-                href="https://bento.me/muhammadkaifnazeer"
+                href="https://voxlet.vercel.app"
               >
-                Muhammad Kaif Nazeer
+                Voxlet
               </Link>
             </div>
           </div>

@@ -48,7 +48,7 @@ const BlocksData: BlockCategory[] = [
     {
         categoryName: 'Testimonials',
         supportLine: 'Build trust with authentic feedback and real customer stories.',
-        imageUrl: '/blocks/pricing.png',
+        imageUrl: '/blocks/testimonials.png',
         blocks: [
             {
                 name: 'Testimonials Section One',
@@ -59,7 +59,7 @@ const BlocksData: BlockCategory[] = [
     {
         categoryName: 'Authentication',
         supportLine: 'Streamline user access with intuitive and customizable authentication UI.',
-        imageUrl: '/blocks/pricing.png',
+        imageUrl: '/blocks/authentication.png',
         blocks: [
 
             {

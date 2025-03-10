@@ -27,7 +27,7 @@ export default async function BlockLoader({ blockName, className }: BlockLoaderP
         try {
             Block = (await import(`@/registry/default/blocks${blockName}`)).default as ComponentType<unknown>;
         } catch (error) {
-            console.warn(`Failed to load ${blockName} as a server block. Using client loader instead.`);
+            console.warn(`Failed to load ${blockName} as a server block. Using client loader instead. Error: ${error}`);
         }
 
         return (

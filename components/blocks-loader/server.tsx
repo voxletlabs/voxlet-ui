@@ -2,7 +2,7 @@ import { ComponentType } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
 import { CodeBlock } from "@/components/code-block";
 import CopyButton from "@/components/copy-button";
-import { readBlockSource, readComponentSource } from "@/components/read-source";
+import { readBlockSource } from "@/components/read-source";
 import { cn } from "@/registry/default/lib/utils";
 import ClientBlockLoader from "./client";
 

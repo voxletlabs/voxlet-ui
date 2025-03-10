@@ -41,7 +41,7 @@ const HeroSection = () => {
           <Spotlight className="left-80 top-28 h-[80vh] w-[50vw] scale-x-[-1]" fill="white" />
         </div>
 
-        <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[200%] sm:w-full sm:max-w-[80rem] mx-auto">
+        <div className="absolute top-[3rem] sm:top-[50%] left-[50%] -translate-x-[50%] sm:-translate-y-[50%] w-[200%] sm:w-full sm:max-w-[80rem] mx-auto">
           <div className='relative w-full h-full rounded-full border-4 pointer-events-none aspect-square'>
             <BorderTrail
               style={{

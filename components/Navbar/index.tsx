@@ -28,21 +28,6 @@ interface SectionData {
     links: LinkData[];
 }
 
-const NavLinks = [
-    {
-        link: "/components",
-        name: "Components",
-    },
-    {
-        link: "/blocks",
-        name: "Blocks",
-    },
-    {
-        link: "/templates",
-        name: "Templates",
-    },
-];
-
 export function Navbar({ className }: NavbarProps) {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
@@ -76,8 +61,8 @@ export function Navbar({ className }: NavbarProps) {
             <header className="fixed top-0 mx-auto z-[100] w-full border-b border-transparent bg-transparent">
                 <div
                     className={`hidden lg:block w-full ${scrolled
-                            ? "backdrop-blur supports-[backdrop-filter]:bg-background/60"
-                            : ""
+                        ? "backdrop-blur supports-[backdrop-filter]:bg-background/60"
+                        : ""
                         }`}
                 >
                     <div className="px-4 py-4 flex h-16 items-center max-w-[100rem] mx-auto w-full">
@@ -144,8 +129,8 @@ export function Navbar({ className }: NavbarProps) {
                 <div className="block lg:hidden">
                     <div
                         className={`fixed w-full top-0 flex items-center justify-between gap-4 px-4 py-2 md:px-6 z-[100] ${scrolled
-                                ? "backdrop-blur supports-[backdrop-filter]:bg-background/60"
-                                : ""
+                            ? "backdrop-blur supports-[backdrop-filter]:bg-background/60"
+                            : ""
                             }`}
                     >
                         <Link href="/">
@@ -174,14 +159,6 @@ export function Navbar({ className }: NavbarProps) {
                         <div className="flex items-center justify-end gap-2">
                             <SearchCommand />
                             <ThemeToggler />
-                            <Link
-                                href="https://github.com/MuhammadKaifNazeer/kaif-ui"
-                                target="_blank"
-                            >
-                                <Button variant="ghost" size="icon">
-                                    <Github className="w-4 h-4" />
-                                </Button>
-                            </Link>
                             <Button
                                 variant="ghost"
                                 size="icon"
@@ -196,8 +173,8 @@ export function Navbar({ className }: NavbarProps) {
 
                     <div
                         className={`fixed w-screen h-screen bg-black/70 z-[105]  duration-500  ${isOpen
-                                ? "-translate-x-0 opacity-1"
-                                : "-translate-x-full opacity-0"
+                            ? "-translate-x-0 opacity-1"
+                            : "-translate-x-full opacity-0"
                             }`}
                         onClick={() => setIsOpen(false)}
                     ></div>
@@ -257,33 +234,33 @@ export function Navbar({ className }: NavbarProps) {
                                     </div>
                                     <div style={{ minWidth: "100%", display: "table" }}>
                                         <div className="w-full">
-                                            {Navigation.filter(
-                                                (section: SectionData) =>
-                                                    section.title === "Explore" ||
-                                                    section.title === "Follow For Updates"
-                                            ).map((section: SectionData, index: number) => (
+                                            {[
+                                                ...Navigation.filter((section: SectionData) =>
+                                                    ["Explore", "Follow For Updates"].includes(section.title)
+                                                ),
+                                                ...Navigation.filter(
+                                                    (section: SectionData) =>
+                                                        !["Explore", "Follow For Updates"].includes(section.title)
+                                                ),
+                                            ].map((section: SectionData, index: number) => (
                                                 <div className="pb-4" key={index}>
                                                     <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-black dark:text-white">
                                                         {section.title}
                                                     </h4>
                                                     <div className="grid grid-flow-row auto-rows-max text-sm">
-                                                        {section.links.map(
-                                                            (link: LinkData, idx: number) => (
-                                                                <Link
-                                                                    key={idx}
-                                                                    className={`group flex w-full items-center rounded-md px-2 py-1.5 font-medium hover:translate-x-1 transition-all ${pathname === link.href
-                                                                            ? "text-white font-bold"
-                                                                            : "text-muted-foreground"
-                                                                        }`}
-                                                                    href={link.href}
-                                                                    target={link.external ? "_blank" : ""}
-                                                                    rel={link.external ? "noreferrer" : ""}
-                                                                    onClick={() => setIsOpen(false)}
-                                                                >
-                                                                    {link.title}
-                                                                </Link>
-                                                            )
-                                                        )}
+                                                        {section.links.map((link: LinkData, idx: number) => (
+                                                            <Link
+                                                                key={idx}
+                                                                className={`group flex w-full items-center rounded-md px-2 py-1.5 font-medium hover:translate-x-1 transition-all ${pathname === link.href ? "text-white font-bold" : "text-muted-foreground"
+                                                                    }`}
+                                                                href={link.href}
+                                                                target={link.external ? "_blank" : ""}
+                                                                rel={link.external ? "noreferrer" : ""}
+                                                                onClick={() => setIsOpen(false)}
+                                                            >
+                                                                {link.title}
+                                                            </Link>
+                                                        ))}
                                                     </div>
                                                 </div>
                                             ))}

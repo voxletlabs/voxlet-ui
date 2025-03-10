@@ -19,19 +19,17 @@ import { ScrollArea } from "@/registry/default/ui/scroll-area";
 import Navigation from "@/data/Navigation";
 import { useRouter } from "next/navigation";
 import { cn } from "@/registry/default/lib/utils";
+import { useTheme } from "next-themes";
 
 const globalState = {
   open: false,
-  setOpen: (_: boolean) => {},
+  setOpen: (_: boolean) => { },
 };
 
 export function SearchCommand() {
   const router = useRouter();
-  const [open, setOpen] = React.useState(globalState.open);
-
-  React.useEffect(() => {
-    globalState.setOpen = setOpen;
-  }, []);
+  const [open, setOpen] = React.useState(false);
+  const { setTheme } = useTheme();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -46,8 +44,7 @@ export function SearchCommand() {
         }
 
         e.preventDefault();
-        
-        globalState.setOpen(true); 
+        setOpen((open) => !open);
       }
     };
 
@@ -56,7 +53,7 @@ export function SearchCommand() {
   }, []);
 
   const runCommand = React.useCallback((command: () => unknown) => {
-    globalState.setOpen(false);
+    setOpen(false);
     command();
   }, []);
 
@@ -66,7 +63,7 @@ export function SearchCommand() {
       <Button
         variant="outline"
         className={cn(
-          "relative h-8 my-auto w-full justify-start rounded-[0.5rem] bg-muted/50 text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
+          "hidden md:flex relative h-8 my-auto w-full items-center justify-start rounded-[0.5rem] bg-muted/50 text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
         )}
         onClick={() => globalState.setOpen(true)}
       >

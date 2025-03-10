@@ -45,14 +45,6 @@ const Navigation = [
     ],
   },
   {
-    title: "Guide",
-    icon: BookText,
-    links: [
-      { title: "Introduction", href: "/docs" },
-      { title: "Contribution Guide", href: "/docs/contribute" },
-    ],
-  },
-  {
     title: "Components",
     icon: Circle,
     links: [

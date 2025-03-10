@@ -17,7 +17,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <div className='relative max-2xl:min-h-screen flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5'>
+      <div className='relative min-h-screen flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5'>
         <div className="w-full absolute inset-0 h-[200vh]">
           <SparklesCore
             id="tsparticlesfullpage"

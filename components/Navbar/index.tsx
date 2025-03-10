@@ -12,6 +12,7 @@ import { ThemeToggler } from "@/components/Theme/ThemeToggler";
 import Navigation from "@/data/Navigation";
 import { ScrollArea } from "@/registry/default/ui/scroll-area";
 import { SearchCommand } from "../SearchCommand";
+import { Badge } from "@/registry/default/ui/badge";
 
 type NavbarProps = {
     className?: string;
@@ -89,6 +90,7 @@ export function Navbar({ className }: NavbarProps) {
                                             className="w-6 h-6 dark:hidden rounded"
                                         />
                                         <h3 className="text-xl font-bold">Voxlet UI</h3>
+                                        <Badge className="text-[10px] rounded-full">Beta</Badge>
                                     </div>
                                 </Link>
                                 <div className="flex items-center">

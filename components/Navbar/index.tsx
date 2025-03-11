@@ -115,7 +115,7 @@ export function Navbar({ className }: NavbarProps) {
                                 <SearchCommand />
                                 <ThemeToggler />
                                 <Link
-                                    href="https://github.com/MuhammadKaifNazeer/kaif-ui"
+                                    href="https://github.com/voxletlabs/voxlet-ui"
                                     target="_blank"
                                 >
                                     <Button className="gap-2">

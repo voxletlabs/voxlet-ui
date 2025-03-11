@@ -66,13 +66,8 @@ export default function BlocksPage() {
           </FadeAnimation>
           <FadeAnimation direction='fadeUp'>
             <Link href={'#blocks'}>
-              <Button className='relative rounded-lg group overflow-hidden md:scale-[1.2] my-1' size={'lg'}>
-                <span className="group-hover:translate-x-40 text-center transition duration-500">
-                  Browse Blocks
-                </span>
-                <div className="-translate-x-40 group-hover:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 z-20">
-                  Show me
-                </div>
+              <Button className='rounded-lg md:scale-[1.1] my-1' size={'lg'}>
+                Browse Blocks
               </Button>
             </Link>
           </FadeAnimation>

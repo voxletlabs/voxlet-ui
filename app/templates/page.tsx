@@ -1,12 +1,9 @@
-"use client"
-
 import React from "react";
 import Link from "next/link";
 import FadeAnimation from "@/components/ui/animations/fade";
 import { Button } from "@/registry/default/ui/button";
 import { Spotlight } from "@/components/ui/spotlight";
 import { BorderTrail } from "@/components/ui/borderTrail";
-import { useEffect, useState } from "react";
 
 export default function TemplatesPage() {
     return (
@@ -65,13 +62,8 @@ export default function TemplatesPage() {
                     </FadeAnimation>
                     <FadeAnimation direction='fadeUp'>
                         <Link href={'#templates'}>
-                            <Button className='relative rounded-lg group overflow-hidden md:scale-[1.1] my-1' size={'lg'}>
-                                <span className="group-hover:translate-x-40 text-center transition duration-500">
-                                    Browse Templates
-                                </span>
-                                <div className="-translate-x-40 group-hover:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 z-20">
-                                    Show me
-                                </div>
+                            <Button className='rounded-lg md:scale-[1.1] my-1' size={'lg'}>
+                                Browse Templates
                             </Button>
                         </Link>
                     </FadeAnimation>
@@ -85,31 +77,6 @@ export default function TemplatesPage() {
 }
 
 function ComingSoon() {
-    const targetDate = new Date().getTime() + 4 * 24 * 60 * 60 * 1000;
-
-    const calculateTimeLeft = () => {
-        const difference = targetDate - Date.now();
-
-        if (difference <= 0) {
-            return { hours: 0, minutes: 0, seconds: 0 };
-        }
-
-        return {
-            hours: Math.floor(difference / (1000 * 60 * 60)),
-            minutes: Math.floor((difference / (1000 * 60)) % 60),
-            seconds: Math.floor((difference / 1000) % 60),
-        };
-    };
-
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setTimeLeft(calculateTimeLeft());
-        }, 1000);
-
-        return () => clearInterval(timer);
-    }, []);
 
     return (
         <div className="flex shrink-0 items-center justify-center rounded-md border border-dashed h-[30vh] md:h-[50vh]">
@@ -129,9 +96,6 @@ function ComingSoon() {
                     <path d="M17 18.5a9 9 0 1 0-10 0" />
                 </svg>
                 <h3 className="mt-4 text-lg font-semibold">Coming Soon</h3>
-                <div className="mt-2 text-5xl font-bold flex items-center justify-center gap-2">
-                    {timeLeft.hours} : {timeLeft.minutes} : {timeLeft.seconds}
-                </div>
                 <p className="mb-4 mt-2 text-sm text-muted-foreground max-w-md mx-auto">Templates will be available soon! 🚀 Bookmark this tab to stay tuned and be the first to explore them.</p>
             </div>
         </div>

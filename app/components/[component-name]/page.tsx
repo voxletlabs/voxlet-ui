@@ -33,7 +33,12 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
     }
 
     const source = convertRegistryPaths((await readComponentCoreCode(component.code)) || "");
-    const utilFileCode = convertRegistryPaths((await readLibSource('utils.ts')) || "");
+    const utilFileCode = `import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+    
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}`
     try {
         return (
             <main className="flex flex-col items-start justify-center min-h-screen pt-[2rem]">

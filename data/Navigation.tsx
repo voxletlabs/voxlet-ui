@@ -58,14 +58,6 @@ const Navigation = [
       ...blocks
     ],
   },
-  // {
-  //   title: "Templates",
-  //   icon: LayoutPanelTop,
-  //   links: [
-  //     { title: "Kaif UI Docs", href: "/templates/kaif-ui-docs" },
-  //     { title: "Fluxis Studios", href: "/templates/fluxis-studios" },
-  //   ],
-  // },
   {
     title: "Explore",
     icon: FileTextIcon,

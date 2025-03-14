@@ -43,11 +43,14 @@ export async function readLibSource(libName: string) {
     "lib",
     `${libName}`,
   );
+
+  console.log(`[readLibSource] Trying to read file: ${filePath}`);
+
   try {
     const source = await fs.readFile(filePath, "utf8");
     return source;
   } catch (error) {
-    console.error(`Error reading file ${filePath}:`, error);
+    console.error(`[readLibSource] Error reading file ${filePath}:`, error);
     return null;
   }
 }

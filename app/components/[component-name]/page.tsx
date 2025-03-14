@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { slugify } from "@/utils/slugify";
 import { CodeBlock } from "@/components/code-block";
 import CopyButton from "@/components/copy-button";
-import { readComponentCoreCode, readLibSource } from "@/components/read-source";
+import { readComponentCoreCode } from "@/components/read-source";
 import { Step, Steps } from "@/registry/default/ui/steps";
 import { ComponentsData } from "@/data/componentsData";
 import ComponentLoader from "@/components/component-loader/server";

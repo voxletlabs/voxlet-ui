@@ -67,8 +67,8 @@ const HeroSection = () => {
               }}
               className="space-y-2 sm:space-y-7"
             >
-              <WordPullUp words="Supercharge Your Projects" className="max-sm:leading-snug" />
-              <FlipWords words={words} />
+              <WordPullUp words="Build websites 10x faster then your competitors" className="leading-snug" />
+              {/* <FlipWords words={words} /> */}
             </span>
           </h1>
           <FadeAnimation direction="fadeIn">

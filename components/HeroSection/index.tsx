@@ -8,12 +8,12 @@ import { Spotlight } from '@/components/ui/spotlight'
 import FadeAnimation from '@/components/ui/animations/fade'
 import Image from 'next/image'
 import { SparklesCore } from "@/registry/default/ui/sparkles";
-import { FlipWords } from "../ui/animations/text/flip-words";
+// import { FlipWords } from "../ui/animations/text/flip-words";
 import { WordPullUp } from "../ui/animations/text/wordsPullUp";
 import { customers } from "../Cta";
 
 const HeroSection = () => {
-  const words = ["Components", "Blocks", "Templates"];
+  // const words = ["Components", "Blocks", "Templates"];
 
   return (
     <>
@@ -67,7 +67,7 @@ const HeroSection = () => {
               }}
               className="space-y-2 sm:space-y-7"
             >
-              <WordPullUp words="Build websites 10x faster then your competitors" className="leading-snug" />
+              <WordPullUp words="Build websites 10x faster than your competitors" className="leading-snug" />
               {/* <FlipWords words={words} /> */}
             </span>
           </h1>

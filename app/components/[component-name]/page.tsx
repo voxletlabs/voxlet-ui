@@ -8,9 +8,30 @@ import { ComponentsData } from "@/data/componentsData";
 import ComponentLoader from "@/components/component-loader/server";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/registry/default/ui/table";
 import Link from "next/link";
+import { Metadata } from "next";
 
 interface ComponentPageProps {
     params: { "component-name": string };
+}
+
+export async function generateMetadata({ params }: { params: { 'component-name': string } }): Promise<Metadata> {
+    const { 'component-name': componentNameSlug } = params;
+
+    const component = ComponentsData.find(
+        (component) => slugify(component.name) === componentNameSlug
+    );
+
+    if (!component) {
+        return {
+            title: 'Component Not Found - Voxlet UI',
+            description: 'The requested component could not be found in the Voxlet UI library.',
+        };
+    }
+
+    return {
+        title: `${component.name} - Voxlet UI`,
+        description: component.supportLine,
+    };
 }
 
 const convertRegistryPaths = (content: string): string => {

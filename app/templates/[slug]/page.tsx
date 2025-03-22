@@ -13,6 +13,38 @@ import {
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { Plus } from "lucide-react";
 import { CTA } from "@/components/Cta"
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const template = getTemplateBySlug(params.slug);
+
+    if (!template) {
+        return {
+            title: "Template Not Found - Voxlet UI",
+            description: "The template you are looking for does not exist.",
+        };
+    }
+
+    return {
+        title: `${template.name} – ${template.title} | Voxlet UI`,
+        description: template.description,
+        openGraph: {
+            title: `${template.name} – ${template.title}`,
+            description: template.description,
+            url: `https://yourwebsite.com/templates/${template.slug}`,
+            siteName: "Voxlet UI",
+            images: template.images.length > 0 ? [{ url: template.images[0], width: 1200, height: 630, alt: template.name }] : [],
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${template.name} – ${template.title}`,
+            description: template.description,
+            images: template.images.length > 0 ? [template.images[0]] : [],
+        },
+    };
+}
+
 
 export default function TemplatePage({ params }: any) {
     const template = getTemplateBySlug(params.slug)

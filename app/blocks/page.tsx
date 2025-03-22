@@ -8,6 +8,12 @@ import FadeAnimation from "@/components/ui/animations/fade";
 import { Button } from "@/registry/default/ui/button";
 import { Spotlight } from "@/components/ui/spotlight";
 import { BorderTrail } from "@/components/ui/borderTrail";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Voxlet UI Blocks - Accelerate Development with Pre-built React Components',
+  description: 'Discover Voxlet UI Blocks—a comprehensive collection of pre-built, animated React and Tailwind CSS components designed to streamline your web development process and enhance user experiences.',
+};
 
 export default function BlocksPage() {
   return (

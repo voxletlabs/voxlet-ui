@@ -6,6 +6,12 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { BorderTrail } from "@/components/ui/borderTrail";
 import { templates } from "@/data/templatesData";
 import { TemplateCard } from "@/components/TemplateCard";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: '🚀 Free Next.js & Tailwind CSS Templates | Voxlet UI',
+  description: 'Get free, high-quality Next.js and Tailwind CSS templates from Voxlet UI. Speed up your web development with modern, responsive, and fully customizable templates. 🚀 Start building today!',
+};
 
 export default function TemplatesPage() {
     return (

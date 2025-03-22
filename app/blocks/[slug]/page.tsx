@@ -3,9 +3,27 @@ import { slugify } from "@/utils/slugify";
 import BlockLoader from "@/components/blocks-loader/server";
 import { BlocksData } from "@/data/blocksData";
 import { Separator } from "@/registry/default/ui/separator";
+import { Metadata } from "next";
 
 interface BlocksPageProps {
     params: { slug: string };
+}
+
+export async function generateMetadata({ params }: BlocksPageProps): Promise<Metadata> {
+    const { slug } = params;
+    const category = BlocksData.find((category) => slugify(category.categoryName) === slug);
+
+    if (!category) {
+        return {
+            title: "Category Not Found - Voxlet UI Blocks",
+            description: "The requested category does not exist in Voxlet UI Blocks.",
+        };
+    }
+
+    return {
+        title: `${category.categoryName} Blocks - Voxlet UI Components`,
+        description: `Explore a variety of ${category.categoryName} blocks in Voxlet UI Components to enhance your web development projects.`,
+    };
 }
 
 export default function BlocksPage({ params }: BlocksPageProps) {

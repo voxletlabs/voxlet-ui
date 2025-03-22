@@ -1,5 +1,12 @@
 import type { ReactNode } from "react";
 import Sidebar from "@/components/Sidebar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Animated React & Tailwind Components | Voxlet UI",
+  description:
+    "Explore Voxlet UI's customizable React and Tailwind components to enhance your web development projects. Start building responsive designs today.",
+};
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (

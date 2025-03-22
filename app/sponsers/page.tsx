@@ -3,6 +3,12 @@ import { Heart } from "lucide-react";
 import { buttonVariants } from "@/registry/default/ui/button";
 import { cn } from "@/registry/default/lib/utils";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Support Voxlet UI - Become a Sponsor',
+  description: 'Empower open-source projects like Voxlet UI by becoming a sponsor. Your support fuels innovation and development.',
+};
 
 const SponsorsPage = () => {
   return (

@@ -4,6 +4,8 @@ import FadeAnimation from "@/components/ui/animations/fade";
 import { Button } from "@/registry/default/ui/button";
 import { Spotlight } from "@/components/ui/spotlight";
 import { BorderTrail } from "@/components/ui/borderTrail";
+import { templates } from "@/data/templatesData";
+import { TemplateCard } from "@/components/TemplateCard";
 
 export default function TemplatesPage() {
     return (
@@ -70,7 +72,23 @@ export default function TemplatesPage() {
                 </div>
             </div>
             <div id="templates" className="mb-8 max-w-7xl mx-auto">
-                <ComingSoon />
+                <div className="px-4 py-8">
+                    {/* <div className="flex justify-between items-center mb-6">
+        <h2 className="text-xl font-semibold">Templates</h2>
+        <Link href="/templates" className="text-sm text-neutral-400">
+          See All →
+        </Link>
+      </div> */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {templates.map((template) => (
+                            <TemplateCard
+                                key={template.slug}
+                                template={template}
+                            />
+                        ))}
+                    </div>
+                </div>
+                {/* <ComingSoon /> */}
             </div>
         </>
     );

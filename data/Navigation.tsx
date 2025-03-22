@@ -1,6 +1,5 @@
 import {
   ExternalLink,
-  BookText,
   Circle,
   LayoutList,
   FileTextIcon,
@@ -9,6 +8,7 @@ import {
 import { ComponentsData } from "./componentsData";
 import { slugify } from "@/utils/slugify";
 import { BlocksData } from "./blocksData";
+import { templates as TemplatesData } from "@/data/templatesData";
 
 type LinkItem = {
   title: string;
@@ -30,6 +30,11 @@ const components = ComponentsData.map((component) => ({
 const blocks = BlocksData.map((blocksCategory) => ({
   title: `${blocksCategory.categoryName}`,
   href: `/blocks/${slugify(blocksCategory.categoryName)}`
+}));
+
+const templates = TemplatesData.map((template) => ({
+  title: template.name,
+  href: `/templates/${template.slug}`,
 }));
 
 const Navigation = [
@@ -56,6 +61,13 @@ const Navigation = [
     icon: LayoutList,
     links: [
       ...blocks
+    ],
+  },
+  {
+    title: "Templates",
+    icon: LayoutPanelTop,
+    links: [
+      ...templates
     ],
   },
   {

@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 
-export default function TemplatePage({ params }: any) {
+export default function TemplatePage({ params }: { params: { slug: string } }) {
     const template = getTemplateBySlug(params.slug)
     const otherTemplates = getOtherTemplates(params.slug)
 

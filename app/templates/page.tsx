@@ -9,8 +9,8 @@ import { TemplateCard } from "@/components/TemplateCard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: '🚀 Free Next.js & Tailwind CSS Templates | Voxlet UI',
-  description: 'Get free, high-quality Next.js and Tailwind CSS templates from Voxlet UI. Speed up your web development with modern, responsive, and fully customizable templates. 🚀 Start building today!',
+    title: '🚀 Free Next.js & Tailwind CSS Templates | Voxlet UI',
+    description: 'Get free, high-quality Next.js and Tailwind CSS templates from Voxlet UI. Speed up your web development with modern, responsive, and fully customizable templates. 🚀 Start building today!',
 };
 
 export default function TemplatesPage() {
@@ -79,12 +79,6 @@ export default function TemplatesPage() {
             </div>
             <div id="templates" className="mb-8 max-w-7xl mx-auto">
                 <div className="px-4 py-8">
-                    {/* <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-semibold">Templates</h2>
-        <Link href="/templates" className="text-sm text-neutral-400">
-          See All →
-        </Link>
-      </div> */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {templates.map((template) => (
                             <TemplateCard
@@ -100,28 +94,28 @@ export default function TemplatesPage() {
     );
 }
 
-function ComingSoon() {
+// function ComingSoon() {
 
-    return (
-        <div className="flex shrink-0 items-center justify-center rounded-md border border-dashed h-[30vh] md:h-[50vh]">
-            <div className="mx-auto flex w-full flex-col items-center justify-center text-center">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="h-10 w-10 text-muted-foreground"
-                    viewBox="0 0 24 24"
-                >
-                    <circle cx="12" cy="11" r="1" />
-                    <path d="M11 17a1 1 0 0 1 2 0c0 .5-.34 3-.5 4.5a.5.5 0 0 1-1 0c-.16-1.5-.5-4-.5-4.5ZM8 14a5 5 0 1 1 8 0" />
-                    <path d="M17 18.5a9 9 0 1 0-10 0" />
-                </svg>
-                <h3 className="mt-4 text-lg font-semibold">Coming Soon</h3>
-                <p className="mb-4 mt-2 text-sm text-muted-foreground max-w-md mx-auto">Templates will be available soon! 🚀 Bookmark this tab to stay tuned and be the first to explore them.</p>
-            </div>
-        </div>
-    );
-}
+//     return (
+//         <div className="flex shrink-0 items-center justify-center rounded-md border border-dashed h-[30vh] md:h-[50vh]">
+//             <div className="mx-auto flex w-full flex-col items-center justify-center text-center">
+//                 <svg
+//                     xmlns="http://www.w3.org/2000/svg"
+//                     fill="none"
+//                     stroke="currentColor"
+//                     strokeLinecap="round"
+//                     strokeLinejoin="round"
+//                     strokeWidth="2"
+//                     className="h-10 w-10 text-muted-foreground"
+//                     viewBox="0 0 24 24"
+//                 >
+//                     <circle cx="12" cy="11" r="1" />
+//                     <path d="M11 17a1 1 0 0 1 2 0c0 .5-.34 3-.5 4.5a.5.5 0 0 1-1 0c-.16-1.5-.5-4-.5-4.5ZM8 14a5 5 0 1 1 8 0" />
+//                     <path d="M17 18.5a9 9 0 1 0-10 0" />
+//                 </svg>
+//                 <h3 className="mt-4 text-lg font-semibold">Coming Soon</h3>
+//                 <p className="mb-4 mt-2 text-sm text-muted-foreground max-w-md mx-auto">Templates will be available soon! 🚀 Bookmark this tab to stay tuned and be the first to explore them.</p>
+//             </div>
+//         </div>
+//     );
+// }

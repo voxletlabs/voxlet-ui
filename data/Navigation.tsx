@@ -50,6 +50,13 @@ const Navigation = [
     ],
   },
   {
+    title: "Templates",
+    icon: LayoutPanelTop,
+    links: [
+      ...templates
+    ],
+  },
+  {
     title: "Components",
     icon: Circle,
     links: [
@@ -61,13 +68,6 @@ const Navigation = [
     icon: LayoutList,
     links: [
       ...blocks
-    ],
-  },
-  {
-    title: "Templates",
-    icon: LayoutPanelTop,
-    links: [
-      ...templates
     ],
   },
   {

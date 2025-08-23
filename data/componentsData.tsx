@@ -450,7 +450,7 @@ const ComponentsData: ComponentDataType[] = [
             message: "The inspiration for this component is directly taken from",
             link: {
                 text: "Serenity UI",
-                url: "https://www.serenity-ui.com/components/navbars/tubelightnavbar",
+                url: "https://www.serenity-ui.com/components/tubelightnavbar",
             },
         },
     },

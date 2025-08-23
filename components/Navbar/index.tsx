@@ -102,7 +102,9 @@ export function Navbar({ className }: NavbarProps) {
                                                 <li key={link.title}>
                                                     <Link href={link.href}>
                                                         <Button variant={"ghost"} className="mx-1">
-                                                            {link.title}
+                                                            {link.title} {(link.href === "/templates") &&
+                                                                <Badge className="rounded-full border-green-600" variant={'outline'}>New</Badge>
+                                                            }
                                                         </Button>
                                                     </Link>
                                                 </li>

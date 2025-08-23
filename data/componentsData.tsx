@@ -763,6 +763,53 @@ const ComponentsData: ComponentDataType[] = [
             },
         ],
     },
+    {
+        name: "Animated Beams Grid Background",
+        supportLine: "A sleek animated grid background featuring beams of light for modern UIs and hero sections.",
+        imageUrl: "/components/animated-beams-grid-background.png",
+        demo: [
+            "animated-beams-grid-background/usage.tsx",
+            "animated-beams-grid-background/only-grid-background-without-beams.tsx",
+        ],
+        code: "animated-beams-grid-background.tsx",
+        typesTable: [
+            {
+                title: "GridBeamsProps",
+                table: [
+                    {
+                        prop: "beamColor",
+                        type: "string | string[]",
+                        default: "#ffffff",
+                        description: "Color of the beams. Can be a single hex string or an array of multiple colors.",
+                    },
+                    {
+                        prop: "gridSize",
+                        type: "number",
+                        default: "150",
+                        description: "Spacing between grid lines and points in pixels.",
+                    },
+                    {
+                        prop: "beamSize",
+                        type: "number",
+                        default: "1.5",
+                        description: "Thickness of each animated beam.",
+                    },
+                    {
+                        prop: "beamDuration",
+                        type: "number",
+                        default: "1",
+                        description: "Base duration (in seconds) for beams to animate across the grid.",
+                    },
+                    {
+                        prop: "showBeams",
+                        type: "boolean",
+                        default: "true",
+                        description: "Toggle to enable or disable animated beams (grid and points still render).",
+                    },
+                ],
+            },
+        ],
+    },
 ];
 
 export { ComponentsData };

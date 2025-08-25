@@ -159,6 +159,66 @@ const ComponentsData: ComponentDataType[] = [
         ],
     },
     {
+        name: "Chat Widget",
+        supportLine: "A floating chat widget with animated open/close, customizable logo, greeting, and actions for booking calls or sending emails.",
+        imageUrl: "/components/chat-widget.png",
+        demo: [
+            "chat-widget/usage.tsx",
+        ],
+        cnUtilsFIle: true,
+        dependencies: [
+            {
+                title: "Install Dependencies",
+                command: "npm i framer-motion lucide-react",
+            },
+        ],
+        code: "chat-widget.tsx",
+        typesTable: [
+            {
+                title: "ChatWidgetProps",
+                table: [
+                    {
+                        prop: "className",
+                        type: "string",
+                        default: "-",
+                        description: "Optional class name applied to the parent container for positioning or styling.",
+                    },
+                    {
+                        prop: "calendarLink",
+                        type: "string",
+                        default: "-",
+                        description: "The URL used for the 'Book a Call' button.",
+                    },
+                    {
+                        prop: "email",
+                        type: "string",
+                        default: "-",
+                        description: "The email address used for the 'Send an Email' button.",
+                    },
+
+                    {
+                        prop: "logo",
+                        type: "string",
+                        default: "https://voxlet.vercel.app/logo-transperant-bg.svg",
+                        description: "An optional logo displayed in the chat header.",
+                    },
+                    {
+                        prop: "greeting",
+                        type: "string",
+                        default: "Hi there 👋",
+                        description: "The smaller greeting message shown above the headline.",
+                    },
+                    {
+                        prop: "headline",
+                        type: "string",
+                        default: "How can we help?",
+                        description: "The main heading text in the chat header.",
+                    },
+                ],
+            },
+        ],
+    },
+    {
         name: "Space Box",
         supportLine: "A cosmic-inspired interactive box with animated stars and shooting stars that react to user hover.",
         imageUrl: "/components/space-box.png",
@@ -578,6 +638,54 @@ const ComponentsData: ComponentDataType[] = [
             },
         ],
     },
+
+    {
+        name: "Animated Beams Grid Background",
+        supportLine: "A sleek animated grid background featuring beams of light for modern UIs and hero sections.",
+        imageUrl: "/components/animated-beams-grid-background.png",
+        demo: [
+            "animated-beams-grid-background/usage.tsx",
+            "animated-beams-grid-background/only-grid-background-without-beams.tsx",
+        ],
+        code: "animated-beams-grid-background.tsx",
+        typesTable: [
+            {
+                title: "GridBeamsProps",
+                table: [
+                    {
+                        prop: "beamColor",
+                        type: "string | string[]",
+                        default: "#ffffff",
+                        description: "Color of the beams. Can be a single hex string or an array of multiple colors.",
+                    },
+                    {
+                        prop: "gridSize",
+                        type: "number",
+                        default: "150",
+                        description: "Spacing between grid lines and points in pixels.",
+                    },
+                    {
+                        prop: "beamSize",
+                        type: "number",
+                        default: "1.5",
+                        description: "Thickness of each animated beam.",
+                    },
+                    {
+                        prop: "beamDuration",
+                        type: "number",
+                        default: "1",
+                        description: "Base duration (in seconds) for beams to animate across the grid.",
+                    },
+                    {
+                        prop: "showBeams",
+                        type: "boolean",
+                        default: "true",
+                        description: "Toggle to enable or disable animated beams (grid and points still render).",
+                    },
+                ],
+            },
+        ],
+    },
     {
         name: "Download Button",
         supportLine: "A dynamic button with real-time download status and progress tracking.",
@@ -758,53 +866,6 @@ const ComponentsData: ComponentDataType[] = [
                         type: "React.ReactNode",
                         default: "-",
                         description: "Content displayed inside the step, such as form fields or descriptions.",
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        name: "Animated Beams Grid Background",
-        supportLine: "A sleek animated grid background featuring beams of light for modern UIs and hero sections.",
-        imageUrl: "/components/animated-beams-grid-background.png",
-        demo: [
-            "animated-beams-grid-background/usage.tsx",
-            "animated-beams-grid-background/only-grid-background-without-beams.tsx",
-        ],
-        code: "animated-beams-grid-background.tsx",
-        typesTable: [
-            {
-                title: "GridBeamsProps",
-                table: [
-                    {
-                        prop: "beamColor",
-                        type: "string | string[]",
-                        default: "#ffffff",
-                        description: "Color of the beams. Can be a single hex string or an array of multiple colors.",
-                    },
-                    {
-                        prop: "gridSize",
-                        type: "number",
-                        default: "150",
-                        description: "Spacing between grid lines and points in pixels.",
-                    },
-                    {
-                        prop: "beamSize",
-                        type: "number",
-                        default: "1.5",
-                        description: "Thickness of each animated beam.",
-                    },
-                    {
-                        prop: "beamDuration",
-                        type: "number",
-                        default: "1",
-                        description: "Base duration (in seconds) for beams to animate across the grid.",
-                    },
-                    {
-                        prop: "showBeams",
-                        type: "boolean",
-                        default: "true",
-                        description: "Toggle to enable or disable animated beams (grid and points still render).",
                     },
                 ],
             },

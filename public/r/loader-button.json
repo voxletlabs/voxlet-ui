@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "loader-button",
+  "title": "loader-button",
+  "description": "Seamless loading with a customizable Loader Button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://ui.voxletstudio.com/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/loaderButton.tsx",
+      "content": "\"use client\";\n \nimport * as React from \"react\";\nimport { LoaderCircle } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\n\ntype LoaderButtonProps = {\n    isLoading: boolean;\n    className?: string;\n    buttonVariant?:\n    | \"default\"\n    | \"destructive\"\n    | \"outline\"\n    | \"secondary\"\n    | \"ghost\"\n    | \"link\"\n    | null\n    | undefined;\n  children: React.ReactNode;\n  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;\n};\n \nconst LoaderButton: React.FC<LoaderButtonProps> = ({\n  buttonVariant,\n  isLoading,\n  className,\n  children,\n  onClick,\n}) => {\n  return (\n    <Button\n    variant={buttonVariant}\n      className={className}\n      onClick={onClick}\n      disabled={isLoading}\n    >\n      {isLoading && <LoaderCircle className=\"mr-2 h-4 w-4 animate-spin\" />}\n      {children}\n    </Button>\n  );\n};\n\nexport default LoaderButton;\n\n// Visit https://voxlet-ui.vercel.app/ for more components like this",
+      "type": "registry:ui"
+    },
+    {
+      "path": "registry/default/components/loaderButton/usage.tsx",
+      "content": "\"use client\";\n \nimport * as React from \"react\";\nimport LoaderButton from \"@/registry/default/ui/loaderButton\";\n \nexport default function LoaderButtonDemo() {\n  const [isLoading, setIsLoading] = React.useState<boolean>(false);\n \nasync function onSubmit(event: React.SyntheticEvent) {\nevent.preventDefault();\nsetIsLoading(true);\n \n    setTimeout(() => {\n      setIsLoading(false);\n    }, 3000);\n \n}\n \nreturn (\n \n<>\n  <div className=\"h-[50vh] w-full flex items-center justify-center\">\n    <LoaderButton\n      buttonVariant={\"default\"}\n      onClick={onSubmit}\n      isLoading={isLoading}\n      className=\"my-class\"\n    >\n      Loader Button\n    </LoaderButton>\n  </div>\n</>\n); }",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/default/components/loaderButton/variants.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport LoaderButton from \"@/registry/default/ui/loaderButton\";\n\nexport default function LoaderButtonVariants() {\n    const [isLoading, setIsLoading] = React.useState<boolean>(false);\n\n    async function onSubmit(event: React.SyntheticEvent) {\n        event.preventDefault();\n        setIsLoading(true);\n\n        setTimeout(() => {\n            setIsLoading(false);\n        }, 3000);\n    }\n\n    return (\n        <>\n            <div className=\"px-4 py-10 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6\">\n                <LoaderButton\n                    buttonVariant={\"default\"}\n                    onClick={onSubmit}\n                    isLoading={isLoading}\n                    className=\"my-class\"\n                >\n                    Loader Button\n                </LoaderButton>\n                <LoaderButton\n                    buttonVariant={\"outline\"}\n                    onClick={onSubmit}\n                    isLoading={isLoading}\n                    className=\"my-class\"\n                >\n                    Loader Button\n                </LoaderButton>\n                <LoaderButton\n                    buttonVariant={\"secondary\"}\n                    onClick={onSubmit}\n                    isLoading={isLoading}\n                    className=\"my-class\"\n                >\n                    Loader Button\n                </LoaderButton>\n                <LoaderButton\n                    buttonVariant={\"ghost\"}\n                    onClick={onSubmit}\n                    isLoading={isLoading}\n                    className=\"my-class\"\n                >\n                    Loader Button\n                </LoaderButton>\n                <LoaderButton\n                    buttonVariant={\"link\"}\n                    onClick={onSubmit}\n                    isLoading={isLoading}\n                    className=\"my-class\"\n                >\n                    Loader Button\n                </LoaderButton>\n                <LoaderButton\n                    buttonVariant={\"destructive\"}\n                    onClick={onSubmit}\n                    isLoading={isLoading}\n                    className=\"my-class\"\n                >\n                    Loader Button\n                </LoaderButton>\n            </div>\n        </>\n    );\n}",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

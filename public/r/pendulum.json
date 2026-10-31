@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pendulum",
+  "title": "pendulum",
+  "description": "Bring your UI to life with the smooth, captivating motion of the Pendulum component.",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "https://ui.voxletstudio.com/r/utils.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/pendulum.tsx",
+      "content": "\"use client\";\n \n// Visit https://voxlet-ui.vercel.app/ for more components like this\n\nimport { cn } from \"@/registry/default/lib/utils\";\nimport { motion } from \"framer-motion\";\n \ninterface PendulumProps {\n  className?: string;\n}\n \nconst Pendulum: React.FC<PendulumProps> = ({ className }) => {\n  return (\n    <div\n      className={cn(\n        \"w-full max-w-screen overflow-hidden h-screen flex items-start justify-center\",\n        className\n      )}\n    >\n      <div className=\"relative flex flex-col items-center justify-center\">\n        <motion.div\n          className=\"pendulum flex flex-col items-center justify-center\"\n          style={{\n            transformOrigin: \"50% 0%\",\n          }}\n          animate={{\n            rotate: [60, -60, 60],\n          }}\n          transition={{\n            repeat: Infinity,\n            duration: 3,\n            ease: [0.6, 0, 0.4, 1],\n          }}\n        >\n          <div className=\"w-[1px] h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] bg-white\"></div>\n \n          <motion.div\n            className=\"w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-white\"\n            style={{\n              boxShadow: \"inset 0 0 80px white, 0 0 30px white\",\n            }}\n            animate={{\n              boxShadow: [\n                \"inset 0 0 50px white, 0 0 20px white\",\n                \"inset 0 0 80px white, 0 0 30px white\",\n              ],\n            }}\n            transition={{\n              repeat: Infinity,\n              duration: 3,\n              ease: \"easeInOut\",\n            }}\n          />\n        </motion.div>\n      </div>\n    </div>\n  );\n};\n \nexport default Pendulum;",
+      "type": "registry:ui"
+    },
+    {
+      "path": "registry/default/components/pendulum/usage.tsx",
+      "content": "import Pendulum from \"@/registry/default/ui/pendulum\";\n \nexport default function PendulumDemo() {\n  return (\n    <>\n        <main className=\"flex items-center justify-center border-t w-full bg-black\">\n          <Pendulum />\n        </main>\n    </>\n  );\n}",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

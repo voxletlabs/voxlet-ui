@@ -1,0 +1,276 @@
+{
+    "items": [
+        {
+            "name": "accordion",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "accordion.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-accordion",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "badge",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "badge.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "button",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "button.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-slot",
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "card",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "card.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "checkbox",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "checkbox.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-checkbox",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "command",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "command.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-dialog",
+                "cmdk",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/dialog.json",
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "cover",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "cover.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/sparkles.json",
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "dialog",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "dialog.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-dialog",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "input",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "input.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "label",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "label.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-label",
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "scroll-area",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "scroll-area.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-scroll-area"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "separator",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "separator.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-separator"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "sparkles",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "sparkles.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "@tsparticles/engine",
+                "@tsparticles/react",
+                "@tsparticles/slim",
+                "framer-motion"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "table",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "table.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "tabs",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "tabs.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-tabs"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "textarea",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "textarea.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "tooltip",
+            "type": "registry:ui",
+            "files": [
+                {
+                    "path": "tooltip.tsx",
+                    "type": "registry:ui"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-tooltip"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        }
+    ]
+}

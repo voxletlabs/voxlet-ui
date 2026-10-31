@@ -1,0 +1,11 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "Voxlet UI",
+    "homepage": "https://ui.voxletstudio.com",
+    "include": [
+        "registry/default/registry.json",
+        "registry/default/lib/registry.json",
+        "registry/default/ui/registry.json",
+        "registry/default/blocks/registry.json"
+    ]
+}

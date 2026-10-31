@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "emogi-nav",
+  "title": "emogi-nav",
+  "description": "Emogi nav, think different.",
+  "registryDependencies": [
+    "https://ui.voxletstudio.com/r/tooltip.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/emogiNav.tsx",
+      "content": "// get animated emogies from: https://googlefonts.github.io/noto-emoji-animation/\n// Visit https://voxlet-ui.vercel.app/ for components like this\n \nimport {\n    Tooltip,\n    TooltipContent,\n    TooltipProvider,\n    TooltipTrigger,\n  } from \"@/registry/default/ui/tooltip\";\n  import Link from \"next/link\";\n  import Image from \"next/image\";\n   \n  type NavItem = {\n    label: string;\n    href: string;\n    emogi: string;\n    alt: string;\n  };\n   \n  type EmogiNavProps = {\n    navItems: NavItem[];\n  };\n   \n  const EmogiNav: React.FC<EmogiNavProps> = ({ navItems }) => {\n    return (\n      <div className=\"fixed top-5 left-[50%] -translate-x-[50%] z-[10000] w-full sm:w-max\">\n        <div className=\"border px-5 py-2 rounded-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60\">\n          <nav>\n            <div className=\"flex items-center justify-center space-x-6\">\n              {navItems.map((item) => (\n                <div key={item.href}>\n                  <TooltipProvider>\n                    <Tooltip delayDuration={0}>\n                      <TooltipTrigger asChild>\n                        <Link href={item.href}>\n                          <Image\n                            src={item.emogi}\n                            alt={item.alt}\n                            width={48}\n                            height={48}\n                          />\n                        </Link>\n                      </TooltipTrigger>\n                      <TooltipContent className=\"z-[11000]\">\n                        <p>{item.label}</p>\n                      </TooltipContent>\n                    </Tooltip>\n                  </TooltipProvider>\n                </div>\n              ))}\n            </div>\n          </nav>\n        </div>\n      </div>\n    );\n  };\n   \n  export default EmogiNav;",
+      "type": "registry:ui"
+    },
+    {
+      "path": "registry/default/components/emogi-nav/usage.tsx",
+      "content": "// get animated emogies from: https://googlefonts.github.io/noto-emoji-animation/\nimport EmogiNav from \"@/registry/default/ui/emogiNav\";\n\nconst navItems = [\n    {\n        label: \"Home\",\n        href: \"#\",\n        emogi: \"https://fonts.gstatic.com/s/e/notoemoji/latest/1f60d/512.gif\",\n        alt: \"😍\",\n    },\n    {\n        label: \"About\",\n        href: \"#\",\n        emogi: \"https://fonts.gstatic.com/s/e/notoemoji/latest/1f604/512.gif\",\n        alt: \"😄\",\n    },\n    {\n        label: \"Work\",\n        href: \"#\",\n        emogi: \"https://fonts.gstatic.com/s/e/notoemoji/latest/1f618/512.gif\",\n        alt: \"😘\",\n    },\n    {\n        label: \"Services\",\n        href: \"#\",\n        emogi: \"https://fonts.gstatic.com/s/e/notoemoji/latest/1f911/512.gif\",\n        alt: \"🤑\",\n    },\n    {\n        label: \"Our Team\",\n        href: \"#\",\n        emogi: \"https://fonts.gstatic.com/s/e/notoemoji/latest/1f973/512.gif\",\n        alt: \"🥳\",\n    },\n    {\n        label: \"Contact\",\n        href: \"#\",\n        emogi: \"https://fonts.gstatic.com/s/e/notoemoji/latest/1f47b/512.gif\",\n        alt: \"👻\",\n    },\n];\n\nconst EmogiNavigation: React.FC = () => {\n    return (\n\n        <div>\n            <EmogiNav navItems={navItems} />\n\n            <div className=\"flex min-h-[100px] w-full justify-center p-2 sm:p-10 items-center\">\n                <div className=\"relative w-full flex items-center justify-center\">\n                    <p className=\"text-black dark:text-white\">\n                        The Navbar will show on top of the page\n                    </p>\n                </div>\n            </div>\n        </div>\n\n    );\n};\n\nexport default EmogiNavigation;",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

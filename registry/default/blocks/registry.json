@@ -1,0 +1,223 @@
+{
+    "items": [
+        {
+            "name": "hero-section-two",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "heroSection/heroSectionTwo.tsx",
+                    "type": "registry:block"
+                }
+            ]
+        },
+        {
+            "name": "hero-section-one",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "heroSection/heroSectionOne.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json"
+            ]
+        },
+        {
+            "name": "pricing-one",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "pricing/pricingOne.tsx",
+                    "type": "registry:block"
+                }
+            ]
+        },
+        {
+            "name": "pricing-three",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "pricing/pricingThree.tsx",
+                    "type": "registry:block"
+                }
+            ]
+        },
+        {
+            "name": "pricing-two",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "pricing/pricingTwo.tsx",
+                    "type": "registry:block"
+                }
+            ]
+        },
+        {
+            "name": "testimonials-section-one",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "testimonialsSection/testimonialsSectionOne.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "lucide-react"
+            ]
+        },
+        {
+            "name": "login-page-three",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "authentication/login-page-three.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/checkbox.json"
+            ]
+        },
+        {
+            "name": "login-page-four",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "authentication/login-page-four.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-icons",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json",
+                "https://ui.voxletstudio.com/r/input.json",
+                "https://ui.voxletstudio.com/r/label.json",
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "login-page-one",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "authentication/login-page-one.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json",
+                "https://ui.voxletstudio.com/r/input.json",
+                "https://ui.voxletstudio.com/r/label.json",
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "sign-in-dialog",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "authentication/sign-in-dialog.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json",
+                "https://ui.voxletstudio.com/r/checkbox.json",
+                "https://ui.voxletstudio.com/r/dialog.json",
+                "https://ui.voxletstudio.com/r/input.json",
+                "https://ui.voxletstudio.com/r/label.json"
+            ]
+        },
+        {
+            "name": "sign-up-dialog",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "authentication/sign-up-dialog.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json",
+                "https://ui.voxletstudio.com/r/dialog.json",
+                "https://ui.voxletstudio.com/r/input.json",
+                "https://ui.voxletstudio.com/r/label.json"
+            ]
+        },
+        {
+            "name": "login-page-five",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "authentication/login-page-five.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "@radix-ui/react-icons",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json",
+                "https://ui.voxletstudio.com/r/input.json",
+                "https://ui.voxletstudio.com/r/label.json"
+            ]
+        },
+        {
+            "name": "login-page-two",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "authentication/login-page-two.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json",
+                "https://ui.voxletstudio.com/r/card.json",
+                "https://ui.voxletstudio.com/r/input.json",
+                "https://ui.voxletstudio.com/r/label.json",
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "footer-one",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "footer/footerOne.tsx",
+                    "type": "registry:block"
+                }
+            ]
+        },
+        {
+            "name": "footer-two",
+            "type": "registry:block",
+            "files": [
+                {
+                    "path": "footer/footerTwo.tsx",
+                    "type": "registry:block"
+                }
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,387 @@
+{
+    "items": [
+        {
+            "name": "magic-wand",
+            "type": "registry:component",
+            "title": "magic-wand",
+            "description": "An interactive Magic Wand effect that follows the cursor, animating a floating wand and revealing images within tiles as the cursor moves.",
+            "files": [
+                {
+                    "path": "ui/magic-wand.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/magic-wand/usage.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "dependencies": [
+                "framer-motion",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "gravity-box",
+            "type": "registry:component",
+            "title": "gravity-box",
+            "description": "A physics-based tag cloud using Matter.js, where tags respond to gravity and collisions.",
+            "files": [
+                {
+                    "path": "ui/gravity-box.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/gravity-box/usage.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "dependencies": [
+                "matter-js"
+            ]
+        },
+        {
+            "name": "chat-widget",
+            "type": "registry:component",
+            "title": "chat-widget",
+            "description": "A floating chat widget with animated open/close, customizable logo, greeting, and actions for booking calls or sending emails.",
+            "files": [
+                {
+                    "path": "ui/chat-widget.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/chat-widget/usage.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "dependencies": [
+                "framer-motion",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json",
+                "https://ui.voxletstudio.com/r/card.json",
+                "https://ui.voxletstudio.com/r/scroll-area.json",
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "space-box",
+            "type": "registry:component",
+            "title": "space-box",
+            "description": "A cosmic-inspired interactive box with animated stars and shooting stars that react to user hover.",
+            "files": [
+                {
+                    "path": "ui/space-box.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/space-box/usage.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "emogi-nav",
+            "type": "registry:component",
+            "title": "emogi-nav",
+            "description": "Emogi nav, think different.",
+            "files": [
+                {
+                    "path": "ui/emogiNav.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/emogi-nav/usage.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/tooltip.json"
+            ]
+        },
+        {
+            "name": "pendulum",
+            "type": "registry:component",
+            "title": "pendulum",
+            "description": "Bring your UI to life with the smooth, captivating motion of the Pendulum component.",
+            "files": [
+                {
+                    "path": "ui/pendulum.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/pendulum/usage.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "dependencies": [
+                "framer-motion"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "scroll-progress",
+            "type": "registry:component",
+            "title": "scroll-progress",
+            "description": "A scroll progress indicator that visually tracks page scroll with a circular progress bar.",
+            "files": [
+                {
+                    "path": "ui/scroll-progress.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/scroll-progress/usage.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "anime-navbar",
+            "type": "registry:component",
+            "title": "anime-navbar",
+            "description": "A sleek and animated navigation bar built with Framer Motion for a smooth user experience.",
+            "files": [
+                {
+                    "path": "ui/anime-navbar.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/anime-navbar/usage.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "dependencies": [
+                "framer-motion",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "tube-light-navbar",
+            "type": "registry:component",
+            "title": "tube-light-navbar",
+            "description": "A sleek, interactive navigation bar with a dynamic lighting effect, perfect for modern UIs.",
+            "files": [
+                {
+                    "path": "ui/tubelight-navbar.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/tubelight-navbar/usage.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "dependencies": [
+                "framer-motion",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "animated-background",
+            "type": "registry:component",
+            "title": "animated-background",
+            "description": "An animated background effect that highlights elements smoothly on hover or click, enhancing user interaction.",
+            "files": [
+                {
+                    "path": "ui/animated-background.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/animated-background/animated-nav-links-hover.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "components/animated-background/animated-tabs-hover.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "components/animated-background/animated-card-background-hover.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "dependencies": [
+                "motion"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "circular-navigation",
+            "type": "registry:component",
+            "title": "circular-navigation",
+            "description": "An interactive circular menu for seamless navigation throughout your application.",
+            "files": [
+                {
+                    "path": "ui/circularNavigation.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/circular-navigation/usage.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "dependencies": [
+                "framer-motion",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json"
+            ]
+        },
+        {
+            "name": "animated-beams-grid-background",
+            "type": "registry:component",
+            "title": "animated-beams-grid-background",
+            "description": "A sleek animated grid background featuring beams of light for modern UIs and hero sections.",
+            "files": [
+                {
+                    "path": "ui/animated-beams-grid-background.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/animated-beams-grid-background/usage.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "components/animated-beams-grid-background/only-grid-background-without-beams.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "download-button",
+            "type": "registry:component",
+            "title": "download-button",
+            "description": "A dynamic button with real-time download status and progress tracking.",
+            "files": [
+                {
+                    "path": "ui/download-button.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/download-button/usage.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json",
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "loader-button",
+            "type": "registry:component",
+            "title": "loader-button",
+            "description": "Seamless loading with a customizable Loader Button.",
+            "files": [
+                {
+                    "path": "ui/loaderButton.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/loaderButton/usage.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "components/loaderButton/variants.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "dependencies": [
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json"
+            ]
+        },
+        {
+            "name": "macbook-keyboard",
+            "type": "registry:component",
+            "title": "macbook-keyboard",
+            "description": "An interactive, minimalist MacBook-inspired keyboard component for seamless user engagement.",
+            "files": [
+                {
+                    "path": "ui/macbook-keyboard.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/macbook-keyboard/usage.tsx",
+                    "type": "registry:component"
+                }
+            ]
+        },
+        {
+            "name": "flip-coin-button",
+            "type": "registry:component",
+            "title": "flip-coin-button",
+            "description": "A fun interactive button that simulates a coin flip animation when clicked.",
+            "files": [
+                {
+                    "path": "ui/flip-coin-button.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/flip-coin-button/usage.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/utils.json"
+            ]
+        },
+        {
+            "name": "steps",
+            "type": "registry:component",
+            "title": "steps",
+            "description": "A vertical stepper component for guiding users through multi-step processes.",
+            "files": [
+                {
+                    "path": "ui/steps.tsx",
+                    "type": "registry:ui"
+                },
+                {
+                    "path": "components/steps/basic.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "components/steps/software-installation-guide.tsx",
+                    "type": "registry:component"
+                },
+                {
+                    "path": "components/steps/signin-onboarding.tsx",
+                    "type": "registry:component"
+                }
+            ],
+            "registryDependencies": [
+                "https://ui.voxletstudio.com/r/button.json",
+                "https://ui.voxletstudio.com/r/input.json",
+                "https://ui.voxletstudio.com/r/label.json",
+                "https://ui.voxletstudio.com/r/textarea.json"
+            ]
+        }
+    ]
+}

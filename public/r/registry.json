@@ -1,0 +1,895 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "Voxlet UI",
+  "homepage": "https://ui.voxletstudio.com",
+  "items": [
+    {
+      "name": "magic-wand",
+      "title": "magic-wand",
+      "description": "An interactive Magic Wand effect that follows the cursor, animating a floating wand and revealing images within tiles as the cursor moves.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/magic-wand.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/magic-wand/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "gravity-box",
+      "title": "gravity-box",
+      "description": "A physics-based tag cloud using Matter.js, where tags respond to gravity and collisions.",
+      "dependencies": [
+        "matter-js"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/gravity-box.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/gravity-box/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "chat-widget",
+      "title": "chat-widget",
+      "description": "A floating chat widget with animated open/close, customizable logo, greeting, and actions for booking calls or sending emails.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json",
+        "https://ui.voxletstudio.com/r/card.json",
+        "https://ui.voxletstudio.com/r/scroll-area.json",
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/chat-widget.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/chat-widget/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "space-box",
+      "title": "space-box",
+      "description": "A cosmic-inspired interactive box with animated stars and shooting stars that react to user hover.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/space-box.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/space-box/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "emogi-nav",
+      "title": "emogi-nav",
+      "description": "Emogi nav, think different.",
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/emogiNav.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/emogi-nav/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "pendulum",
+      "title": "pendulum",
+      "description": "Bring your UI to life with the smooth, captivating motion of the Pendulum component.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/pendulum.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/pendulum/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "scroll-progress",
+      "title": "scroll-progress",
+      "description": "A scroll progress indicator that visually tracks page scroll with a circular progress bar.",
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/scroll-progress.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/scroll-progress/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "anime-navbar",
+      "title": "anime-navbar",
+      "description": "A sleek and animated navigation bar built with Framer Motion for a smooth user experience.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/anime-navbar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/anime-navbar/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "tube-light-navbar",
+      "title": "tube-light-navbar",
+      "description": "A sleek, interactive navigation bar with a dynamic lighting effect, perfect for modern UIs.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/tubelight-navbar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/tubelight-navbar/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "animated-background",
+      "title": "animated-background",
+      "description": "An animated background effect that highlights elements smoothly on hover or click, enhancing user interaction.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/animated-background.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/animated-background/animated-nav-links-hover.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/animated-background/animated-tabs-hover.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/animated-background/animated-card-background-hover.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "circular-navigation",
+      "title": "circular-navigation",
+      "description": "An interactive circular menu for seamless navigation throughout your application.",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/circularNavigation.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/circular-navigation/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "animated-beams-grid-background",
+      "title": "animated-beams-grid-background",
+      "description": "A sleek animated grid background featuring beams of light for modern UIs and hero sections.",
+      "files": [
+        {
+          "path": "registry/default/ui/animated-beams-grid-background.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/animated-beams-grid-background/usage.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/animated-beams-grid-background/only-grid-background-without-beams.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "download-button",
+      "title": "download-button",
+      "description": "A dynamic button with real-time download status and progress tracking.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json",
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/download-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/download-button/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "loader-button",
+      "title": "loader-button",
+      "description": "Seamless loading with a customizable Loader Button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/loaderButton.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/loaderButton/usage.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/loaderButton/variants.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "macbook-keyboard",
+      "title": "macbook-keyboard",
+      "description": "An interactive, minimalist MacBook-inspired keyboard component for seamless user engagement.",
+      "files": [
+        {
+          "path": "registry/default/ui/macbook-keyboard.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/macbook-keyboard/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "flip-coin-button",
+      "title": "flip-coin-button",
+      "description": "A fun interactive button that simulates a coin flip animation when clicked.",
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/flip-coin-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/flip-coin-button/usage.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "steps",
+      "title": "steps",
+      "description": "A vertical stepper component for guiding users through multi-step processes.",
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json",
+        "https://ui.voxletstudio.com/r/input.json",
+        "https://ui.voxletstudio.com/r/label.json",
+        "https://ui.voxletstudio.com/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/steps.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/components/steps/basic.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/steps/software-installation-guide.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/default/components/steps/signin-onboarding.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "utils",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/default/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:lib"
+    },
+    {
+      "name": "accordion",
+      "dependencies": [
+        "@radix-ui/react-accordion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "badge",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "button",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "card",
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "checkbox",
+      "dependencies": [
+        "@radix-ui/react-checkbox",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "command",
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "cmdk",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/dialog.json",
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "cover",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/sparkles.json",
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/cover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog",
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "input",
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "label",
+      "dependencies": [
+        "@radix-ui/react-label",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "scroll-area",
+      "dependencies": [
+        "@radix-ui/react-scroll-area"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "separator",
+      "dependencies": [
+        "@radix-ui/react-separator"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "sparkles",
+      "dependencies": [
+        "@tsparticles/engine",
+        "@tsparticles/react",
+        "@tsparticles/slim",
+        "framer-motion"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/sparkles.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "table",
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "tabs",
+      "dependencies": [
+        "@radix-ui/react-tabs"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "textarea",
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "tooltip",
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "hero-section-two",
+      "files": [
+        {
+          "path": "registry/default/blocks/heroSection/heroSectionTwo.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "hero-section-one",
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/heroSection/heroSectionOne.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "pricing-one",
+      "files": [
+        {
+          "path": "registry/default/blocks/pricing/pricingOne.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "pricing-three",
+      "files": [
+        {
+          "path": "registry/default/blocks/pricing/pricingThree.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "pricing-two",
+      "files": [
+        {
+          "path": "registry/default/blocks/pricing/pricingTwo.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "testimonials-section-one",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/testimonialsSection/testimonialsSectionOne.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "login-page-three",
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/checkbox.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/authentication/login-page-three.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "login-page-four",
+      "dependencies": [
+        "@radix-ui/react-icons",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json",
+        "https://ui.voxletstudio.com/r/input.json",
+        "https://ui.voxletstudio.com/r/label.json",
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/authentication/login-page-four.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "login-page-one",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json",
+        "https://ui.voxletstudio.com/r/input.json",
+        "https://ui.voxletstudio.com/r/label.json",
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/authentication/login-page-one.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "sign-in-dialog",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json",
+        "https://ui.voxletstudio.com/r/checkbox.json",
+        "https://ui.voxletstudio.com/r/dialog.json",
+        "https://ui.voxletstudio.com/r/input.json",
+        "https://ui.voxletstudio.com/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/authentication/sign-in-dialog.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "sign-up-dialog",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json",
+        "https://ui.voxletstudio.com/r/dialog.json",
+        "https://ui.voxletstudio.com/r/input.json",
+        "https://ui.voxletstudio.com/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/authentication/sign-up-dialog.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "login-page-five",
+      "dependencies": [
+        "@radix-ui/react-icons",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json",
+        "https://ui.voxletstudio.com/r/input.json",
+        "https://ui.voxletstudio.com/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/authentication/login-page-five.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "login-page-two",
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json",
+        "https://ui.voxletstudio.com/r/card.json",
+        "https://ui.voxletstudio.com/r/input.json",
+        "https://ui.voxletstudio.com/r/label.json",
+        "https://ui.voxletstudio.com/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/authentication/login-page-two.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "footer-one",
+      "files": [
+        {
+          "path": "registry/default/blocks/footer/footerOne.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    },
+    {
+      "name": "footer-two",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ui.voxletstudio.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/footer/footerTwo.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "type": "registry:block"
+    }
+  ]
+}

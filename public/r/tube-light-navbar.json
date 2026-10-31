@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tube-light-navbar",
+  "title": "tube-light-navbar",
+  "description": "A sleek, interactive navigation bar with a dynamic lighting effect, perfect for modern UIs.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://ui.voxletstudio.com/r/utils.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/tubelight-navbar.tsx",
+      "content": "\"use client\"\n\nimport React, { useEffect, useState } from \"react\"\nimport { motion } from \"framer-motion\"\nimport Link from \"next/link\"\nimport { LucideIcon } from \"lucide-react\"\nimport { cn } from \"@/registry/default/lib/utils\"\n\ninterface NavItem {\n    name: string\n    url: string\n    icon: LucideIcon\n}\n\ninterface NavBarProps {\n    items: NavItem[]\n    className?: string\n}\n\nexport function NavBar({ items, className }: NavBarProps) {\n    const [activeTab, setActiveTab] = useState(items[0].name)\n    const [isMobile, setIsMobile] = useState(false)\n\n    useEffect(() => {\n        const handleResize = () => {\n            setIsMobile(window.innerWidth < 768)\n        }\n\n        handleResize()\n        window.addEventListener(\"resize\", handleResize)\n        return () => window.removeEventListener(\"resize\", handleResize)\n    }, [])\n\n    return (\n        <div\n            className={cn(\n                \"fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-[200] mb-6 sm:pt-6 h-max\",\n                className,\n            )}\n        >\n            <div className=\"flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg\">\n                {items.map((item) => {\n                    const Icon = item.icon\n                    const isActive = activeTab === item.name\n\n                    return (\n                        <Link\n                            key={item.name}\n                            href={item.url}\n                            onClick={() => setActiveTab(item.name)}\n                            className={cn(\n                                \"relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors\",\n                                \"text-foreground/80 hover:text-primary\",\n                                isActive && \"bg-muted text-primary\",\n                            )}\n                        >\n                            <span className=\"hidden md:inline\">{item.name}</span>\n                            <span className=\"md:hidden\">\n                                <Icon size={18} strokeWidth={2.5} />\n                            </span>\n                            {isActive && (\n                                <motion.div\n                                    layoutId=\"lamp\"\n                                    className=\"absolute inset-0 w-full bg-primary/5 rounded-full -z-10\"\n                                    initial={false}\n                                    transition={{\n                                        type: \"spring\",\n                                        stiffness: 300,\n                                        damping: 30,\n                                    }}\n                                >\n                                    <div className=\"absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary rounded-t-full\">\n                                        <div className=\"absolute w-12 h-6 bg-primary/20 rounded-full blur-md -top-2 -left-2\" />\n                                        <div className=\"absolute w-8 h-6 bg-primary/20 rounded-full blur-md -top-1\" />\n                                        <div className=\"absolute w-4 h-4 bg-primary/20 rounded-full blur-xs top-0 left-2\" />\n                                    </div>\n                                </motion.div>\n                            )}\n                        </Link>\n                    )\n                })}\n            </div>\n        </div>\n    )\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "registry/default/components/tubelight-navbar/usage.tsx",
+      "content": "\"use client\"\n\nimport { Home, User, Briefcase, FileText } from 'lucide-react'\nimport { NavBar } from \"@/registry/default/ui/tubelight-navbar\"\n\nexport default function TubeLightNavbarDemo() {\n    const navItems = [\n        { name: 'Home', url: '#', icon: Home },\n        { name: 'About', url: '#', icon: User },\n        { name: 'Projects', url: '#', icon: Briefcase },\n        { name: 'Resume', url: '#', icon: FileText }\n    ]\n\n    return (\n        <>\n            <NavBar items={navItems} />\n            <div className=\"preview flex min-h-[100px] w-full justify-center p-2 sm:p-10 items-center\">\n                <div className=\"relative w-full flex items-center justify-center\">\n                    <p className=\"text-black dark:text-white\">\n                        The Navbar will show at top of the page\n                    </p>\n                </div>\n            </div>\n        </>\n    )\n}",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

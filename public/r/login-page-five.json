@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "login-page-five",
+  "dependencies": [
+    "@radix-ui/react-icons",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://ui.voxletstudio.com/r/button.json",
+    "https://ui.voxletstudio.com/r/input.json",
+    "https://ui.voxletstudio.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/blocks/authentication/login-page-five.tsx",
+      "content": "\"use client\";\n \nimport * as React from \"react\";\nimport Image from \"next/image\";\nimport Link from \"next/link\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport { Label } from \"@/registry/default/ui/label\";\nimport { Input } from \"@/registry/default/ui/input\";\nimport { Loader } from \"lucide-react\";\nimport { GitHubLogoIcon } from \"@radix-ui/react-icons\";\n \nexport default function LoginPageFive() {\n  const [isLoading, setIsLoading] = React.useState<boolean>(false);\n \n  async function onSubmit(event: React.SyntheticEvent) {\n    event.preventDefault();\n    setIsLoading(true);\n \n    setTimeout(() => {\n      setIsLoading(false);\n    }, 3000);\n  }\n \n  return (\n    <div className=\"w-full lg:grid lg:min-h-screen lg:grid-cols-2 bg-background\">\n      <div className=\"flex items-center justify-center py-12\">\n        <div className=\"mx-auto grid w-[350px] gap-6\">\n          <div className=\"flex flex-col space-y-2 text-start\">\n            <h1 className=\"text-2xl font-semibold tracking-tight\">Login</h1>\n            <p className=\"text-sm text-muted-foreground\">\n              Enter your email below to login to your account\n            </p>\n          </div>\n          <div className=\"grid gap-4\">\n            <form onSubmit={onSubmit} className=\"grid gap-4\">\n              <div className=\"grid gap-2\">\n                <Label htmlFor=\"email\">Email</Label>\n                <Input id=\"email\" type=\"email\" placeholder=\"m@example.com\" />\n              </div>\n              <div className=\"grid gap-2\">\n                <div className=\"flex items-center\">\n                  <Label htmlFor=\"password\">Password</Label>\n                  <Link\n                    href=\"#\"\n                    className=\"ml-auto inline-block text-sm underline\"\n                  >\n                    Forgot your password?\n                  </Link>\n                </div>\n                <Input id=\"password\" type=\"password\" />\n              </div>\n              <Button disabled={isLoading} type=\"submit\" className=\"w-full\">\n                {isLoading && <Loader className=\"mr-2 h-4 w-4 animate-spin\" />}\n                Login with Email\n              </Button>\n            </form>\n            <div className=\"relative\">\n              <div className=\"absolute inset-0 flex items-center\">\n                <span className=\"w-full border-t\" />\n              </div>\n              <div className=\"relative flex justify-center text-xs uppercase\">\n                <span className=\"bg-background px-2 text-muted-foreground\">\n                  Or continue with\n                </span>\n              </div>\n            </div>\n            <Button variant=\"outline\" type=\"button\" disabled={isLoading}>\n              {isLoading ? (\n                <Loader className=\"mr-2 h-4 w-4 animate-spin\" />\n              ) : (\n                <GitHubLogoIcon className=\"mr-2 h-4 w-4\" />\n              )}{\" \"}\n              GitHub\n            </Button>\n          </div>\n          <div className=\"mt-4 text-center text-sm\">\n            Don&apos;t have an account?{\" \"}\n            <Link href=\"#\" className=\"underline\">\n              Sign up\n            </Link>\n          </div>\n        </div>\n      </div>\n      <div className=\"hidden bg-muted lg:block\">\n        <Image\n          src=\"https://images.unsplash.com/photo-1547119957-637f8679db1e?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\"\n          alt=\"Image\"\n          width=\"1920\"\n          height=\"1080\"\n          className=\"h-full w-full object-cover dark:brightness-[0.2] dark:grayscale\"\n        />\n      </div>\n    </div>\n  );\n}",
+      "type": "registry:block"
+    }
+  ],
+  "type": "registry:block"
+}

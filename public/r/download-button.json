@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "download-button",
+  "title": "download-button",
+  "description": "A dynamic button with real-time download status and progress tracking.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://ui.voxletstudio.com/r/button.json",
+    "https://ui.voxletstudio.com/r/utils.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/download-button.tsx",
+      "content": "\"use client\"\n\nimport { Download, Loader2, CheckCircle } from \"lucide-react\"\nimport { Button } from \"@/registry/default/ui/button\"\nimport { cn } from \"@/registry/default/lib/utils\"\n\ninterface DownloadButtonProps {\n    downloadStatus: \"idle\" | \"downloading\" | \"downloaded\" | \"complete\"\n    progress: number\n    onClick: () => void\n    className?: string\n}\n\nexport default function DownloadButton({ downloadStatus, progress, onClick, className }: DownloadButtonProps) {\n    return (\n        <Button\n            onClick={onClick}\n            className={cn(\n                \"rounded-xl w-40 relative overflow-hidden select-none\",\n                downloadStatus === \"downloading\" && \"bg-primary/50 hover:bg-primary/50\",\n                downloadStatus !== \"idle\" && \"pointer-events-none\",\n                className,\n            )}\n        >\n            {downloadStatus === \"idle\" && (\n                <>\n                    <Download className=\"h-4 w-4\" />\n                    Download\n                </>\n            )}\n            {downloadStatus === \"downloading\" && (\n                <div className=\"z-[5] flex items-center justify-center\">\n                    <Loader2 className=\"mr-2 h-4 w-4 animate-spin\" />\n                    {progress}%\n                </div>\n            )}\n            {downloadStatus === \"downloaded\" && (\n                <>\n                    <CheckCircle className=\"h-4 w-4\" />\n                    <span className=\"t\">Downloaded</span>\n                </>\n            )}\n            {downloadStatus === \"complete\" && <span className=\"text-primary\">Download</span>}\n            {downloadStatus === \"downloading\" && (\n                <div\n                    className=\"absolute bottom-0 z-[3] h-full left-0 bg-primary inset-0 transition-all duration-200 ease-in-out\"\n                    style={{ width: `${progress}%` }}\n                />\n            )}\n        </Button>\n    )\n}\n\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "registry/default/components/download-button/usage.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\nimport DownloadButton from \"@/registry/default/ui/download-button\"\n\nexport default function DownloadButtonDemo() {\n  const [downloadStatus, setDownloadStatus] = useState<\"idle\" | \"downloading\" | \"downloaded\" | \"complete\">(\"idle\")\n  const [progress, setProgress] = useState(0)\n\n  const simulateDownload = () => {\n    setDownloadStatus(\"downloading\")\n    setProgress(0)\n\n    const interval = setInterval(() => {\n      setProgress((prevProgress) => {\n        if (prevProgress >= 100) {\n          clearInterval(interval)\n          setDownloadStatus(\"downloaded\")\n          return 100\n        }\n        return prevProgress + 5\n      })\n    }, 200) // Update every 200ms to complete in 4 seconds\n\n    // Show 'Downloaded' state for 1.5 seconds\n    setTimeout(() => {\n      setDownloadStatus(\"complete\")\n    }, 4000 + 1500)\n\n    // Reset to idle state after download completes and 'Downloaded' state is shown\n    setTimeout(\n      () => {\n        setDownloadStatus(\"idle\")\n        setProgress(0)\n      },\n      4000 + 1500 + 100,\n    ) // Added 100ms buffer for smoother transition\n  }\n\n  const handleClick = () => {\n    if (downloadStatus === \"idle\") {\n      simulateDownload()\n    }\n  }\n\n  return (\n    <div className=\"flex items-center justify-center min-h-[10rem]\">\n      <DownloadButton\n        downloadStatus={downloadStatus}\n        progress={progress}\n        onClick={handleClick}\n        className=\"hover:shadow-xl transition-shadow duration-300\"\n      />\n    </div>\n  )\n}\n\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

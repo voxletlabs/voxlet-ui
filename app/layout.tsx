@@ -1,12 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Analytics } from "@vercel/analytics/react"
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/Theme/theme-provider";
-import { Navbar } from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Script from "next/script";
-import faqData from "@/data/site-faq";
 
 // Self-hosted Inter (variable, latin subset) — identical to the Google-hosted font,
 // but no network fetch at build time and faster builds.
@@ -18,8 +13,11 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://voxlet-ui.vercel.app/"),
-  title: "Voxlet UI - The Best Animated React & Tailwind Components for Fast Web Development",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? "https://ui.voxletstudio.com"),
+  title: {
+    default: "Voxlet UI - The Best Animated React & Tailwind Components for Fast Web Development",
+    template: "%s - Voxlet UI",
+  },
   description:
     "Voxlet UI is a modern component library offering high-quality, customizable UI components, blocks, and templates for developers and designers. Build sleek, responsive, and scalable websites effortlessly.",
   icons: {
@@ -64,7 +62,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    url: "https://voxlet-ui.vercel.app/",
+    url: "https://ui.voxletstudio.com",
     title: "Voxlet UI - The Best Animated React & Tailwind Components for Fast Web Development",
     description:
       "Voxlet UI provides a collection of high-quality UI components, blocks, and templates to accelerate your web development workflow.",
@@ -87,7 +85,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://voxlet-ui.vercel.app/",
+    canonical: "https://ui.voxletstudio.com",
   },
 };
 
@@ -104,15 +102,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta name="google-site-verification" content="u35ajoIK8hJpbI_GtR4wWT6dvyO1P2_srNIuFKAuLTQ" />
-        <Script
-          id="faq-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
-          strategy="afterInteractive"
-        />
-      </head>
       <body
         className={`${inter.className} antialiased overflow-x-hidden`}
       >
@@ -122,10 +111,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
           {children}
-          <Analytics />
-          <Footer />
         </ThemeProvider>
       </body>
     </html>

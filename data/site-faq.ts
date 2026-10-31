@@ -39,7 +39,7 @@ const faqData = {
             "name": "Where can I access Voxlet UI's components and documentation?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "You can access Voxlet UI's components and documentation on their official website: https://voxlet-ui.vercel.app/"
+                "text": "You can access Voxlet UI's components and documentation on their official website: https://ui.voxletstudio.com"
             }
         },
         {

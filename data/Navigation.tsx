@@ -24,12 +24,12 @@ type NavigationGroup = {
 
 const components = ComponentsData.map((component) => ({
   title: `${component.name}`,
-  href: `/components/${slugify(component.name)}`
+  href: `/components/${slugify(component.name)}`,
 }));
 
 const blocks = BlocksData.map((blocksCategory) => ({
   title: `${blocksCategory.categoryName}`,
-  href: `/blocks/${slugify(blocksCategory.categoryName)}`
+  href: `/blocks/${slugify(blocksCategory.categoryName)}`,
 }));
 
 const templates = TemplatesData.map((template) => ({
@@ -39,12 +39,12 @@ const templates = TemplatesData.map((template) => ({
 
 const Navigation = [
   {
-    title: "Follow For Updates",
+    title: "Designed & Built By",
     icon: ExternalLink,
     links: [
       {
-        title: "Muhammad Kaif Nazeer",
-        href: "https://bento.me/muhammadkaifnazeer",
+        title: "Muhammad ↗",
+        href: "https://muhammad.voxletstudio.com",
         external: true,
       },
     ],
@@ -52,23 +52,17 @@ const Navigation = [
   {
     title: "Templates",
     icon: LayoutPanelTop,
-    links: [
-      ...templates
-    ],
+    links: [...templates],
   },
   {
     title: "Components",
     icon: Circle,
-    links: [
-      ...components
-    ],
+    links: [...components],
   },
   {
     title: "Blocks",
     icon: LayoutList,
-    links: [
-      ...blocks
-    ],
+    links: [...blocks],
   },
   {
     title: "Explore",

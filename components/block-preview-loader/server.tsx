@@ -23,10 +23,7 @@ export default async function PreviewBlockLoader({ blockName }: PreviewBlockLoad
     return <RegistryItemError itemName={blockName} />;
   }
 
-  // Blocks are self-contained compositions and span the full page width.
-  return (
-    <div className="w-full">
-      <Block />
-    </div>
-  );
+  // Blocks are self-contained page compositions — render them at the top of
+  // the page, full-bleed, exactly as they would appear on a real website.
+  return <Block />;
 }

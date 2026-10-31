@@ -9,9 +9,10 @@ interface PreviewComponentLoaderProps {
 /**
  * Renders the actual demo components of a registry item, chrome-free.
  *
- * Each demo section spans the full viewport width and centers its content
- * vertically, so widgets (navbars, buttons, ...) sit where they would on a
- * real site while the page itself stays 100% wide.
+ * Sections are natural-height and full-width with top alignment, exactly like
+ * the item placed on a real page — the demos own their sizing (several use
+ * h-screen / internal paddings), so no vertical centering or viewport
+ * stretching is imposed here.
  */
 export default async function PreviewComponentLoader({ demoFiles }: PreviewComponentLoaderProps) {
   const items = await Promise.all(
@@ -34,7 +35,7 @@ export default async function PreviewComponentLoader({ demoFiles }: PreviewCompo
   return (
     <div className="flex w-full flex-col">
       {loaded.map(({ id, Demo }) => (
-        <section key={id} className="flex w-full min-h-dvh items-center justify-center py-12">
+        <section key={id} className="flex w-full justify-center">
           <Demo />
         </section>
       ))}

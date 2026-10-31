@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ["avatars.githubusercontent.com", "images.unsplash.com", "plus.unsplash.com", "fonts.gstatic.com", "ui.shadcn.com", "images.pexels.com", "kaif-ui.vercel.app", "github.com"],
+        remotePatterns: [
+            { protocol: "https", hostname: "avatars.githubusercontent.com" },
+            { protocol: "https", hostname: "images.unsplash.com" },
+            { protocol: "https", hostname: "plus.unsplash.com" },
+            { protocol: "https", hostname: "fonts.gstatic.com" },
+            { protocol: "https", hostname: "ui.shadcn.com" },
+            { protocol: "https", hostname: "images.pexels.com" },
+            { protocol: "https", hostname: "kaif-ui.vercel.app" },
+            { protocol: "https", hostname: "github.com" },
+        ],
     },
 };
 

@@ -15,8 +15,9 @@ import { Plus } from "lucide-react";
 import { CTA } from "@/components/Cta"
 import { Metadata } from "next";
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const template = getTemplateBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const template = getTemplateBySlug(slug);
 
     if (!template) {
         return {
@@ -46,9 +47,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 
-export default function TemplatePage({ params }: { params: { slug: string } }) {
-    const template = getTemplateBySlug(params.slug)
-    const otherTemplates = getOtherTemplates(params.slug)
+export default async function TemplatePage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const template = getTemplateBySlug(slug)
+    const otherTemplates = getOtherTemplates(slug)
 
     if (!template) {
         notFound()

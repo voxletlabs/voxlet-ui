@@ -5,7 +5,8 @@ import { Button } from "@/registry/default/ui/button";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { X, Github } from "lucide-react";
+import { X } from "lucide-react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { ThemeToggler } from "@/components/Theme/ThemeToggler";
@@ -121,7 +122,7 @@ export function Navbar({ className }: NavbarProps) {
                                     target="_blank"
                                 >
                                     <Button className="gap-2">
-                                        <Github className="w-4 h-4" />
+                                        <GitHubLogoIcon className="w-4 h-4" />
                                         Give a star
                                     </Button>
                                 </Link>

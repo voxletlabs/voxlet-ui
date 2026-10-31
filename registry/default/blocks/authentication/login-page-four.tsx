@@ -8,7 +8,8 @@ import { Input } from "@/registry/default/ui/input";
 import { Label } from "@/registry/default/ui/label";
 import Image from "next/image";
 import Link from "next/link";
-import { LoaderCircle, Github } from "lucide-react";
+import { LoaderCircle } from "lucide-react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export default function LoginPageFour() {
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -116,7 +117,7 @@ export default function LoginPageFour() {
                                 {isLoading ? (
                                     <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
                                 ) : (
-                                    <Github className="mr-2 h-4 w-4" />
+                                    <GitHubLogoIcon className="mr-2 h-4 w-4" />
                                 )}{" "}
                                 GitHub
                             </Button>

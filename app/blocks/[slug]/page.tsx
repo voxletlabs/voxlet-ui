@@ -6,11 +6,11 @@ import { Separator } from "@/registry/default/ui/separator";
 import { Metadata } from "next";
 
 interface BlocksPageProps {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: BlocksPageProps): Promise<Metadata> {
-    const { slug } = params;
+    const { slug } = await params;
     const category = BlocksData.find((category) => slugify(category.categoryName) === slug);
 
     if (!category) {
@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: BlocksPageProps): Promise<Met
     };
 }
 
-export default function BlocksPage({ params }: BlocksPageProps) {
-    const { slug } = params;
+export default async function BlocksPage({ params }: BlocksPageProps) {
+    const { slug } = await params;
 
     const category = BlocksData.find((category) => slugify(category.categoryName) === slug);
 

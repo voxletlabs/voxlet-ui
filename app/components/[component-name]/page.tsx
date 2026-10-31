@@ -11,11 +11,11 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 interface ComponentPageProps {
-    params: { "component-name": string };
+    params: Promise<{ "component-name": string }>;
 }
 
-export async function generateMetadata({ params }: { params: { 'component-name': string } }): Promise<Metadata> {
-    const { 'component-name': componentNameSlug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ 'component-name': string }> }): Promise<Metadata> {
+    const { 'component-name': componentNameSlug } = await params;
 
     const component = ComponentsData.find(
         (component) => slugify(component.name) === componentNameSlug
@@ -43,7 +43,7 @@ const convertRegistryPaths = (content: string): string => {
 };
 
 export default async function ComponentPage({ params }: ComponentPageProps) {
-    const { "component-name": componentNameSlug } = params;
+    const { "component-name": componentNameSlug } = await params;
 
     const component = ComponentsData.find(
         (component) => slugify(component.name) === componentNameSlug
@@ -53,21 +53,30 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
         return notFound();
     }
 
-    const source = convertRegistryPaths((await readComponentCoreCode(component.code)) || "");
+    let source = "";
+    try {
+        source = convertRegistryPaths((await readComponentCoreCode(component.code)) || "");
+    } catch (error) {
+        console.log(error);
+        return notFound();
+    }
+
     const utilFileCode = `import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-    
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }`
-    try {
-        return (
+
+    const demoComponents = Array.isArray(component.demo) ? component.demo : [];
+
+    return (
             <main className="flex flex-col items-start justify-center min-h-screen pt-[2rem]">
                 <h1 className="text-3xl font-bold mb-2">{component.name}</h1>
 
                 <p className="text-lg mb-4 text-muted-foreground">{component.supportLine}</p>
 
-                {component.demo.map((path) => (
+                {demoComponents.map((path) => (
                     <div className="mb-4 w-full" key={path}>
                         <ComponentLoader componentName={path} />
                     </div>
@@ -140,8 +149,4 @@ export function cn(...inputs: ClassValue[]) {
                 )}
             </main>
         );
-    } catch (error) {
-        console.log(error)
-        return notFound();
-    }
 }

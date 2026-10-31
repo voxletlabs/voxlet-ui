@@ -12,7 +12,7 @@ export default function FlipCoinButton({ children }: FlipCoinButtonProps) {
   const [shrinkLanding, setShrinkLanding] = useState(false)
   const [coinLanded, setCoinLanded] = useState(false)
   const coinRef = useRef<HTMLDivElement>(null)
-  const requestRef = useRef<number>()
+  const requestRef = useRef<number | undefined>(undefined)
 
   const handleClick = () => {
     if (clicked) return

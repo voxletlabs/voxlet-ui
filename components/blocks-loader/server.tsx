@@ -20,39 +20,41 @@ const convertRegistryPaths = (content: string): string => {
 };
 
 export default async function BlockLoader({ blockName, className }: BlockLoaderProps) {
+    let source: string;
+
     try {
-        const source = convertRegistryPaths((await readBlockSource(blockName)) || "");
-
-        let Block: ComponentType<unknown> | null = null;
-        try {
-            Block = (await import(`@/registry/default/blocks${blockName}`)).default as ComponentType<unknown>;
-        } catch (error) {
-            console.warn(`Failed to load ${blockName} as a server block. Using client loader instead. Error: ${error}`);
-        }
-
-        return (
-            <div className={cn("group/item", className)}>
-                <Tabs defaultValue="preview" className="w-full">
-                    <TabsList>
-                        <TabsTrigger value="preview">Preview</TabsTrigger>
-                        <TabsTrigger value="code">Code</TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="preview">
-                        <div className="p-4 border rounded-lg">
-                            {Block ? <Block /> : <ClientBlockLoader blockName={blockName} />}
-                        </div>
-                    </TabsContent>
-                    <TabsContent value="code" className="w-full max-w-[85rem] mx-auto">
-                        <div className="relative w-full">
-                            <CodeBlock lang="tsx">{source}</CodeBlock>
-                            <CopyButton componentSource={source} />
-                        </div>
-                    </TabsContent>
-                </Tabs>
-            </div>
-        );
+        source = convertRegistryPaths((await readBlockSource(blockName)) || "");
     } catch (error) {
         console.error(`Error loading block ${blockName}:`, error);
         return null;
     }
+
+    let Block: ComponentType<unknown> | null = null;
+    try {
+        Block = (await import(`@/registry/default/blocks/${blockName}`)).default as ComponentType<unknown>;
+    } catch (error) {
+        console.warn(`Failed to load ${blockName} as a server block. Using client loader instead. Error: ${error}`);
+    }
+
+    return (
+        <div className={cn("group/item", className)}>
+            <Tabs defaultValue="preview" className="w-full">
+                <TabsList>
+                    <TabsTrigger value="preview">Preview</TabsTrigger>
+                    <TabsTrigger value="code">Code</TabsTrigger>
+                </TabsList>
+                <TabsContent value="preview">
+                    <div className="p-4 border rounded-lg">
+                        {Block ? <Block /> : <ClientBlockLoader blockName={blockName} />}
+                    </div>
+                </TabsContent>
+                <TabsContent value="code" className="w-full max-w-[85rem] mx-auto">
+                    <div className="relative w-full">
+                        <CodeBlock lang="tsx">{source}</CodeBlock>
+                        <CopyButton componentSource={source} />
+                    </div>
+                </TabsContent>
+            </Tabs>
+        </div>
+    );
 }

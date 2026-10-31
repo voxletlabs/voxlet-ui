@@ -6,7 +6,8 @@ import Link from "next/link";
 import { Button } from "@/registry/default/ui/button";
 import { Label } from "@/registry/default/ui/label";
 import { Input } from "@/registry/default/ui/input";
-import { Loader, Github } from "lucide-react";
+import { Loader } from "lucide-react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
  
 export default function LoginPageFive() {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -67,7 +68,7 @@ export default function LoginPageFive() {
               {isLoading ? (
                 <Loader className="mr-2 h-4 w-4 animate-spin" />
               ) : (
-                <Github className="mr-2 h-4 w-4" />
+                <GitHubLogoIcon className="mr-2 h-4 w-4" />
               )}{" "}
               GitHub
             </Button>

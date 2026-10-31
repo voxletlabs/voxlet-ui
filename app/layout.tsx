@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react"
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/Theme/theme-provider";
 import { Navbar } from "@/components/Navbar";
@@ -8,11 +8,17 @@ import Footer from "@/components/Footer";
 import Script from "next/script";
 import faqData from "@/data/site-faq";
 
-const inter = Inter({
-  subsets: ["latin"],
+// Self-hosted Inter (variable, latin subset) — identical to the Google-hosted font,
+// but no network fetch at build time and faster builds.
+const inter = localFont({
+  src: "./fonts/inter-latin-var.woff2",
+  weight: "100 900",
+  style: "normal",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://voxlet-ui.vercel.app/"),
   title: "Voxlet UI - The Best Animated React & Tailwind Components for Fast Web Development",
   description:
     "Voxlet UI is a modern component library offering high-quality, customizable UI components, blocks, and templates for developers and designers. Build sleek, responsive, and scalable websites effortlessly.",
@@ -46,15 +52,10 @@ export const metadata: Metadata = {
     "Open source UI library",
     "Vercel Next.js components",
   ],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
   robots: {
     index: true,
     follow: true,
   },
-  themeColor: "#ffffff",
   authors: [
     {
       name: "Voxlet Team",
@@ -88,6 +89,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://voxlet-ui.vercel.app/",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({

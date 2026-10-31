@@ -55,7 +55,7 @@ export default function Footer() {
                   className="dark:text-sky-500 text-neutral-600 font-medium"
                   href="https://voxletstudio.com"
                 >
-                  Voxlet
+                  Voxlet Studio
                 </Link>
               </div>
             </div>

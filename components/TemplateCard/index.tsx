@@ -10,7 +10,7 @@ export function TemplateCard({ template }: TemplateCardProps) {
     return (
         <Link href={`/templates/${template.slug}`} className="group cursor-pointer">
             {template.images.length > 1 ? (
-                <div className="relative aspect-video overflow-hidden rounded-lg mb-3">
+                <div className="relative aspect-video overflow-hidden rounded-lg mb-3 border rounded">
                     <Image
                         src={template.images[0]}
                         alt={template.name}
@@ -26,7 +26,7 @@ export function TemplateCard({ template }: TemplateCardProps) {
                     />
                 </div>
             ) : (
-                <div className="relative aspect-video overflow-hidden rounded-lg mb-3">
+                <div className="relative aspect-video overflow-hidden rounded-lg mb-3 border rounded">
                     <Image
                         src={template.images[0]}
                         alt={template.name}

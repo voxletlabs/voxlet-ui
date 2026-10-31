@@ -20,7 +20,7 @@ export const templates: Template[] = [
         creator: {
             name: "Muhammad Kaif Nazeer",
             avatar: "https://avatars.githubusercontent.com/u/122388541?v=4",
-            url: "https://muhammadkaifnazeer.vercel.app",
+            url: "https://muhammadkaifnazeer.voxletstudio.com",
         },
         categories: [
             "Documentation",

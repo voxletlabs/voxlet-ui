@@ -2,32 +2,26 @@ import { ComponentType } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
 import { CodeBlock } from "@/components/code-block";
 import CopyButton from "@/components/copy-button";
-import { readComponentSource } from "@/components/read-source";
+import PreviewButton from "@/components/preview-button";
+import { convertRegistryPaths, readRegistrySource } from "@/utils/registry-source";
 import { cn } from "@/registry/default/lib/utils";
 import ClientComponentLoader from "./client";
 
 interface ComponentLoaderProps {
   componentName: string;
   className?: string;
+  /** URL of the chrome-free full-page preview; renders the maximize button when provided. */
+  previewHref?: string;
 }
 
-const convertRegistryPaths = (content: string): string => {
-  return content
-    .replace(/@\/registry\/default\/ui/g, "@/components/ui")
-    .replace(/@\/registry\/default\/components/g, "@/components")
-    .replace(/@\/registry\/default\/hooks/g, "@/hooks")
-    .replace(/@\/registry\/default\/lib/g, "@/lib");
-};
+export default async function ComponentLoader({ componentName, className, previewHref }: ComponentLoaderProps) {
+  const sourceContent = await readRegistrySource("components", componentName);
 
-export default async function ComponentLoader({ componentName, className }: ComponentLoaderProps) {
-  let source: string;
-
-  try {
-    source = convertRegistryPaths((await readComponentSource(componentName)) || "");
-  } catch (error) {
-    console.error(`Error loading component ${componentName}:`, error);
+  if (!sourceContent) {
     return null;
   }
+
+  const source = convertRegistryPaths(sourceContent);
 
   let Component: ComponentType<unknown> | null = null;
   try {
@@ -39,10 +33,13 @@ export default async function ComponentLoader({ componentName, className }: Comp
   return (
     <div className={cn("group/item", className)}>
       <Tabs defaultValue="preview" className="w-full">
-        <TabsList>
-          <TabsTrigger value="preview">Preview</TabsTrigger>
-          <TabsTrigger value="code">Code</TabsTrigger>
-        </TabsList>
+        <div className="flex w-full items-center justify-between">
+          <TabsList>
+            <TabsTrigger value="preview">Preview</TabsTrigger>
+            <TabsTrigger value="code">Code</TabsTrigger>
+          </TabsList>
+          {previewHref ? <PreviewButton href={previewHref} /> : null}
+        </div>
         <TabsContent value="preview">
           <div className="p-4 border rounded-lg">
             {Component ? <Component /> : <ClientComponentLoader componentName={componentName} />}

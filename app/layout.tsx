@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Voxlet Team",
-      url: "https://voxlet.vercel.app/",
+      url: "https://voxletstudio.com/",
     },
   ],
   openGraph: {

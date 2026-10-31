@@ -252,7 +252,7 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
                         <div>
                             <h3 className="text-sm font-bold mb-4">Need a custom website?</h3>
                             <p className="text-sm text-muted-foreground">
-                                <Link href="https://voxlet.vercel.app" target="_blank" className="underline font-medium hover:text-black dark:hover:text-white">
+                                <Link href="https://voxletstudio.com" target="_blank" className="underline font-medium hover:text-black dark:hover:text-white">
                                     Voxlet
                                 </Link>{" "}
                                 specializes in crafting innovative, scalable, and high-performance digital solutions tailored to your unique needs.{" "}

@@ -199,7 +199,7 @@ const ComponentsData: ComponentDataType[] = [
                     {
                         prop: "logo",
                         type: "string",
-                        default: "https://voxlet.vercel.app/logo-transperant-bg.svg",
+                        default: "https://voxletstudio.com/logo-transperant-bg.svg",
                         description: "An optional logo displayed in the chat header.",
                     },
                     {

@@ -53,7 +53,7 @@ export default function Footer() {
                 <Link
                   target="__blank"
                   className="dark:text-sky-500 text-neutral-600 font-medium"
-                  href="https://voxlet.vercel.app"
+                  href="https://voxletstudio.com"
                 >
                   Voxlet
                 </Link>

@@ -1,5 +1,5 @@
 import { ComponentType } from "react";
-import RegistryItemErrorState from "@/components/registry-item-error";
+import RegistryItemError from "@/components/registry-item-error";
 
 interface PreviewComponentLoaderProps {
   /** Demo file references, as listed in the component data, e.g. `magic-wand/usage.tsx`. */
@@ -7,8 +7,11 @@ interface PreviewComponentLoaderProps {
 }
 
 /**
- * Renders the actual demo components of a registry item, stacked and chrome-free.
- * Used by the full-page preview routes in app/(preview).
+ * Renders the actual demo components of a registry item, chrome-free.
+ *
+ * Each demo section spans the full viewport width and centers its content
+ * vertically, so widgets (navbars, buttons, ...) sit where they would on a
+ * real site while the page itself stays 100% wide.
  */
 export default async function PreviewComponentLoader({ demoFiles }: PreviewComponentLoaderProps) {
   const items = await Promise.all(
@@ -25,13 +28,13 @@ export default async function PreviewComponentLoader({ demoFiles }: PreviewCompo
   const loaded = items.filter((item) => item.Demo !== null);
 
   if (loaded.length === 0) {
-    return <RegistryItemErrorState />;
+    return <RegistryItemError />;
   }
 
   return (
-    <div className="flex w-full flex-col items-center gap-16 py-8">
+    <div className="flex w-full flex-col">
       {loaded.map(({ id, Demo }) => (
-        <section key={id} className="flex w-full items-center justify-center">
+        <section key={id} className="flex w-full min-h-dvh items-center justify-center py-12">
           <Demo />
         </section>
       ))}

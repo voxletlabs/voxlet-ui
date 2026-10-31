@@ -40,11 +40,12 @@ export default function AnimatedBackground({
     }
   };
 
-  useEffect(() => {
-    if (defaultValue !== undefined) {
-      setActiveId(defaultValue);
-    }
-  }, [defaultValue]);
+  // Adjust state when the controlled default value changes (React's endorsed pattern)
+  const [prevDefaultValue, setPrevDefaultValue] = useState(defaultValue);
+  if (defaultValue !== undefined && defaultValue !== prevDefaultValue) {
+    setPrevDefaultValue(defaultValue);
+    setActiveId(defaultValue);
+  }
 
   return Children.map(children, (child: any, index) => {
     const id = child.props['data-id'];

@@ -65,7 +65,7 @@ const SignInPageOne = () => {
                                 Full Name
                             </label>
                             <input
-                                className="flex h-9 w-full rounded-[6px] border-[0.5px] border-[#E5E5E5] bg-[#F2F2F2] px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                                className="flex h-9 w-full rounded-[6px] border-[0.5px] border-[#E5E5E5] bg-[#F2F2F2] px-3 py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
                                 placeholder="Enter your full name"
                                 id=":r0:-form-item"
                                 aria-describedby=":r0:-form-item-description"
@@ -82,7 +82,7 @@ const SignInPageOne = () => {
                                 Email
                             </label>
                             <input
-                                className="flex h-9 w-full rounded-[6px] border-[0.5px] border-[#E5E5E5] bg-[#F2F2F2] px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                                className="flex h-9 w-full rounded-[6px] border-[0.5px] border-[#E5E5E5] bg-[#F2F2F2] px-3 py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
                                 placeholder="Enter your email"
                                 id=":r1:-form-item"
                                 aria-describedby=":r1:-form-item-description"
@@ -100,7 +100,7 @@ const SignInPageOne = () => {
                             </label>
                             <div className="relative">
                                 <input
-                                    className="flex h-9 w-full rounded-[6px] border-[0.5px] border-[#E5E5E5] bg-[#F2F2F2] px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pr-10"
+                                    className="flex h-9 w-full rounded-[6px] border-[0.5px] border-[#E5E5E5] bg-[#F2F2F2] px-3 py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pr-10"
                                     placeholder="Create password"
                                     id=":r2:-form-item"
                                     aria-describedby=":r2:-form-item-description"
@@ -140,7 +140,7 @@ const SignInPageOne = () => {
                             </label>
                             <div className="relative">
                                 <input
-                                    className="flex h-9 w-full rounded-[6px] border-[0.5px] border-[#E5E5E5] bg-[#F2F2F2] px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pr-10"
+                                    className="flex h-9 w-full rounded-[6px] border-[0.5px] border-[#E5E5E5] bg-[#F2F2F2] px-3 py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pr-10"
                                     placeholder="Confirm password"
                                     id=":r3:-form-item"
                                     aria-describedby=":r3:-form-item-description"

@@ -33,9 +33,7 @@ const FadeAnimation = ({
     delay = 0, // Default delay value
 }: FadeAnimationProps) => {
     const ref = useRef(null);
-    /* eslint-disable @typescript-eslint/no-explicit-any */
-    const inViewResult = useInView(ref, { once, margin: inViewMargin as any });
-    /* eslint-enable @typescript-eslint/no-explicit-any */
+    const inViewResult = useInView(ref, { once, margin: inViewMargin as never });
 
     const isInView = !inView || inViewResult;
 

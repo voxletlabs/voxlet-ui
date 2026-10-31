@@ -9,12 +9,12 @@ const Pricing = () => {
                     <span className="text-orange-500">Simple</span> Pricing for Everyone
                 </h2>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                    Choose the plan that fits your needs, whether you're just getting started or ready to scale with premium features and dedicated support.
+                    Choose the plan that fits your needs, whether you&apos;re just getting started or ready to scale with premium features and dedicated support.
                 </p>
             </div>
             <div className="grid md:grid-cols-3 gap-4 items-center">
                 {pricingPlans.map((plan) => (
-                    <div className={`relative rounded-[37px] flex flex-col gap-3 p-4 ${plan.isHighlighted ? "border border-white bg-gradient-to-b from-[#FFA756] via-[#F68441] to-[#EE602C]" : "bg-[#DCDCDC]"}`}>
+                    <div key={plan.name} className={`relative rounded-[37px] flex flex-col gap-3 p-4 ${plan.isHighlighted ? "border border-white bg-gradient-to-b from-[#FFA756] via-[#F68441] to-[#EE602C]" : "bg-[#DCDCDC]"}`}>
                         <div className="space-y-8 p-4 bg-[#F5F5F5] rounded-[28px] shadow-[0px_95px_27px_0px_rgba(0,0,0,0.00),_0px_61px_24px_0px_rgba(0,0,0,0.03),_0px_34px_21px_0px_rgba(0,0,0,0.11),_0px_15px_15px_0px_rgba(0,0,0,0.19),_0px_4px_8px_0px_rgba(0,0,0,0.22)] pb-20 px-4">
                             <div className="flex flex-col">
                                 <h3 className="text-[18px] w-fit font-medium text-gray-900 rounded-[9999px] border border-[#DCDCDC] bg-white flex justify-center items-center px-[14.32px] py-1">
@@ -25,12 +25,12 @@ const Pricing = () => {
                                     <span className="ml-1 text-gray-500">/month</span>
                                 </div>
                             </div>
-                            <Link href={plan.ctaButton.link} className="relative cursor-pointer hover:-translate-y-0.5 duration-200 inline-flex items-center justify-center rounded-[6px] bg-[linear-gradient(181deg,_#5E5E5E_18.12%,_#000_99.57%)] shadow-[0px_4px_8px_0px_rgba(3,_7,_18,_0.06),_0px_2px_4px_0px_rgba(3,_7,_18,_0.06), 0px_0px_0px_1px_rgba(3,_7,_18,_0.08),_0px_1px_1px_2px_rgba(255,_255,_255,_0.40)_inset, 0px_-1px_5px_2px_rgba(255,_255,_255,_0.40)_inset] w-full py-4 px-6 bg-gray-900 text-white text-md font-medium shadow-sm hover:bg-gray-800 transition-colors">
+                            <Link href={plan.ctaButton.link} className="relative cursor-pointer hover:-translate-y-0.5 duration-200 inline-flex items-center justify-center rounded-[6px] bg-[linear-gradient(181deg,_#5E5E5E_18.12%,_#000_99.57%)] shadow-[0px_4px_8px_0px_rgba(3,_7,_18,_0.06),_0px_2px_4px_0px_rgba(3,_7,_18,_0.06), 0px_0px_0px_1px_rgba(3,_7,_18,_0.08),_0px_1px_1px_2px_rgba(255,_255,_255,_0.40)_inset, 0px_-1px_5px_2px_rgba(255,_255,_255,_0.40)_inset] w-full py-4 px-6 bg-gray-900 text-white text-md font-medium shadow-xs hover:bg-gray-800 transition-colors">
                                 {plan.ctaButton.text}
                             </Link>
                             <ul className="space-y-4">
                                 {plan.features.map((feature) => (
-                                    <li className="flex items-center">
+                                    <li key={feature} className="flex items-center">
                                         <svg
                                             className="w-5 h-5 text-orange-500 mr-3"
                                             fill="currentColor"

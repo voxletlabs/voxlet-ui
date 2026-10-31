@@ -1,11 +1,14 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useSyncExternalStore, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { LucideIcon } from "lucide-react"
 import { cn } from "@/registry/default/lib/utils"
+
+// Stable no-op subscription for hydration-only external store
+const subscribeNoop = () => () => {}
 
 interface NavItem {
     name: string
@@ -21,14 +24,11 @@ interface NavBarProps {
 
 export function AnimeNavBar({ items, className, defaultActive = "Home" }: NavBarProps) {
     const pathname = usePathname()
-    const [mounted, setMounted] = useState(false)
+    // Pure hydration gate: false on the server & during hydration, true after
+    const mounted = useSyncExternalStore(subscribeNoop, () => true, () => false)
     const [hoveredTab, setHoveredTab] = useState<string | null>(null)
     const [activeTab, setActiveTab] = useState<string>(defaultActive)
     const [isMobile, setIsMobile] = useState(false)
-
-    useEffect(() => {
-        setMounted(true)
-    }, [])
 
     useEffect(() => {
         const handleResize = () => {

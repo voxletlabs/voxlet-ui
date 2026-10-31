@@ -1,17 +1,23 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import React, { useState, useEffect, useMemo, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/registry/default/lib/utils"
 
-const Star = ({ delay }: { delay: number }) => (
+// Deterministic pseudo-random generator (pure: stable across renders and hydration)
+const seededRandom = (seed: number) => {
+  const x = Math.sin(seed) * 10000
+  return x - Math.floor(x)
+}
+
+const Star = ({ seed }: { seed: number }) => (
   <motion.div
     className="absolute bg-white rounded-full"
     style={{
-      width: Math.random() * 3 + 1 + "px",
-      height: Math.random() * 3 + 1 + "px",
-      top: Math.random() * 100 + "%",
-      left: Math.random() * 100 + "%",
+      width: `${seededRandom(seed * 5 + 1) * 3 + 1}px`,
+      height: `${seededRandom(seed * 5 + 2) * 3 + 1}px`,
+      top: `${seededRandom(seed * 5 + 3) * 100}%`,
+      left: `${seededRandom(seed * 5 + 4) * 100}%`,
     }}
     animate={{
       opacity: [0, 1, 0],
@@ -20,25 +26,27 @@ const Star = ({ delay }: { delay: number }) => (
     transition={{
       duration: 2,
       repeat: Number.POSITIVE_INFINITY,
-      delay: delay,
+      delay: seededRandom(seed * 5 + 5) * 2,
     }}
   />
 )
 
-const ShootingStar = () => {
+type ShootingStarData = { id: string; seed: number }
+
+const ShootingStar = ({ seed }: { seed: number }) => {
   // Randomly decide if the star starts from the top or the left
-  const startsFromTop = Math.random() > 0.5
+  const startsFromTop = seededRandom(seed) > 0.5
 
   // For stars starting from the top, randomize the x position
   // For stars starting from the left, randomize the y position
   const startPosition = startsFromTop
-    ? { top: "0%", left: `${Math.random() * 100}%` }
-    : { top: `${Math.random() * 100}%`, left: "0%" }
+    ? { top: "0%", left: `${seededRandom(seed + 1) * 100}%` }
+    : { top: `${seededRandom(seed + 1) * 100}%`, left: "0%" }
 
   // Animation will be diagonal, but with different angles based on starting position
   const endPosition = startsFromTop
-    ? { top: "110%", left: `${Number.parseFloat(startPosition.left as string) + 50}%` }
-    : { top: `${Number.parseFloat(startPosition.top as string) + 50}%`, left: "110%" }
+    ? { top: "110%", left: `${seededRandom(seed + 1) * 100 + 50}%` }
+    : { top: `${seededRandom(seed + 1) * 100 + 50}%`, left: "110%" }
 
   return (
     <motion.div
@@ -54,7 +62,7 @@ const ShootingStar = () => {
         left: endPosition.left,
       }}
       transition={{
-        duration: Math.random() * 1.5 + 1,
+        duration: seededRandom(seed + 2) * 1.5 + 1,
         ease: "linear",
       }}
     />
@@ -69,63 +77,66 @@ interface SpaceBoxProps {
   className?: string
 }
 
-export default function SpaceBox({ highlightedWord, text, animatedText, starDensity, className }: SpaceBoxProps) {
-  const [isHovered, setIsHovered] = useState(false)
-  const [stars, setStars] = useState<JSX.Element[]>([])
-  const [shootingStars, setShootingStars] = useState<JSX.Element[]>([])
-
-  const getStarCount = (density: NonNullable<SpaceBoxProps["starDensity"]>) => {
-    switch (density) {
-      case "low":
-        return { regular: 25, shooting: 2 }
-      case "medium":
-        return { regular: 50, shooting: 4 }
-      case "high":
-        return { regular: 100, shooting: 6 }
-      default:
-        return { regular: 50, shooting: 4 }
-    }
+const getStarCount = (density: NonNullable<SpaceBoxProps["starDensity"]>) => {
+  switch (density) {
+    case "low":
+      return { regular: 25, shooting: 2 }
+    case "medium":
+      return { regular: 50, shooting: 4 }
+    case "high":
+      return { regular: 100, shooting: 6 }
+    default:
+      return { regular: 50, shooting: 4 }
   }
+}
 
-  const createShootingStar = useCallback(() => {
-    const id = Math.random().toString(36).substr(2, 9)
-    return <ShootingStar key={id} />
-  }, [])
+const ShootingStarLayer = ({ starDensity }: { starDensity: NonNullable<SpaceBoxProps["starDensity"]> }) => {
+  const { shooting: shootingStarCount } = getStarCount(starDensity)
+
+  // First batch is deterministic; every later batch is spawned from the interval callback
+  const [shootingStars, setShootingStars] = useState<ShootingStarData[]>(() =>
+    Array.from({ length: shootingStarCount }, (_, i) => ({ id: `shooting-${i}`, seed: i + 1 }))
+  )
 
   useEffect(() => {
-    if (isHovered) {
-      const { regular: starCount, shooting: shootingStarCount } = getStarCount(starDensity)
-      const newStars = Array.from({ length: starCount }, (_, i) => <Star key={i} delay={Math.random() * 2} />)
-      setStars(newStars)
+    // Create new shooting stars periodically
+    const interval = setInterval(() => {
+      const now = Date.now()
+      setShootingStars((prev) => {
+        // Only remove stars that have likely completed their animation
+        // This is a simple approach - we're removing older stars based on array position
+        const newStars = prev.length > shootingStarCount * 2 ? prev.slice(prev.length - shootingStarCount) : [...prev]
 
-      // Initial shooting stars
-      setShootingStars(Array.from({ length: shootingStarCount }, createShootingStar))
+        // Add new shooting stars
+        for (let i = 0; i < Math.ceil(shootingStarCount / 3); i++) {
+          newStars.push({ id: `shooting-${now}-${i}`, seed: now + i * 17 })
+        }
+        return newStars
+      })
+    }, 800) // Create new shooting stars every 800ms
 
-      // Create new shooting stars periodically
-      const interval = setInterval(() => {
-        setShootingStars((prev) => {
-          // Only remove stars that have likely completed their animation
-          // This is a simple approach - we're removing older stars based on array position
-          const newStars = prev.length > shootingStarCount * 2 ? prev.slice(prev.length - shootingStarCount) : [...prev]
-
-          // Add new shooting stars
-          for (let i = 0; i < Math.ceil(shootingStarCount / 3); i++) {
-            newStars.push(createShootingStar())
-          }
-          return newStars
-        })
-      }, 800) // Create new shooting stars every 800ms
-
-      return () => {
-        clearInterval(interval)
-        setStars([])
-        setShootingStars([])
-      }
-    } else {
-      setStars([])
-      setShootingStars([])
+    return () => {
+      clearInterval(interval)
     }
-  }, [isHovered, starDensity, createShootingStar])
+  }, [shootingStarCount])
+
+  return (
+    <>
+      {shootingStars.map((star) => (
+        <ShootingStar key={star.id} seed={star.seed} />
+      ))}
+    </>
+  )
+}
+
+export default function SpaceBox({ highlightedWord, text, animatedText, starDensity, className }: SpaceBoxProps) {
+  const [isHovered, setIsHovered] = useState(false)
+
+  const stars = useMemo(() => {
+    if (!isHovered) return null
+    const { regular: starCount } = getStarCount(starDensity)
+    return Array.from({ length: starCount }, (_, i) => <Star key={i} seed={i + 1} />)
+  }, [isHovered, starDensity])
 
   return (
     <motion.div
@@ -138,8 +149,8 @@ export default function SpaceBox({ highlightedWord, text, animatedText, starDens
       onMouseLeave={() => setIsHovered(false)}
       layout
     >
-      {isHovered && stars}
-      {isHovered && shootingStars}
+      {stars}
+      {isHovered && <ShootingStarLayer starDensity={starDensity} />}
       <div className="flex flex-col sm:flex-row items-center gap-3 text-3xl relative z-10">
         <AnimatePresence mode="wait">
           {isHovered ? (
@@ -187,4 +198,3 @@ export default function SpaceBox({ highlightedWord, text, animatedText, starDens
     </motion.div>
   )
 }
-

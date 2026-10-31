@@ -926,8 +926,8 @@ const MacBookKeyboard = () => {
                                 }}
                             >
                                 <div className="text-[5px] w-full flex justify-center items-center flex-col text-white">
-                                    <span className="block">"</span>
-                                    <span className="block">'</span>
+                                    <span className="block">{'"'}</span>
+                                    <span className="block">{"'"}</span>
                                 </div>
                             </div>
                         </div>

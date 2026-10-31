@@ -5,6 +5,12 @@ import { useRef } from "react";
 import { cn } from "@/registry/default/lib/utils";
 import { SparklesCore } from "@/registry/default/ui/sparkles";
 
+// Deterministic pseudo-random generator (pure: stable across renders and hydration)
+const seededRandom = (seed: number) => {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+};
+
 export const Cover = ({
   children,
   className,
@@ -31,14 +37,15 @@ export const Cover = ({
       );
       setBeamPositions(positions);
     }
-  }, [ref.current]);
+    // Measure once after mount
+  }, []);
 
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       ref={ref}
-      className="relative hover:bg-neutral-900  group/cover inline-block dark:bg-neutral-900 bg-neutral-100 px-2 py-2  transition duration-200 rounded-sm"
+      className="relative hover:bg-neutral-900  group/cover inline-block dark:bg-neutral-900 bg-neutral-100 px-2 py-2  transition duration-200 rounded-xs"
     >
       <AnimatePresence>
         {hovered && (
@@ -90,8 +97,8 @@ export const Cover = ({
         <Beam
           key={index}
           hovered={hovered}
-          duration={Math.random() * 2 + 1}
-          delay={Math.random() * 2 + 1}
+          duration={seededRandom(index * 2 + 1) * 2 + 1}
+          delay={seededRandom(index * 2 + 2) * 2 + 1}
           width={containerWidth}
           style={{
             top: `${position}px`,
@@ -161,6 +168,9 @@ export const Beam = ({
 } & React.ComponentProps<typeof motion.svg>) => {
   const id = useId();
 
+  // Deterministic per-beam randomness (seed derived from the stable element id)
+  const idNumber = Math.abs([...id].reduce((acc, c) => acc + c.charCodeAt(0), 0));
+
   return (
     <motion.svg
       width={width ?? "600"}
@@ -197,8 +207,8 @@ export const Beam = ({
             duration: hovered ? 0.5 : (duration ?? 2),
             ease: "linear",
             repeat: Infinity,
-            delay: hovered ? Math.random() * (1 - 0.2) + 0.2 : 0,
-            repeatDelay: hovered ? Math.random() * (2 - 1) + 1 : (delay ?? 1),
+            delay: hovered ? seededRandom(idNumber) * 0.8 + 0.2 : 0,
+            repeatDelay: hovered ? seededRandom(idNumber + 1) + 1 : (delay ?? 1),
           }}
         >
           <stop stopColor="#2EB9DF" stopOpacity="0" />

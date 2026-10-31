@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useMemo, useRef } from "react"
 
 interface GridPoint {
   x: number
@@ -36,13 +36,11 @@ export default function GridBeams({
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const gridPointsRef = useRef<GridPoint[]>([])
   const beamsRef = useRef<Beam[]>([])
-  const animationRef = useRef<number>()
-  const [beamColors, setBeamColors] = useState<string[]>(Array.isArray(beamColor) ? beamColor : [beamColor])
-
-  // Update beam colors when prop changes
-  useEffect(() => {
-    setBeamColors(Array.isArray(beamColor) ? beamColor : [beamColor])
-  }, [beamColor])
+  const animationRef = useRef<number | undefined>(undefined)
+  const beamColors = useMemo(
+    () => (Array.isArray(beamColor) ? beamColor : [beamColor]),
+    [beamColor]
+  )
 
   useEffect(() => {
     const canvas = canvasRef.current

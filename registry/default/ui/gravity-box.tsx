@@ -10,6 +10,28 @@ type GravityBoxProps = {
     }[]
 }
 
+// Function to create a body for a tag
+const createTagBody = (tag: { id: string; x: number; y: number; width: number; height: number }, world: Matter.World) => {
+    // Create the body with proper physics properties
+    const body = Matter.Bodies.rectangle(tag.x, tag.y, tag.width, tag.height, {
+        restitution: 0.5, // Moderate bounciness
+        friction: 0.1,
+        frictionAir: 0.02, // More air friction for better control
+        density: 0.001, // Light weight
+        chamfer: { radius: 5 }, // Rounded corners
+        label: tag.id,
+        collisionFilter: {
+            group: 0,
+            category: 0x0001,
+            mask: 0xffffffff,
+        },
+    })
+
+    // Add the body to the world
+    Matter.Composite.add(world, body)
+    return body
+}
+
 export default function GravityBox({ tags: initialTags }: GravityBoxProps) {
     const boxRef = useRef<HTMLDivElement>(null)
     const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -17,9 +39,9 @@ export default function GravityBox({ tags: initialTags }: GravityBoxProps) {
 
     // Track bodies for physics simulation
     const bodiesRef = useRef<Record<string, Matter.Body>>({})
-    const engineRef = useRef<Matter.Engine>()
-    const renderRef = useRef<Matter.Render>()
-    const runnerRef = useRef<Matter.Runner>()
+    const engineRef = useRef<Matter.Engine | undefined>(undefined)
+    const renderRef = useRef<Matter.Render | undefined>(undefined)
+    const runnerRef = useRef<Matter.Runner | undefined>(undefined)
 
     // Process tags to add IDs and initial positions
     const [tags, setTags] = useState(() =>
@@ -31,6 +53,7 @@ export default function GravityBox({ tags: initialTags }: GravityBoxProps) {
             y: 0,
             width: 0,
             height: 0,
+            angle: 0,
         })),
     )
 
@@ -66,8 +89,9 @@ export default function GravityBox({ tags: initialTags }: GravityBoxProps) {
                 height,
                 wireframes: false,
                 background: "transparent",
-                pixelRatio: "auto",
-            } as any,
+                // Matter's runtime accepts "auto" for pixelRatio; its typings model numbers only
+                pixelRatio: "auto" as unknown as number,
+            },
         })
         renderRef.current = render
 
@@ -99,17 +123,19 @@ export default function GravityBox({ tags: initialTags }: GravityBoxProps) {
         document.body.appendChild(tempElement)
 
         // Update tags with calculated dimensions and random positions
-        const updatedTags = tags.map((tag) => {
+        const updatedTags = initialTags.map((tag, index) => {
             tempElement.textContent = tag.text
             const rect = tempElement.getBoundingClientRect()
 
             return {
                 ...tag,
+                id: `tag-${index}`,
                 // Random position in top half of the box
                 x: Math.random() * (width - 100) + 50,
                 y: Math.random() * (height / 3) + 50, // Start a bit lower
                 width: Math.max(rect.width, 40), // Ensure minimum width
                 height: Math.max(rect.height, 24), // Ensure minimum height
+                angle: 0,
             }
         })
 
@@ -168,6 +194,7 @@ export default function GravityBox({ tags: initialTags }: GravityBoxProps) {
                         ...tag,
                         x: body.position.x,
                         y: body.position.y,
+                        angle: body.angle,
                     }
                 }),
             )
@@ -188,29 +215,9 @@ export default function GravityBox({ tags: initialTags }: GravityBoxProps) {
                 Matter.Engine.clear(engineRef.current)
             }
         }
+        // Intentionally mount-only: re-running would restart the physics engine
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
-    // Function to create a body for a tag
-    const createTagBody = (tag: (typeof tags)[0], world: Matter.World) => {
-        // Create the body with proper physics properties
-        const body = Matter.Bodies.rectangle(tag.x, tag.y, tag.width, tag.height, {
-            restitution: 0.5, // Moderate bounciness
-            friction: 0.1,
-            frictionAir: 0.02, // More air friction for better control
-            density: 0.001, // Light weight
-            chamfer: { radius: 5 }, // Rounded corners
-            label: tag.id,
-            collisionFilter: {
-                group: 0,
-                category: 0x0001,
-                mask: 0xffffffff,
-            },
-        })
-
-        // Add the body to the world
-        Matter.Composite.add(world, body)
-        return body
-    }
 
     return (
         <div ref={boxRef} className="relative w-full border border-[#e5e5e5] dark:border-[#292929] rounded-lg bg-[#f2f2f2]/50 dark:bg-[#292929]/50 h-96 overflow-hidden">
@@ -219,10 +226,7 @@ export default function GravityBox({ tags: initialTags }: GravityBoxProps) {
 
             {/* Render the tags */}
             {tags.map((tag) => {
-                const body = bodiesRef.current[tag.id]
-                if (!body) return null
-
-                const angle = body ? body.angle : 0
+                const angle = tag.angle
 
                 return (
                     <div

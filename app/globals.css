@@ -7,10 +7,6 @@ html {
   scroll-padding: 5rem;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;

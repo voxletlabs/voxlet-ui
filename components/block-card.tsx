@@ -14,7 +14,7 @@ interface BlockCardProps {
 export default function BlockCard({ block }: BlockCardProps) {
     return (
         <Link href={getBlockHref(block)} className="antialiased group" aria-label={`${block.name} block`}>
-            <div className="relative dark:border rounded-lg dark:border-white/[0.1] overflow-hidden group-hover:shadow-xl transition duration-200 aspect-video flex items-center justify-center">
+            <div className="relative border rounded-lg dark:border-white/[0.1] overflow-hidden group-hover:shadow-xl transition duration-200 aspect-video flex items-center justify-center ">
                 <Image
                     alt={block.name}
                     loading="lazy"

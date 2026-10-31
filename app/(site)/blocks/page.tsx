@@ -59,7 +59,7 @@ export default function BlocksPage() {
           </FadeAnimation>
           <FadeAnimation direction='fadeIn'>
             <h1 className="text-4xl md:text-6xl max-w-2xl leading-snug font-semibold text-center">
-              Build Faster with Voxlet Blocks
+              Build Faster with Voxlet UI Blocks
             </h1>
           </FadeAnimation>
           <FadeAnimation direction='fadeIn'>

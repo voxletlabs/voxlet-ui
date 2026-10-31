@@ -64,9 +64,9 @@ export default async function BlockLoader({
             {Block ? <Block /> : <ClientBlockLoader blockName={blockName} />}
           </div>
         </TabsContent>
-        <TabsContent value="code" className="w-full max-w-[85rem] mx-auto">
+        <TabsContent value="code" className="w-full mx-auto border p-4 rounded-lg">
           {cliCommand ? (
-            <div className="mb-6">
+            <div className="mb-6 pt-4">
               <p className="text-sm font-medium mb-2">Install with CLI</p>
               <div className="relative w-full">
                 <CodeBlock lang="bash">{cliCommand}</CodeBlock>
@@ -76,7 +76,7 @@ export default async function BlockLoader({
           ) : null}
           <div className="flex items-center my-4">
             <div className="flex-grow border-t border-muted"></div>
-            <span className="flex-shrink mx-4 text-gray-400">OR</span>
+            <span className="flex-shrink mx-4 text-muted-foreground">OR</span>
             <div className="flex-grow border-t border-muted"></div>
           </div>
 

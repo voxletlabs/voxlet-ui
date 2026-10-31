@@ -1,6 +1,10 @@
 type Block = {
     name: string;
     path: string;
+    /** Optional per-block showcase image; falls back to the category image. */
+    imageUrl?: string;
+    /** Featured blocks render before the (randomized) rest of the catalog. */
+    featured?: boolean;
 };
 
 type BlockCategory = {
@@ -14,7 +18,7 @@ const BlocksData: BlockCategory[] = [
     {
         categoryName: 'Hero Section',
         supportLine: 'Make a stunning first impression with captivating hero sections.',
-        imageUrl: '/blocks/hero-section.png',
+        imageUrl: '/blocks/hero-section/hero-section-two.png',
         blocks: [
             {
                 name: 'Hero Section Two',

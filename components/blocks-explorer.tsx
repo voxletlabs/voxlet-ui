@@ -1,10 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Image from "next/image";
 import { ScrollArea, ScrollBar } from "@/registry/default/ui/scroll-area";
 import { Button } from "@/registry/default/ui/button";
-import { cn } from "@/registry/default/lib/utils";
 import BlockCard from "@/components/block-card";
 import { getAllBlocks, getBlockCategories } from "@/utils/blocks";
 

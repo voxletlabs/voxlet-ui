@@ -5,7 +5,6 @@ export interface BlockCategorySummary {
     name: string;
     slug: string;
     supportLine: string;
-    imageUrl: string;
     blockCount: number;
 }
 
@@ -16,7 +15,7 @@ export interface BlockSummary {
     path: string;
     category: string;
     categorySlug: string;
-    /** Showcase image: per-block when set, otherwise the category image. */
+    /** Per-block showcase image. */
     imageUrl: string;
 }
 
@@ -34,7 +33,6 @@ export function getBlockCategories(): BlockCategorySummary[] {
         name: category.categoryName,
         slug: slugify(category.categoryName),
         supportLine: category.supportLine,
-        imageUrl: category.imageUrl,
         blockCount: category.blocks.length,
     }));
 }
@@ -56,7 +54,7 @@ export function getAllBlocks(): BlockSummary[] {
             path: block.path,
             category: category.categoryName,
             categorySlug: slugify(category.categoryName),
-            imageUrl: block.imageUrl ?? category.imageUrl,
+            imageUrl: block.imageUrl,
             featured: block.featured,
             dataOrderIndex: BlocksData.indexOf(category) * 1000 + category.blocks.indexOf(block),
         })),
@@ -80,13 +78,13 @@ export function findBlockDetail(categorySlug: string, blockSlug: string): BlockD
     }
 
     const categoryIndex = BlocksData.indexOf(category);
-    const toSummary = (block: { name: string; path: string; imageUrl?: string; featured?: boolean }): OrderableBlock => ({
+    const toSummary = (block: { name: string; path: string; imageUrl: string; featured?: boolean }): OrderableBlock => ({
         name: block.name,
         slug: slugify(block.name),
         path: block.path,
         category: category.categoryName,
         categorySlug,
-        imageUrl: block.imageUrl ?? category.imageUrl,
+        imageUrl: block.imageUrl,
         featured: block.featured,
         dataOrderIndex: categoryIndex * 1000 + category.blocks.indexOf(block),
     });
